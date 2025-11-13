@@ -1,0 +1,331 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html#fluid-mech.",
+    "href": "index.html#fluid-mech.",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Fluid Mech.:",
+    "text": "Fluid Mech.:\nequations are known!\n\\[\\begin{align}\n& \\frac{\\partial \\rho}{\\partial t} + \\nabla (\\rho \\vec{V}) = 0\\\\\n& \\rho \\left[ \\frac{\\partial \\vec{V}}{\\partial t} + (\\vec{V} \\cdot \\nabla ) \\vec{V} \\right] = -\\nabla p + \\nabla \\sigma + \\rho \\vec{g}\\\\\n& \\frac{\\partial \\rho E}{\\partial t} + \\nabla \\left[ (\\rho E + p) \\vec{V} \\right] = \\nabla (\\sigma \\vec{V}) + \\nabla \\vec{q} + \\vec{q}_R + \\rho \\vec{g} \\vec{V} + \\rho \\omega_E\\\\\n& \\frac{\\partial \\rho Y}{\\partial t} + \\nabla (\\rho Y \\vec{V}) = \\nabla \\left[ \\rho D \\nabla Y \\right] + \\rho \\omega_Y\n\\end{align}\\]\nBut very few analytical solutions!"
+  },
+  {
+    "objectID": "index.html#then-if-i-want",
+    "href": "index.html#then-if-i-want",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Then, if I want…",
+    "text": "Then, if I want…\n\n\n\nvalidate — Are the models and approximations used correct?\nverify — some solution?\nsizing – Applications to industrial configurations?\n(just) better understand things?\n\n\n\\(\\rightarrow\\) (Costly) numerical simulations\n\\(\\rightarrow\\) (Costly) experimental measurements"
+  },
+  {
+    "objectID": "index.html#measuring-fluid-flow-velocity-principles",
+    "href": "index.html#measuring-fluid-flow-velocity-principles",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Measuring fluid-flow velocity principles",
+    "text": "Measuring fluid-flow velocity principles\n\nTo determine the velocity of an object, distance and time need to be measured (either the distance traveled during a given time or the time needed to travel a given distance).\nBut, gases as well as pure liquids do not contain moving objects that reveal the velocity of the fluid.\nThus, many measurement techniques have been developed, determining the flow velocity indirectly by measuring other quantities, such as:\n\npressure (pressure probes),\nrotational speed (wind anemometer),\nheat transfer (hot film, hot wire)."
+  },
+  {
+    "objectID": "index.html#alternatives-to-piv-12",
+    "href": "index.html#alternatives-to-piv-12",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Alternatives to PIV (1/2)",
+    "text": "Alternatives to PIV (1/2)\n\n\n\n\n\n\n\n\n\n\nPitot tube\nHot Wire Anemometry\nLaser Doppler Anemometry\n\n\n\n\nSketch\n\n\n\n\n\nPrinciple (what is measured)\nStatic and dynamic pressures. Bernoulli\nJoule dissipation measurement in a wire\nInterferometric meas. of a Doppler shift on scattering particle\n\n\nPros\nEasy to use. Cheap (1 k€)\nHigh time resolution  Medium price (10 k€)\nNon intrusive. High time resolution. Suited for several components\n\n\nCons\nHighly intrusive. Very poor resolution\nIntrusive, fragile. Non linear calibration\nNon-regular sampling. High price (50-100 k€). Complex settings"
+  },
+  {
+    "objectID": "index.html#alternatives-to-piv-22",
+    "href": "index.html#alternatives-to-piv-22",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Alternatives to PIV (2/2)",
+    "text": "Alternatives to PIV (2/2)\n\n\n1d time resolved signal: \n\nTherefore, the structure of an unsteady flow field cannot be obtained by such methods.\n\n\n\nVideo"
+  },
+  {
+    "objectID": "index.html#piv-principles-12",
+    "href": "index.html#piv-principles-12",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "PIV principles (1/2)",
+    "text": "PIV principles (1/2)\n\n\n\n\n\n\n\n\n\nSeeding: tracer particles are added to the flow.\nIllumination: these tracer particles have to be illuminated (in a plane) of the flow at least twice within a short and known time interval.\nRecording: the light scattered by the tracer particles on a camera.\nCalibration: to determine the relation between the particle image displacement in the image plane and the tracer particle displacement in the flow."
+  },
+  {
+    "objectID": "index.html#piv-principles-22",
+    "href": "index.html#piv-principles-22",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "PIV principles (2/2)",
+    "text": "PIV principles (2/2)\n\n\n\nEvaluation: The displacement of the particle images between the light pulses has to be determined through evaluation of the PIV recordings.\nPost-Processing: In order to detect and remove invalid measurements and to extract complex flow quantities of interest, sophisticated post-processing is required."
+  },
+  {
+    "objectID": "index.html#piv-pros",
+    "href": "index.html#piv-pros",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "PIV pros",
+    "text": "PIV pros\n\nThe most widely applied velocity imaging technique in fluid mechanics.\nPIV is a very robust and accurate technique, which in its most common implementation enables the imaging of two components of velocity in a cross-section of the flow.\nPIV measurements are now commonplace and they have been applied in a wide range of gas- and liquid-phase flows, including microfluidics, large-scale wind tunnels, flames, plasmas, and supersonic and hypersonic flows."
+  },
+  {
+    "objectID": "index.html#piv-refs",
+    "href": "index.html#piv-refs",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "PIV refs",
+    "text": "PIV refs\n\n\nExcellent introductions to PIV can be found in several references:"
+  },
+  {
+    "objectID": "index.html#tracer-particles",
+    "href": "index.html#tracer-particles",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Tracer particles",
+    "text": "Tracer particles\n\nIn contrast to hot wire or pressure probe techniques, PIV is based on the direct determination of the 2 fundamental dimensions of the velocity: length and time.\nOn the other hand, the measurement technique is indirect as it determines the velocity of tracer particles instead of the velocity of the fluid.\nTherefore, the interaction of the particles and the surrounding fluid has to be examined in order to avoid significant discrepancies between fluid and particle motion."
+  },
+  {
+    "objectID": "index.html#tracer-particles-1",
+    "href": "index.html#tracer-particles-1",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Tracer particles",
+    "text": "Tracer particles\nFluid mech. properties (1/3)\n\nA primary source of error is the influence of gravitational forces on the velocity of the tracer particles, if the densities of the fluid \\(\\rho\\) and the tracer particles \\(\\rho_p\\) do not match.\nFrom Stokes’ drag law, assuming spherical particles in a viscous fluid at a very low Reynolds number: \\(\\vec{U}_g = d_p^2 \\frac{\\rho_p - \\rho}{18 \\mu} \\vec{g}\\).\nTherefore, the sedimentation of particles can be avoided if the density of the fluid and particles is identical (neutral buoyancy).\nThis is easily achieved in liquid flows, but not in gas flows. Therefore, the particle diameter must be chosen sufficiently small to minimize the settling velocity of the particles."
+  },
+  {
+    "objectID": "index.html#tracer-particles-2",
+    "href": "index.html#tracer-particles-2",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Tracer particles",
+    "text": "Tracer particles\nFluid mech. properties (2/3)\n\n\n\nParticle frequency response: \\(\\frac{d}{dt}U_p = -18 \\frac{\\nu}{d_p^2}\\frac{U_p - U_f}{\\rho_p / \\rho_f}\\) \\[ \\Rightarrow U_p(t) = U_f \\left(1-\\exp \\left( t / \\tau_p \\right )\\right)\\] with \\(\\tau_{\\rm p} = d_{\\rm p}^2 \\frac{\\rho_{\\rm p}}{18 \\mu}\\), relaxation time scale of the particle.\n\n\n\n\n\nA convenient measure for the tendency of particles to attain velocity equilibrium with the fluid is given by the Stokes number \\[ St = \\frac{\\tau_{\\rm p}}{\\tau_{\\rm f}}\\] where \\(\\tau_f\\) stands for the characteristic time scale of the flow (refers to velocity fluctuations along the particle trajectory).\nA value of the Stokes number below \\(10^{-1}\\) yields an acceptable flow tracing accuracy."
+  },
+  {
+    "objectID": "index.html#tracer-particles-3",
+    "href": "index.html#tracer-particles-3",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Tracer particles",
+    "text": "Tracer particles\nFluid mech. properties (3/3)\n\n\n\n\n\n\n\n\n\n\n\n\nDiameter (\\(\\mu m\\))\nRelative density\nResponse time \\(\\tau_p\\) (\\(\\mu s\\))\n\n\n\n\nWater\nHollow glass spheres\n10\n1.05\n0.5\n\n\nWater\nAluminium powder\n3\n2.7\n0.9\n\n\nAir\nOil dropplets\n1\n920\n0.3\n\n\nAir\nSiO\\(_2\\) beads\n0.8\n2600\n5\n\n\nAir\nInflated bubbles\n300\n1\n0.3"
+  },
+  {
+    "objectID": "index.html#tracer-particles-generation",
+    "href": "index.html#tracer-particles-generation",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Tracer particles generation",
+    "text": "Tracer particles generation"
+  },
+  {
+    "objectID": "index.html#light-scattering",
+    "href": "index.html#light-scattering",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Light scattering",
+    "text": "Light scattering\n\n\nPIV image intensity and contrast \\(\\propto\\) scattered light power: selecting suitable scattering particles is usually more effective and cost-efficient than increasing laser (illumination) power."
+  },
+  {
+    "objectID": "index.html#light-scattering-1",
+    "href": "index.html#light-scattering-1",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Light scattering",
+    "text": "Light scattering\nFor spherical particles with diameters \\(d_p\\) larger than the wavelength of the incident light \\(\\lambda\\), Mie’s scattering theory holds.\n\n\nMaximum light diffused at 0°\nImportant parameters:\n  – Particle type/shape/size\n  – Refraction index\n  – Nature of the environment"
+  },
+  {
+    "objectID": "index.html#illumination-sheet",
+    "href": "index.html#illumination-sheet",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Illumination sheet",
+    "text": "Illumination sheet\nUse of spherical and cylindrical lenses\nImportant parameters:\n  – Cylindrical lens curvature and concavity (F2)\n  – Focal length of the spherical lens (F1)\n  – Divergence and diameter of the laser beam"
+  },
+  {
+    "objectID": "index.html#image-recording",
+    "href": "index.html#image-recording",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Image recording",
+    "text": "Image recording\nSee B. Radisson’s lecture."
+  },
+  {
+    "objectID": "index.html#complete-setup-overview",
+    "href": "index.html#complete-setup-overview",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Complete setup overview",
+    "text": "Complete setup overview"
+  },
+  {
+    "objectID": "index.html#resolution-requirements-in-fluid-flows-12",
+    "href": "index.html#resolution-requirements-in-fluid-flows-12",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Resolution requirements in fluid flows (1/2)",
+    "text": "Resolution requirements in fluid flows (1/2)\n\nOne of the major difficulties in flow imaging is achieving adequate spatial and temporal resolution. This is particularly the case when flows are turbulent, if it is desired to resolve the smallest scales at which fluctuations occur.\nLaminar flows pose less stringent requirements on resolution, compared to turbulent flows. In many laminar shear flows including boundary layers, pipe flows, wakes, jets, and mixing layers, the maximum gradient is the same order of magnitude as the overall gradient, \\[\\left(\\frac{\\partial U}{\\partial y} \\right)_{\\rm max} \\approx \\frac{\\Delta U}{\\delta}\\] where \\(\\Delta U\\) is the characteristic velocity difference, \\(\\delta\\) is the local width of the shear flow."
+  },
+  {
+    "objectID": "index.html#resolution-requirements-in-fluid-flows-22",
+    "href": "index.html#resolution-requirements-in-fluid-flows-22",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Resolution requirements in fluid flows (2/2)",
+    "text": "Resolution requirements in fluid flows (2/2)\n\nTurbulent flows have substantially more severe resolution requirements than laminar flows, owing to the much larger gradients that occur at the smallest scales of turbulence.\nIn turbulent flows, the spatial fluctuations range in scale from the largest physical dimension of the flow (e.g., the local width of the boundary layer or jet) to the scale at which diffusion acts to remove all gradients.\nThe largest scales are often called the ‘‘outer scales,’’ whereas the smallest scales are the ‘‘inner’’ or dissipation scales because these are the scales at which the energy of fluctuations, whether kinetic or scalar, is dissipated.\nIn classical turbulence theory, the kinetic energy dissipation scale is the Kolmogorov scale \\[\\eta \\equiv \\left( \\frac{\\nu ^3}{\\epsilon} \\right)^{1/4}.\\]\nUsing scaling arguments, the Kolmogorov scale can also be related to outer scale variables through the relationship, \\(\\eta \\propto Re^{-3/4}\\)."
+  },
+  {
+    "objectID": "index.html#summary",
+    "href": "index.html#summary",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Summary",
+    "text": "Summary\nDevelopping a PIV setup is a seek for a compromise regarding,\n\n\nReduced inertia of the seeding particles:\n  – Neutrally buoyant\n  – As small as possible\nHigh visibility:\n  – Good light scattering\n  – Large enough\nAir vs water\nApplication"
+  },
+  {
+    "objectID": "index.html#frame-1",
+    "href": "index.html#frame-1",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Frame 1",
+    "text": "Frame 1"
+  },
+  {
+    "objectID": "index.html#frame-2",
+    "href": "index.html#frame-2",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Frame 2",
+    "text": "Frame 2"
+  },
+  {
+    "objectID": "index.html#objective",
+    "href": "index.html#objective",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Objective",
+    "text": "Objective\nEstimate a velocity-field from a couple of grayscale particle images, i.e. find \\(\\vec{V}(\\vec{x},t)\\) from \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\).\n\nIdeally, a high data density is preferred on the PIV vector fields, particularly when significant spatial flow variations must be resolved or when comparing experimental data with numerical results.\nThis requires a medium concentration of the images of the tracer particles in the PIV recording.\nMedium image concentration is characterized by the fact that matching pairs of particle images – due to subsequent illuminations – cannot be detected by visual inspection.\nHence, statistical approaches were developed."
+  },
+  {
+    "objectID": "index.html#from-ivecxttdelta-t-i-in-0255",
+    "href": "index.html#from-ivecxttdelta-t-i-in-0255",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)",
+    "text": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)\n\n# import the standard numerical and plotting packages\nimport numpy as np\nimport matplotlib.pyplot as plt\n# import what is necessary from OpenPIV\nfrom openpiv import tools\n\n# load the images\na = tools.imread(\"./images/B005_1.tif\")\nb = tools.imread(\"./images/B005_2.tif\")"
+  },
+  {
+    "objectID": "index.html#from-ivecxttdelta-t-i-in-0255-1",
+    "href": "index.html#from-ivecxttdelta-t-i-in-0255-1",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)",
+    "text": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)\n\n# import the standard numerical and plotting packages\nimport numpy as np\nimport matplotlib.pyplot as plt\n# import what is necessary from OpenPIV\nfrom openpiv import tools\n\n# load the images\na = tools.imread(\"./images/B005_1.tif\")\nb = tools.imread(\"./images/B005_2.tif\")\n\nfig, axs = plt.subplots(1, 2, figsize=(9, 4))\nimg = axs[0].imshow(a, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[0].set_title('frame A')\nimg = axs[1].imshow(b, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[1].set_title('frame B')\ncbar = fig.add_axes([0.95, 0.1, 0.03, 0.8])\nfig.colorbar(img, cax=cbar)\nplt.show()"
+  },
+  {
+    "objectID": "index.html#windowing",
+    "href": "index.html#windowing",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Windowing",
+    "text": "Windowing\nLet’s focus on small portions of the images:\n\nwin_size = 32\na_win = a[:win_size, :win_size].copy()\nb_win = b[:win_size, :win_size].copy()\n\nfig, axs = plt.subplots(1, 2, figsize=(9, 4))\nimg = axs[0].imshow(a_win, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[0].set_title('IA')\nimg = axs[1].imshow(b_win, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[1].set_title('IB')\ncbar = fig.add_axes([0.95, 0.1, 0.03, 0.8])\nfig.colorbar(img, cax=cbar)\nplt.show()\n\n\n\n\n\n\n\n\n\n\nThe movement of individual particles from frame A to frame B is untrackable by “hand”."
+  },
+  {
+    "objectID": "index.html#shifting",
+    "href": "index.html#shifting",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Shifting",
+    "text": "Shifting\nWe could then try to shift the window IA by some pixels along the horizontal and/or vertical directions\n\nfig, axs = plt.subplots(1, 3, figsize=(9, 4))\nimg = axs[0].imshow(b_win - a_win, cmap=plt.cm.gray)\naxs[0].set_title(\"IB - IA(shift=0)\")\nimg = axs[1].imshow(b_win - np.roll(a_win, (1, 0), axis=(0, 1)), cmap=plt.cm.gray)\naxs[1].set_title(\"IB - IA(shift=1 pxl)\")\nimg = axs[2].imshow(b_win - np.roll(a_win, (2, 0), axis=(0, 1)), cmap=plt.cm.gray)\naxs[2].set_title(\"IB - IA(shift=2 pxl)\")\ncbar = fig.add_axes([0.95, 0.1, 0.03, 0.8])\nfig.colorbar(img, cax=cbar)\nplt.show()"
+  },
+  {
+    "objectID": "index.html#optimal-matching",
+    "href": "index.html#optimal-matching",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Optimal matching?",
+    "text": "Optimal matching?\nLet’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.\n\ndef match_template(img, template, maxroll=8):\n    # img: input image to compare\n    # template: image to match against\n    # maxroll: max nbr of pxl to shift in each dir. Default value is 8.\n    best_dist = np.inf\n    best_shift = (-1, -1)\n    for y in range(-maxroll,maxroll):\n        for x in range(-maxroll,maxroll):\n            # calculate Euclidean distance\n            dist = np.sqrt(np.sum((img - np.roll(template, (y, x), axis=(0, 1))) ** 2))\n            if dist &lt; best_dist:\n                best_dist = dist\n                best_shift = (y, x)\n    return (best_dist, best_shift)\n# Let’s check that it works by manually shifting the same image (IA):\nmatch_template(np.roll(a_win, (2, 0), axis=(0, 1)), a_win)\n\n\n\n(0.0, (2, 0))"
+  },
+  {
+    "objectID": "index.html#optimal-matching-1",
+    "href": "index.html#optimal-matching-1",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Optimal matching?",
+    "text": "Optimal matching?\nLet’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.\n\n# Let’s try it on the two sub-windows\nmatch_template(b_win, a_win)\n\n\n\n(123.80226169178009, (-1, 1))\n\n\n\nWell, this is not the true displacement, but it gives a hint.\nThe problem is that shifting each image and repeating the loop many times is impractical."
+  },
+  {
+    "objectID": "index.html#optimal-matching-2",
+    "href": "index.html#optimal-matching-2",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Optimal matching?",
+    "text": "Optimal matching?\nLet’s use a different matching principle, based on the cross-correlation:\n\n\n\\[R_{II}(x,y) = \\sum_{i=-K}^K \\sum_{j=-L}^L I(i,j) I'(i+x,j+y)\\]\n\n\\(I(x,y) =\\) Pixel grayscale \\((i,j)\\) of the 1st image (instant \\(t\\))\n\\(I'(x,y) =\\) Pixel grayscale \\((i,j)\\) of the 2nd image (instant \\(t+\\Delta t\\))\n\\(2K\\), \\(2L\\) = Dimension of the analysis area (mesh).\n\nThis is statistical information. We do not look for particle-to-particle speed!"
+  },
+  {
+    "objectID": "index.html#cc-interrogation-technic",
+    "href": "index.html#cc-interrogation-technic",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "CC interrogation technic",
+    "text": "CC interrogation technic\nDirect calculation: very long! : \\(2M^2N^2\\) operations \\(\\Rightarrow\\) Calculation of the correlation function by FFT: \\(2N^2\\log_2N\\) (if \\(N=M\\))."
+  },
+  {
+    "objectID": "index.html#cc-interrogation-technic-1",
+    "href": "index.html#cc-interrogation-technic-1",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "CC interrogation technic",
+    "text": "CC interrogation technic\nCC is an efficient computational algorithm to find out the right shift.\n\n# import the required package\nfrom scipy.signal import correlate\n\ncross_corr = correlate(b_win - b_win.mean(), a_win - a_win.mean(), method=\"fft\")\n# let's see what the cross-correlation looks like\nY, X = np.meshgrid(np.arange(cross_corr.shape[0]), np.arange(cross_corr.shape[1]))\nfig = plt.figure()\nax = fig.add_subplot(projection=\"3d\")\nax.plot_surface(Y, X, cross_corr, cmap='jet', linewidth=0.2)\nplt.title(\"Correlation map — peak is the most probable shift\")\nplt.show()"
+  },
+  {
+    "objectID": "index.html#cc-interrogation-technic-2",
+    "href": "index.html#cc-interrogation-technic-2",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "CC interrogation technic",
+    "text": "CC interrogation technic\nWe can get the first velocity field by repeating this analysis for all windows.\n\ndef vel_field(curr_frame, next_frame, win_size):\n    ys = np.arange(0, curr_frame.shape[0], win_size)\n    xs = np.arange(0, curr_frame.shape[1], win_size)\n    dys = np.zeros((len(ys), len(xs)))\n    dxs = np.zeros((len(ys), len(xs)))\n    for iy, y in enumerate(ys):\n        for ix, x in enumerate(xs):\n            int_win = curr_frame[y : y + win_size, x : x + win_size]\n            search_win = next_frame[y : y + win_size, x : x + win_size]\n            cross_corr = correlate(\n                search_win - search_win.mean(), int_win - int_win.mean(), method=\"fft\"\n            )\n            dys[iy, ix], dxs[iy, ix] = (\n                np.unravel_index(np.argmax(cross_corr), cross_corr.shape)\n                - np.array([win_size, win_size])\n                + 1\n            )\n    # locate velocity vectors from the center of each window\n    ys = ys + win_size / 2\n    xs = xs + win_size / 2\n    return xs, ys, dxs, dys\n\nxs, ys, dxs, dys = vel_field(a, b, 32)\nnorm_drs = np.sqrt(dxs ** 2 + dys ** 2)\n\nfig, ax = plt.subplots(figsize=(9, 4))\nax.quiver(\n    xs,\n    ys[::-1],\n    dxs,\n    -dys,\n    norm_drs,\n    cmap=\"plasma\",\n    angles=\"xy\",\n    scale_units=\"xy\",\n    scale=0.25,\n)\nax.set_aspect(\"equal\")\nplt.show()"
+  },
+  {
+    "objectID": "index.html#cc-interrogation-technic-3",
+    "href": "index.html#cc-interrogation-technic-3",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "CC interrogation technic",
+    "text": "CC interrogation technic\nLet’s have a look back at the CC map:\n\n\n\nplt.imshow(cross_corr, cmap=plt.cm.gray)\ny, x = np.unravel_index(cross_corr.argmax(), cross_corr.shape)\nprint(f\"{y=}, {x=}\")\nplt.show()\n\n\n\ny=30, x=32\n\n\n\n\n\n\n\n\n\n\n\n\nThe information is discrete (pxl)! Very high uncertainty for displacements close to 1 pxl\nSub-pixel interpolation of the correlation peak (Gaussian, parabolic, etc.) over 3, 5 or 7 pxls \\(\\Rightarrow\\) theoretical accuracy 0.01 pxl."
+  },
+  {
+    "objectID": "index.html#cc-interrogation-technic-4",
+    "href": "index.html#cc-interrogation-technic-4",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "CC interrogation technic",
+    "text": "CC interrogation technic\nerrors\n\n\n\nThe interpolation of correlation peaks causes a bias towards integer values displacements (Peak locking effect)\nThis effect increases when the particle image size &lt; 2 pixels\nSolutions to correct this effect: choice of the interpolation function, iterative PIV, etc. \n\n\n\nParticle size on image results from:\n  – Actual particle size\n  – Particle brigthness\n  – Sensor pixel size\n  – Focus"
+  },
+  {
+    "objectID": "index.html#parameters",
+    "href": "index.html#parameters",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Parameters",
+    "text": "Parameters\nTaking good quality images is an art!\n\n\n\n\nHomogeneous, regular tracer density \\(\\rightarrow\\) correlation relevance\n\n\n\n\nParticle image size (ideal: ~3/4 pixels): Detectability / Pixel locking\n\n\n\n\nNo saturation of particle images on the CCD sensor\n\n\n\n\nNo reflection, background noise,…\n\n\n\n\n\nGaussian laser beams\n\n\n\n\nSuperimposed laser sheets, ideal thickness ~ 500μm\n\n\n\n\nTime between pulses: In plane displacement =&gt; resolution Out of plane displacement =&gt; lost particles"
+  },
+  {
+    "objectID": "index.html#parameters-1",
+    "href": "index.html#parameters-1",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Parameters",
+    "text": "Parameters\nCorrelation coefficient for different displacements, i.e. different time between pulses"
+  },
+  {
+    "objectID": "index.html#spatial-resolution",
+    "href": "index.html#spatial-resolution",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Spatial resolution",
+    "text": "Spatial resolution\nTypical mesh sizes: \\(32 \\times 32\\), \\(64 \\times 64\\), \\(128 \\times 128\\) pixel \\(^2\\)\nTypical pixel size: \\(0.1\\) mm to \\(1\\) mm"
+  },
+  {
+    "objectID": "index.html#spatial-resolution-1",
+    "href": "index.html#spatial-resolution-1",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Spatial resolution",
+    "text": "Spatial resolution\nOverlaping of the interrogation windows: typically 50%, 75%"
+  },
+  {
+    "objectID": "index.html#spatial-resolution-2",
+    "href": "index.html#spatial-resolution-2",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Spatial resolution",
+    "text": "Spatial resolution\nIf strong gradients\n\n\\(\\rightarrow\\) towards multi-pass"
+  },
+  {
+    "objectID": "index.html#multi-pass",
+    "href": "index.html#multi-pass",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Multi-pass",
+    "text": "Multi-pass"
+  },
+  {
+    "objectID": "index.html#validation-procedure",
+    "href": "index.html#validation-procedure",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Validation procedure",
+    "text": "Validation procedure\nQuality factor (signal-to-noise ratio):"
+  },
+  {
+    "objectID": "index.html#validation-procedure-1",
+    "href": "index.html#validation-procedure-1",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "Validation procedure",
+    "text": "Validation procedure\n\n\n\nComparison of vectors with their \\(k \\equiv [i-N:i+N,j-N:j+N]\\) neighbors: suppression/replacement if, e.g., \\[V_{ij} &gt; \\overline{V_k} \\pm K \\times {\\rm RMS(neighbors)}\\]\n\n\n\n\n\n\n\n\n\n\n\nSpatial filtering (vectors interpolation): Post-processing is not an artistic creation! It is necessary to remove the noise as much as possible without removing the signal"
+  },
+  {
+    "objectID": "index.html#and-more",
+    "href": "index.html#and-more",
+    "title": "Particle Image Velocimetry (PIV)",
+    "section": "And More…",
+    "text": "And More…\n\nFooter & Logo (optionally specify custom footer per-slide or hide global footer)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations"
+  }
+]
