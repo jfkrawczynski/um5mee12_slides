@@ -1,5 +1,544 @@
 [
   {
+    "objectID": "index.html#fluid-mech.",
+    "href": "index.html#fluid-mech.",
+    "title": "Analyse de l’effet de serre",
+    "section": "Fluid Mech.:",
+    "text": "Fluid Mech.:\nequations are known!\n\\[\\begin{align}\n& \\frac{\\partial \\rho}{\\partial t} + \\nabla (\\rho \\vec{V}) = 0\\\\\n& \\rho \\left[ \\frac{\\partial \\vec{V}}{\\partial t} + (\\vec{V} \\cdot \\nabla ) \\vec{V} \\right] = -\\nabla p + \\nabla \\sigma + \\rho \\vec{g}\\\\\n& \\frac{\\partial \\rho E}{\\partial t} + \\nabla \\left[ (\\rho E + p) \\vec{V} \\right] = \\nabla (\\sigma \\vec{V}) + \\nabla \\vec{q} + \\vec{q}_R + \\rho \\vec{g} \\vec{V} + \\rho \\omega_E\\\\\n& \\frac{\\partial \\rho Y}{\\partial t} + \\nabla (\\rho Y \\vec{V}) = \\nabla \\left[ \\rho D \\nabla Y \\right] + \\rho \\omega_Y\n\\end{align}\\]\nBut very few analytical solutions!"
+  },
+  {
+    "objectID": "index.html#then-if-i-want",
+    "href": "index.html#then-if-i-want",
+    "title": "Energie : sources et usages",
+    "section": "Then, if I want…",
+    "text": "Then, if I want…\n\n\n\nvalidate — Are the models and approximations used correct?\nverify — some solution?\nsizing – Applications to industrial configurations?\n(just) better understand things?\n\n\n\\(\\rightarrow\\) (Costly) numerical simulations\n\\(\\rightarrow\\) (Costly) experimental measurements"
+  },
+  {
+    "objectID": "index.html#measuring-fluid-flow-velocity-principles",
+    "href": "index.html#measuring-fluid-flow-velocity-principles",
+    "title": "Energie : sources et usages",
+    "section": "Measuring fluid-flow velocity principles",
+    "text": "Measuring fluid-flow velocity principles\n\nTo determine the velocity of an object, distance and time need to be measured (either the distance traveled during a given time or the time needed to travel a given distance).\nBut, gases as well as pure liquids do not contain moving objects that reveal the velocity of the fluid.\nThus, many measurement techniques have been developed, determining the flow velocity indirectly by measuring other quantities, such as:\n\npressure (pressure probes),\nrotational speed (wind anemometer),\nheat transfer (hot film, hot wire)."
+  },
+  {
+    "objectID": "index.html#alternatives-to-piv-12",
+    "href": "index.html#alternatives-to-piv-12",
+    "title": "Energie : sources et usages",
+    "section": "Alternatives to PIV (1/2)",
+    "text": "Alternatives to PIV (1/2)\n\n\n\n\n\n\n\n\n\n\nPitot tube\nHot Wire Anemometry\nLaser Doppler Anemometry\n\n\n\n\nSketch\n\n\n\n\n\nPrinciple (what is measured)\nStatic and dynamic pressures. Bernoulli\nJoule dissipation measurement in a wire\nInterferometric meas. of a Doppler shift on scattering particle\n\n\nPros\nEasy to use. Cheap (1 k€)\nHigh time resolution  Medium price (10 k€)\nNon intrusive. High time resolution. Suited for several components\n\n\nCons\nHighly intrusive. Very poor resolution\nIntrusive, fragile. Non linear calibration\nNon-regular sampling. High price (50-100 k€). Complex settings"
+  },
+  {
+    "objectID": "index.html#alternatives-to-piv-22",
+    "href": "index.html#alternatives-to-piv-22",
+    "title": "Energie : sources et usages",
+    "section": "Alternatives to PIV (2/2)",
+    "text": "Alternatives to PIV (2/2)\n\n\n1d time resolved signal: \n\nTherefore, the structure of an unsteady flow field cannot be obtained by such methods.\n\n\n\nVideo"
+  },
+  {
+    "objectID": "index.html#piv-principles-12",
+    "href": "index.html#piv-principles-12",
+    "title": "Analyse de l’effet de serre",
+    "section": "PIV principles (1/2)",
+    "text": "PIV principles (1/2)\n\n\n\n\n\n\n\n\n\nSeeding: tracer particles are added to the flow.\nIllumination: these tracer particles have to be illuminated (in a plane) of the flow at least twice within a short and known time interval.\nRecording: the light scattered by the tracer particles on a camera.\nCalibration: to determine the relation between the particle image displacement in the image plane and the tracer particle displacement in the flow."
+  },
+  {
+    "objectID": "index.html#piv-principles-22",
+    "href": "index.html#piv-principles-22",
+    "title": "Analyse de l’effet de serre",
+    "section": "PIV principles (2/2)",
+    "text": "PIV principles (2/2)\n\n\n\nEvaluation: The displacement of the particle images between the light pulses has to be determined through evaluation of the PIV recordings.\nPost-Processing: In order to detect and remove invalid measurements and to extract complex flow quantities of interest, sophisticated post-processing is required."
+  },
+  {
+    "objectID": "index.html#piv-pros",
+    "href": "index.html#piv-pros",
+    "title": "Analyse de l’effet de serre",
+    "section": "PIV pros",
+    "text": "PIV pros\n\nThe most widely applied velocity imaging technique in fluid mechanics.\nPIV is a very robust and accurate technique, which in its most common implementation enables the imaging of two components of velocity in a cross-section of the flow.\nPIV measurements are now commonplace and they have been applied in a wide range of gas- and liquid-phase flows, including microfluidics, large-scale wind tunnels, flames, plasmas, and supersonic and hypersonic flows."
+  },
+  {
+    "objectID": "index.html#piv-refs",
+    "href": "index.html#piv-refs",
+    "title": "Analyse de l’effet de serre",
+    "section": "PIV refs",
+    "text": "PIV refs\n\n\nExcellent introductions to PIV can be found in several references:"
+  },
+  {
+    "objectID": "index.html#tracer-particles",
+    "href": "index.html#tracer-particles",
+    "title": "Energie : sources et usages",
+    "section": "Tracer particles",
+    "text": "Tracer particles\nFluid mech. properties (3/3)\n\n\n\n\n\n\n\n\n\n\n\n\nDiameter (\\(\\mu m\\))\nRelative density\nResponse time \\(\\tau_p\\) (\\(\\mu s\\))\n\n\n\n\nWater\nHollow glass spheres\n10\n1.05\n0.5\n\n\nWater\nAluminium powder\n3\n2.7\n0.9\n\n\nAir\nOil dropplets\n1\n920\n0.3\n\n\nAir\nSiO\\(_2\\) beads\n0.8\n2600\n5\n\n\nAir\nInflated bubbles\n300\n1\n0.3"
+  },
+  {
+    "objectID": "index.html#tracer-particles-1",
+    "href": "index.html#tracer-particles-1",
+    "title": "Analyse de l’effet de serre",
+    "section": "Tracer particles",
+    "text": "Tracer particles\nFluid mech. properties (1/3)\n\nA primary source of error is the influence of gravitational forces on the velocity of the tracer particles, if the densities of the fluid \\(\\rho\\) and the tracer particles \\(\\rho_p\\) do not match.\nFrom Stokes’ drag law, assuming spherical particles in a viscous fluid at a very low Reynolds number: \\(\\vec{U}_g = d_p^2 \\frac{\\rho_p - \\rho}{18 \\mu} \\vec{g}\\).\nTherefore, the sedimentation of particles can be avoided if the density of the fluid and particles is identical (neutral buoyancy).\nThis is easily achieved in liquid flows, but not in gas flows. Therefore, the particle diameter must be chosen sufficiently small to minimize the settling velocity of the particles."
+  },
+  {
+    "objectID": "index.html#tracer-particles-2",
+    "href": "index.html#tracer-particles-2",
+    "title": "Analyse de l’effet de serre",
+    "section": "Tracer particles",
+    "text": "Tracer particles\nFluid mech. properties (2/3)\n\n\n\nParticle frequency response: \\(\\frac{d}{dt}U_p = -18 \\frac{\\nu}{d_p^2}\\frac{U_p - U_f}{\\rho_p / \\rho_f}\\) \\[ \\Rightarrow U_p(t) = U_f \\left(1-\\exp \\left( t / \\tau_p \\right )\\right)\\] with \\(\\tau_{\\rm p} = d_{\\rm p}^2 \\frac{\\rho_{\\rm p}}{18 \\mu}\\), relaxation time scale of the particle.\n\n\n\n\n\nA convenient measure for the tendency of particles to attain velocity equilibrium with the fluid is given by the Stokes number \\[ St = \\frac{\\tau_{\\rm p}}{\\tau_{\\rm f}}\\] where \\(\\tau_f\\) stands for the characteristic time scale of the flow (refers to velocity fluctuations along the particle trajectory).\nA value of the Stokes number below \\(10^{-1}\\) yields an acceptable flow tracing accuracy."
+  },
+  {
+    "objectID": "index.html#tracer-particles-3",
+    "href": "index.html#tracer-particles-3",
+    "title": "Analyse de l’effet de serre",
+    "section": "Tracer particles",
+    "text": "Tracer particles\nFluid mech. properties (3/3)\n\n\n\n\n\n\n\n\n\n\n\n\nDiameter (\\(\\mu m\\))\nRelative density\nResponse time \\(\\tau_p\\) (\\(\\mu s\\))\n\n\n\n\nWater\nHollow glass spheres\n10\n1.05\n0.5\n\n\nWater\nAluminium powder\n3\n2.7\n0.9\n\n\nAir\nOil dropplets\n1\n920\n0.3\n\n\nAir\nSiO\\(_2\\) beads\n0.8\n2600\n5\n\n\nAir\nInflated bubbles\n300\n1\n0.3"
+  },
+  {
+    "objectID": "index.html#tracer-particles-generation",
+    "href": "index.html#tracer-particles-generation",
+    "title": "Analyse de l’effet de serre",
+    "section": "Tracer particles generation",
+    "text": "Tracer particles generation"
+  },
+  {
+    "objectID": "index.html#light-scattering",
+    "href": "index.html#light-scattering",
+    "title": "Analyse de l’effet de serre",
+    "section": "Light scattering",
+    "text": "Light scattering\n\n\nPIV image intensity and contrast \\(\\propto\\) scattered light power: selecting suitable scattering particles is usually more effective and cost-efficient than increasing laser (illumination) power."
+  },
+  {
+    "objectID": "index.html#light-scattering-1",
+    "href": "index.html#light-scattering-1",
+    "title": "Analyse de l’effet de serre",
+    "section": "Light scattering",
+    "text": "Light scattering\nFor spherical particles with diameters \\(d_p\\) larger than the wavelength of the incident light \\(\\lambda\\), Mie’s scattering theory holds.\n\n\nMaximum light diffused at 0°\nImportant parameters:\n  – Particle type/shape/size\n  – Refraction index\n  – Nature of the environment"
+  },
+  {
+    "objectID": "index.html#illumination-sheet",
+    "href": "index.html#illumination-sheet",
+    "title": "Energie : sources et usages",
+    "section": "Illumination sheet",
+    "text": "Illumination sheet\nUse of spherical and cylindrical lenses\nImportant parameters:\n  – Cylindrical lens curvature and concavity (F2)\n  – Focal length of the spherical lens (F1)\n  – Divergence and diameter of the laser beam"
+  },
+  {
+    "objectID": "index.html#image-recording",
+    "href": "index.html#image-recording",
+    "title": "Analyse de l’effet de serre",
+    "section": "Image recording",
+    "text": "Image recording\nSee B. Radisson’s lecture."
+  },
+  {
+    "objectID": "index.html#complete-setup-overview",
+    "href": "index.html#complete-setup-overview",
+    "title": "Analyse de l’effet de serre",
+    "section": "Complete setup overview",
+    "text": "Complete setup overview"
+  },
+  {
+    "objectID": "index.html#resolution-requirements-in-fluid-flows-12",
+    "href": "index.html#resolution-requirements-in-fluid-flows-12",
+    "title": "Analyse de l’effet de serre",
+    "section": "Resolution requirements in fluid flows (1/2)",
+    "text": "Resolution requirements in fluid flows (1/2)\n\nOne of the major difficulties in flow imaging is achieving adequate spatial and temporal resolution. This is particularly the case when flows are turbulent, if it is desired to resolve the smallest scales at which fluctuations occur.\nLaminar flows pose less stringent requirements on resolution, compared to turbulent flows. In many laminar shear flows including boundary layers, pipe flows, wakes, jets, and mixing layers, the maximum gradient is the same order of magnitude as the overall gradient, \\[\\left(\\frac{\\partial U}{\\partial y} \\right)_{\\rm max} \\approx \\frac{\\Delta U}{\\delta}\\] where \\(\\Delta U\\) is the characteristic velocity difference, \\(\\delta\\) is the local width of the shear flow."
+  },
+  {
+    "objectID": "index.html#resolution-requirements-in-fluid-flows-22",
+    "href": "index.html#resolution-requirements-in-fluid-flows-22",
+    "title": "Analyse de l’effet de serre",
+    "section": "Resolution requirements in fluid flows (2/2)",
+    "text": "Resolution requirements in fluid flows (2/2)\n\nTurbulent flows have substantially more severe resolution requirements than laminar flows, owing to the much larger gradients that occur at the smallest scales of turbulence.\nIn turbulent flows, the spatial fluctuations range in scale from the largest physical dimension of the flow (e.g., the local width of the boundary layer or jet) to the scale at which diffusion acts to remove all gradients.\nThe largest scales are often called the ‘‘outer scales,’’ whereas the smallest scales are the ‘‘inner’’ or dissipation scales because these are the scales at which the energy of fluctuations, whether kinetic or scalar, is dissipated.\nIn classical turbulence theory, the kinetic energy dissipation scale is the Kolmogorov scale \\[\\eta \\equiv \\left( \\frac{\\nu ^3}{\\epsilon} \\right)^{1/4}.\\]\nUsing scaling arguments, the Kolmogorov scale can also be related to outer scale variables through the relationship, \\(\\eta \\propto Re^{-3/4}\\)."
+  },
+  {
+    "objectID": "index.html#summary",
+    "href": "index.html#summary",
+    "title": "Analyse de l’effet de serre",
+    "section": "Summary",
+    "text": "Summary\nDevelopping a PIV setup is a seek for a compromise regarding,\n\n\nReduced inertia of the seeding particles:\n  – Neutrally buoyant\n  – As small as possible\nHigh visibility:\n  – Good light scattering\n  – Large enough\nAir vs water\nApplication"
+  },
+  {
+    "objectID": "index.html#frame-1",
+    "href": "index.html#frame-1",
+    "title": "Analyse de l’effet de serre",
+    "section": "Frame 1",
+    "text": "Frame 1"
+  },
+  {
+    "objectID": "index.html#frame-2",
+    "href": "index.html#frame-2",
+    "title": "Analyse de l’effet de serre",
+    "section": "Frame 2",
+    "text": "Frame 2"
+  },
+  {
+    "objectID": "index.html#objective",
+    "href": "index.html#objective",
+    "title": "Analyse de l’effet de serre",
+    "section": "Objective",
+    "text": "Objective"
+  },
+  {
+    "objectID": "index.html#from-ivecxttdelta-t-i-in-0255",
+    "href": "index.html#from-ivecxttdelta-t-i-in-0255",
+    "title": "Analyse de l’effet de serre",
+    "section": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)",
+    "text": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)\n\n# import the standard numerical and plotting packages\nimport numpy as np\nimport matplotlib.pyplot as plt\n# import what is necessary from OpenPIV\nfrom openpiv import tools\n\n# load the images\na = tools.imread(\"./images/B005_1.tif\")\nb = tools.imread(\"./images/B005_2.tif\")"
+  },
+  {
+    "objectID": "index.html#from-ivecxttdelta-t-i-in-0255-1",
+    "href": "index.html#from-ivecxttdelta-t-i-in-0255-1",
+    "title": "Analyse de l’effet de serre",
+    "section": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)",
+    "text": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)\n\n# import the standard numerical and plotting packages\nimport numpy as np\nimport matplotlib.pyplot as plt\n# import what is necessary from OpenPIV\nfrom openpiv import tools\n\n# load the images\na = tools.imread(\"./images/B005_1.tif\")\nb = tools.imread(\"./images/B005_2.tif\")\n\nfig, axs = plt.subplots(1, 2, figsize=(9, 4))\nimg = axs[0].imshow(a, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[0].set_title('frame A')\nimg = axs[1].imshow(b, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[1].set_title('frame B')\ncbar = fig.add_axes([0.95, 0.1, 0.03, 0.8])\nfig.colorbar(img, cax=cbar)\nplt.show()"
+  },
+  {
+    "objectID": "index.html#windowing",
+    "href": "index.html#windowing",
+    "title": "Analyse de l’effet de serre",
+    "section": "Windowing",
+    "text": "Windowing\nLet’s focus on small portions of the images:\n\nwin_size = 32\na_win = a[:win_size, :win_size].copy()\nb_win = b[:win_size, :win_size].copy()\n\nfig, axs = plt.subplots(1, 2, figsize=(9, 4))\nimg = axs[0].imshow(a_win, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[0].set_title('IA')\nimg = axs[1].imshow(b_win, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[1].set_title('IB')\ncbar = fig.add_axes([0.95, 0.1, 0.03, 0.8])\nfig.colorbar(img, cax=cbar)\nplt.show()\n\n\n\n\n\n\n\n\n\n\nThe movement of individual particles from frame A to frame B is untrackable by “hand”."
+  },
+  {
+    "objectID": "index.html#shifting",
+    "href": "index.html#shifting",
+    "title": "Analyse de l’effet de serre",
+    "section": "Shifting",
+    "text": "Shifting\nWe could then try to shift the window IA by some pixels along the horizontal and/or vertical directions\n\nfig, axs = plt.subplots(1, 3, figsize=(9, 4))\nimg = axs[0].imshow(b_win - a_win, cmap=plt.cm.gray)\naxs[0].set_title(\"IB - IA(shift=0)\")\nimg = axs[1].imshow(b_win - np.roll(a_win, (1, 0), axis=(0, 1)), cmap=plt.cm.gray)\naxs[1].set_title(\"IB - IA(shift=1 pxl)\")\nimg = axs[2].imshow(b_win - np.roll(a_win, (2, 0), axis=(0, 1)), cmap=plt.cm.gray)\naxs[2].set_title(\"IB - IA(shift=2 pxl)\")\ncbar = fig.add_axes([0.95, 0.1, 0.03, 0.8])\nfig.colorbar(img, cax=cbar)\nplt.show()"
+  },
+  {
+    "objectID": "index.html#optimal-matching",
+    "href": "index.html#optimal-matching",
+    "title": "Analyse de l’effet de serre",
+    "section": "Optimal matching?",
+    "text": "Optimal matching?\nLet’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.\n\ndef match_template(img, template, maxroll=8):\n    # img: input image to compare\n    # template: image to match against\n    # maxroll: max nbr of pxl to shift in each dir. Default value is 8.\n    best_dist = np.inf\n    best_shift = (-1, -1)\n    for y in range(-maxroll,maxroll):\n        for x in range(-maxroll,maxroll):\n            # calculate Euclidean distance\n            dist = np.sqrt(np.sum((img - np.roll(template, (y, x), axis=(0, 1))) ** 2))\n            if dist &lt; best_dist:\n                best_dist = dist\n                best_shift = (y, x)\n    return (best_dist, best_shift)\n# Let’s check that it works by manually shifting the same image (IA):\nmatch_template(np.roll(a_win, (2, 0), axis=(0, 1)), a_win)\n\n\n\n(0.0, (2, 0))"
+  },
+  {
+    "objectID": "index.html#optimal-matching-1",
+    "href": "index.html#optimal-matching-1",
+    "title": "Analyse de l’effet de serre",
+    "section": "Optimal matching?",
+    "text": "Optimal matching?\nLet’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.\n\n# Let’s try it on the two sub-windows\nmatch_template(b_win, a_win)\n\n\n\n(123.80226169178009, (-1, 1))\n\n\n\nWell, this is not the true displacement, but it gives a hint.\nThe problem is that shifting each image and repeating the loop many times is impractical."
+  },
+  {
+    "objectID": "index.html#optimal-matching-2",
+    "href": "index.html#optimal-matching-2",
+    "title": "Analyse de l’effet de serre",
+    "section": "Optimal matching?",
+    "text": "Optimal matching?\nLet’s use a different matching principle, based on the cross-correlation:\n\n\n\\[R_{II}(x,y) = \\sum_{i=-K}^K \\sum_{j=-L}^L I(i,j) I'(i+x,j+y)\\]\n\n\\(I(x,y) =\\) Pixel grayscale \\((i,j)\\) of the 1st image (instant \\(t\\))\n\\(I'(x,y) =\\) Pixel grayscale \\((i,j)\\) of the 2nd image (instant \\(t+\\Delta t\\))\n\\(2K\\), \\(2L\\) = Dimension of the analysis area (mesh).\n\nThis is statistical information. We do not look for particle-to-particle speed!"
+  },
+  {
+    "objectID": "index.html#cc-interrogation-technic",
+    "href": "index.html#cc-interrogation-technic",
+    "title": "Analyse de l’effet de serre",
+    "section": "CC interrogation technic",
+    "text": "CC interrogation technic\nDirect calculation: very long! : \\(2M^2N^2\\) operations \\(\\Rightarrow\\) Calculation of the correlation function by FFT: \\(2N^2\\log_2N\\) (if \\(N=M\\))."
+  },
+  {
+    "objectID": "index.html#cc-interrogation-technic-1",
+    "href": "index.html#cc-interrogation-technic-1",
+    "title": "Analyse de l’effet de serre",
+    "section": "CC interrogation technic",
+    "text": "CC interrogation technic\nCC is an efficient computational algorithm to find out the right shift.\n\n# import the required package\nfrom scipy.signal import correlate\n\ncross_corr = correlate(b_win - b_win.mean(), a_win - a_win.mean(), method=\"fft\")\n# let's see what the cross-correlation looks like\nY, X = np.meshgrid(np.arange(cross_corr.shape[0]), np.arange(cross_corr.shape[1]))\nfig = plt.figure()\nax = fig.add_subplot(projection=\"3d\")\nax.plot_surface(Y, X, cross_corr, cmap='jet', linewidth=0.2)\nplt.title(\"Correlation map — peak is the most probable shift\")\nplt.show()"
+  },
+  {
+    "objectID": "index.html#cc-interrogation-technic-2",
+    "href": "index.html#cc-interrogation-technic-2",
+    "title": "Analyse de l’effet de serre",
+    "section": "CC interrogation technic",
+    "text": "CC interrogation technic\nWe can get the first velocity field by repeating this analysis for all windows.\n\ndef vel_field(curr_frame, next_frame, win_size):\n    ys = np.arange(0, curr_frame.shape[0], win_size)\n    xs = np.arange(0, curr_frame.shape[1], win_size)\n    dys = np.zeros((len(ys), len(xs)))\n    dxs = np.zeros((len(ys), len(xs)))\n    for iy, y in enumerate(ys):\n        for ix, x in enumerate(xs):\n            int_win = curr_frame[y : y + win_size, x : x + win_size]\n            search_win = next_frame[y : y + win_size, x : x + win_size]\n            cross_corr = correlate(\n                search_win - search_win.mean(), int_win - int_win.mean(), method=\"fft\"\n            )\n            dys[iy, ix], dxs[iy, ix] = (\n                np.unravel_index(np.argmax(cross_corr), cross_corr.shape)\n                - np.array([win_size, win_size])\n                + 1\n            )\n    # locate velocity vectors from the center of each window\n    ys = ys + win_size / 2\n    xs = xs + win_size / 2\n    return xs, ys, dxs, dys\n\nxs, ys, dxs, dys = vel_field(a, b, 32)\nnorm_drs = np.sqrt(dxs ** 2 + dys ** 2)\n\nfig, ax = plt.subplots(figsize=(9, 4))\nax.quiver(\n    xs,\n    ys[::-1],\n    dxs,\n    -dys,\n    norm_drs,\n    cmap=\"plasma\",\n    angles=\"xy\",\n    scale_units=\"xy\",\n    scale=0.25,\n)\nax.set_aspect(\"equal\")\nplt.show()"
+  },
+  {
+    "objectID": "index.html#cc-interrogation-technic-3",
+    "href": "index.html#cc-interrogation-technic-3",
+    "title": "Analyse de l’effet de serre",
+    "section": "CC interrogation technic",
+    "text": "CC interrogation technic\nLet’s have a look back at the CC map:\n\n\n\nplt.imshow(cross_corr, cmap=plt.cm.gray)\ny, x = np.unravel_index(cross_corr.argmax(), cross_corr.shape)\nprint(f\"{y=}, {x=}\")\nplt.show()\n\n\n\ny=30, x=32\n\n\n\n\n\n\n\n\n\n\n\n\nThe information is discrete (pxl)! Very high uncertainty for displacements close to 1 pxl\nSub-pixel interpolation of the correlation peak (Gaussian, parabolic, etc.) over 3, 5 or 7 pxls \\(\\Rightarrow\\) theoretical accuracy 0.01 pxl."
+  },
+  {
+    "objectID": "index.html#cc-interrogation-technic-4",
+    "href": "index.html#cc-interrogation-technic-4",
+    "title": "Analyse de l’effet de serre",
+    "section": "CC interrogation technic",
+    "text": "CC interrogation technic\nerrors\n\n\n\nThe interpolation of correlation peaks causes a bias towards integer values displacements (Peak locking effect)\nThis effect increases when the particle image size &lt; 2 pixels\nSolutions to correct this effect: choice of the interpolation function, iterative PIV, etc. \n\n\n\nParticle size on image results from:\n  – Actual particle size\n  – Particle brigthness\n  – Sensor pixel size\n  – Focus"
+  },
+  {
+    "objectID": "index.html#parameters",
+    "href": "index.html#parameters",
+    "title": "Analyse de l’effet de serre",
+    "section": "Parameters",
+    "text": "Parameters\nTaking good quality images is an art!\n\n\n\n\nHomogeneous, regular tracer density \\(\\rightarrow\\) correlation relevance\n\n\n\n\nParticle image size (ideal: ~3/4 pixels): Detectability / Pixel locking\n\n\n\n\nNo saturation of particle images on the CCD sensor\n\n\n\n\nNo reflection, background noise,…\n\n\n\n\n\nGaussian laser beams\n\n\n\n\nSuperimposed laser sheets, ideal thickness ~ 500μm\n\n\n\n\nTime between pulses: In plane displacement =&gt; resolution Out of plane displacement =&gt; lost particles"
+  },
+  {
+    "objectID": "index.html#parameters-1",
+    "href": "index.html#parameters-1",
+    "title": "Analyse de l’effet de serre",
+    "section": "Parameters",
+    "text": "Parameters\nCorrelation coefficient for different displacements, i.e. different time between pulses"
+  },
+  {
+    "objectID": "index.html#spatial-resolution",
+    "href": "index.html#spatial-resolution",
+    "title": "Analyse de l’effet de serre",
+    "section": "Spatial resolution",
+    "text": "Spatial resolution\nTypical mesh sizes: \\(32 \\times 32\\), \\(64 \\times 64\\), \\(128 \\times 128\\) pixel \\(^2\\)\nTypical pixel size: \\(0.1\\) mm to \\(1\\) mm"
+  },
+  {
+    "objectID": "index.html#spatial-resolution-1",
+    "href": "index.html#spatial-resolution-1",
+    "title": "Analyse de l’effet de serre",
+    "section": "Spatial resolution",
+    "text": "Spatial resolution\nOverlaping of the interrogation windows: typically 50%, 75%"
+  },
+  {
+    "objectID": "index.html#spatial-resolution-2",
+    "href": "index.html#spatial-resolution-2",
+    "title": "Analyse de l’effet de serre",
+    "section": "Spatial resolution",
+    "text": "Spatial resolution\nIf strong gradients\n\n\\(\\rightarrow\\) towards multi-pass"
+  },
+  {
+    "objectID": "index.html#multi-pass",
+    "href": "index.html#multi-pass",
+    "title": "Analyse de l’effet de serre",
+    "section": "Multi-pass",
+    "text": "Multi-pass"
+  },
+  {
+    "objectID": "index.html#validation-procedure",
+    "href": "index.html#validation-procedure",
+    "title": "Analyse de l’effet de serre",
+    "section": "Validation procedure",
+    "text": "Validation procedure\nQuality factor (signal-to-noise ratio):"
+  },
+  {
+    "objectID": "index.html#validation-procedure-1",
+    "href": "index.html#validation-procedure-1",
+    "title": "Analyse de l’effet de serre",
+    "section": "Validation procedure",
+    "text": "Validation procedure\n\n\n\nComparison of vectors with their \\(k \\equiv [i-N:i+N,j-N:j+N]\\) neighbors: suppression/replacement if, e.g., \\[V_{ij} &gt; \\overline{V_k} \\pm K \\times {\\rm RMS(neighbors)}\\]\n\n\n\n\n\n\n\n\n\n\n\nSpatial filtering (vectors interpolation): Post-processing is not an artistic creation! It is necessary to remove the noise as much as possible without removing the signal"
+  },
+  {
+    "objectID": "index.html#and-more",
+    "href": "index.html#and-more",
+    "title": "Energie : sources et usages",
+    "section": "And More…",
+    "text": "And More…\n\nL’énergie durable, Pas que du vent, D. Mackay Le support qui a inspiré cette présentation. Encore beaucoup d’aspects non couverts dans cette présentation.\nEnergy and Human Ambitions on a Finite Planet, T. Murphy 2021 Le pendant du travail de Mackay au US."
+  },
+  {
+    "objectID": "index.html#quest-ce-que-leffet-de-serre",
+    "href": "index.html#quest-ce-que-leffet-de-serre",
+    "title": "Analyse de l’effet de serre",
+    "section": "Qu’est-ce que l’effet de serre ?",
+    "text": "Qu’est-ce que l’effet de serre ?\nSerre : bâtiment couvert de surfaces transparentes à la lumière du soleil qui empêche que la chaleur ne se dissipe trop vite vers l’extérieur. Deux effets contribuent à retenir la chaleur prisonnière à l’intérieur de la serre :\n\nun effet purement mécanique : la suppression de la convection\nune opacité sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement.\n\n\nEffet de serre : phénomène de rétention thermique d’un local non-ventilé, dû à une transparence sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement."
+  },
+  {
+    "objectID": "index.html#quest-ce-que-leffet-de-serre-1",
+    "href": "index.html#quest-ce-que-leffet-de-serre-1",
+    "title": "Analyse de l’effet de serre",
+    "section": "Qu’est-ce que l’effet de serre ?",
+    "text": "Qu’est-ce que l’effet de serre ?\nSerre : bâtiment couvert de surfaces transparentes à la lumière du soleil qui empêche que la chaleur ne se dissipe trop vite vers l’extérieur. Deux effets contribuent à retenir la chaleur prisonnière à l’intérieur de la serre :\n\nun effet purement mécanique : la suppression de la convection\nune opacité sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement.\n\n\n\n\n\n\n\nNote\n\n\nPhénomène de rétention thermique d’un local non-ventilé, dû à une transparence sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement."
+  },
+  {
+    "objectID": "index.html#quest-ce-que-leffet-de-serre-2",
+    "href": "index.html#quest-ce-que-leffet-de-serre-2",
+    "title": "Analyse de l’effet de serre",
+    "section": "Qu’est-ce que l’effet de serre ?",
+    "text": "Qu’est-ce que l’effet de serre ?\nSerre : bâtiment couvert de surfaces transparentes à la lumière du soleil qui empêche que la chaleur ne se dissipe trop vite vers l’extérieur. Deux effets contribuent à retenir la chaleur prisonnière à l’intérieur de la serre :\n\nun effet purement mécanique : la suppression de la convection\nune opacité sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement.\n\n\n\n\n\n\n\nNote\n\n\nPhénomène de rétention thermique d’un local non-ventilé, dû à une transparence sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement."
+  },
+  {
+    "objectID": "index.html#quest-ce-que-leffet-de-serre-3",
+    "href": "index.html#quest-ce-que-leffet-de-serre-3",
+    "title": "Analyse de l’effet de serre",
+    "section": "Qu’est-ce que l’effet de serre ?",
+    "text": "Qu’est-ce que l’effet de serre ?\nEffet de serre : phénomène de rétention thermique d’un local non-ventilé, dû à une transparence sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement."
+  },
+  {
+    "objectID": "index.html#quest-ce-que-leffet-de-serre-4",
+    "href": "index.html#quest-ce-que-leffet-de-serre-4",
+    "title": "Analyse de l’effet de serre",
+    "section": "Qu’est-ce que l’effet de serre ?",
+    "text": "Qu’est-ce que l’effet de serre ?\nEffet de serre : phénomène de rétention thermique d’un local non-ventilé, dû à une transparence sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement."
+  },
+  {
+    "objectID": "index.html#quest-ce-que-leffet-de-serre-5",
+    "href": "index.html#quest-ce-que-leffet-de-serre-5",
+    "title": "Analyse de l’effet de serre",
+    "section": "Qu’est-ce que l’effet de serre ?",
+    "text": "Qu’est-ce que l’effet de serre ?\nEffet de serre : phénomène de rétention thermique d’un local non-ventilé, dû à une transparence sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement."
+  },
+  {
+    "objectID": "index.html#quest-ce-que-leffet-de-serre-8",
+    "href": "index.html#quest-ce-que-leffet-de-serre-8",
+    "title": "Analyse de l’effet de serre",
+    "section": "Qu’est-ce que l’effet de serre ?",
+    "text": "Qu’est-ce que l’effet de serre ?\nSerre : bâtiment couvert de surfaces transparentes à la lumière du soleil qui empêche que la chaleur ne se dissipe trop vite vers l’extérieur. Deux effets contribuent à retenir la chaleur prisonnière à l’intérieur de la serre :\n\nun effet purement mécanique : la suppression de la convection\nune opacité sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement.\n\n\n\n\n\n\n\nNote\n\n\nPhénomène de rétention thermique d’un local non-ventilé, dû à une transparence sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement."
+  },
+  {
+    "objectID": "index.html#quest-ce-que-leffet-de-serre-9",
+    "href": "index.html#quest-ce-que-leffet-de-serre-9",
+    "title": "Analyse de l’effet de serre",
+    "section": "Qu’est-ce que l’effet de serre ?",
+    "text": "Qu’est-ce que l’effet de serre ?\nSerre : bâtiment couvert de surfaces transparentes à la lumière du soleil qui empêche que la chaleur ne se dissipe trop vite vers l’extérieur. Deux effets contribuent à retenir la chaleur prisonnière à l’intérieur de la serre :\n\nun effet purement mécanique : la suppression de la convection\nune opacité sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement.\n\n\n\n\n\n\n\nNote\n\n\nPhénomène de rétention thermique d’un local non-ventilé, dû à une transparence sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement."
+  },
+  {
+    "objectID": "index.html#quest-ce-que-leffet-de-serre-7",
+    "href": "index.html#quest-ce-que-leffet-de-serre-7",
+    "title": "Analyse de l’effet de serre",
+    "section": "Qu’est-ce que l’effet de serre ?",
+    "text": "Qu’est-ce que l’effet de serre ?\nEffet de serre : phénomène de rétention thermique d’un local non-ventilé, dû à une transparence sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement.\n\n\n\n\n\n\n\nImportant\n\n\nC’est l’équilibre énergétique du système (vitre + plaque) qui conduit à un réchauffement de la surface. C’est parce que la vitre se réchauffe (par rapport à sa température initiale) que la plaque se réchauffe."
+  },
+  {
+    "objectID": "index.html#quest-ce-que-leffet-de-serre-6",
+    "href": "index.html#quest-ce-que-leffet-de-serre-6",
+    "title": "Analyse de l’effet de serre",
+    "section": "Qu’est-ce que l’effet de serre ?",
+    "text": "Qu’est-ce que l’effet de serre ?\nEffet de serre : phénomène de rétention thermique d’un local non-ventilé, dû à une transparence sélective des matériaux de l’enveloppe en fonction des diverses longueurs d’ondes du rayonnement."
+  },
+  {
+    "objectID": "index.html#le-modèle-à-1-couche",
+    "href": "index.html#le-modèle-à-1-couche",
+    "title": "Energie : sources et usages",
+    "section": "Le modèle à 1 couche",
+    "text": "Le modèle à 1 couche\nBut : montrer que l’effet de serre est dû aux propriétés radiatives du milieu au dessus de la surface ainsi qu’à la conservation de l’énergie.\n\nOn néglige la conduction et la convection thermiques et on ne considère que les échanges radiatifs.\nOn suppose que l’atmosphère est isotherme et qu’elle peut être représentée par une vitre isotherme parfaitement transparente au rayonnement solaire.\n\n\n\n\n\n\n\n\nImportant\n\n\nC’est l’équilibre énergétique du système (vitre + plaque) qui conduit à un réchauffement de la surface. C’est parce que la vitre se réchauffe (par rapport à sa température initiale) que la plaque se réchauffe.\n\n\n\n\n\n\n\n\n\nNote\n\n\nLa plupart des serres horticoles actuelles ayant des parois en polyéthylène, le réchauffement à l’intérieur n’est pas dû à l’absorption du rayonnement infrarouge mais à la seule diminution de la convection."
+  },
+  {
+    "objectID": "index.html#le-modèle-à-1-couche-1",
+    "href": "index.html#le-modèle-à-1-couche-1",
+    "title": "Energie : sources et usages",
+    "section": "Le modèle à 1 couche",
+    "text": "Le modèle à 1 couche\nBut : montrer que l’effet de serre est dû aux propriétés radiatives du milieu au dessus de la surface ainsi qu’à la conservation de l’énergie.\n\nOn néglige la conduction et la convection thermiques et on ne considère que les échanges radiatifs.\nOn suppose que l’atmosphère est isotherme et qu’elle peut être représentée par une vitre isotherme parfaitement transparente au rayonnement solaire."
+  },
+  {
+    "objectID": "index.html#le-modèle-à-1-couche-2",
+    "href": "index.html#le-modèle-à-1-couche-2",
+    "title": "Energie : sources et usages",
+    "section": "Le modèle à 1 couche",
+    "text": "Le modèle à 1 couche\nBut : montrer que l’effet de serre est dû aux propriétés radiatives du milieu au dessus de la surface ainsi qu’à la conservation de l’énergie.\n\nOn néglige la conduction et la convection thermiques et on ne considère que les échanges radiatifs.\nOn suppose que l’atmosphère est isotherme et qu’elle peut être représentée par une vitre isotherme parfaitement transparente au rayonnement solaire."
+  },
+  {
+    "objectID": "index.html#le-modèle-à-1-couche-3",
+    "href": "index.html#le-modèle-à-1-couche-3",
+    "title": "Energie : sources et usages",
+    "section": "Le modèle à 1 couche",
+    "text": "Le modèle à 1 couche\nBut : montrer que l’effet de serre est dû aux propriétés radiatives du milieu au dessus de la surface ainsi qu’à la conservation de l’énergie.\n\nOn néglige la conduction et la convection thermiques et on ne considère que les échanges radiatifs.\nOn suppose que l’atmosphère est isotherme et qu’elle peut être représentée par une vitre isotherme parfaitement transparente au rayonnement solaire."
+  },
+  {
+    "objectID": "index.html#le-modèle-à-1-couche-4",
+    "href": "index.html#le-modèle-à-1-couche-4",
+    "title": "Energie : sources et usages",
+    "section": "Le modèle à 1 couche",
+    "text": "Le modèle à 1 couche\nBut : montrer que l’effet de serre est dû aux propriétés radiatives du milieu au dessus de la surface ainsi qu’à la conservation de l’énergie.\n\nOn néglige la conduction et la convection thermiques et on ne considère que les échanges radiatifs.\nOn suppose que l’atmosphère est isotherme et qu’elle peut être représentée par une vitre isotherme parfaitement transparente au rayonnement solaire."
+  },
+  {
+    "objectID": "index.html#le-modèle-à-1-couche-5",
+    "href": "index.html#le-modèle-à-1-couche-5",
+    "title": "Energie : sources et usages",
+    "section": "Le modèle à 1 couche",
+    "text": "Le modèle à 1 couche\nBut : montrer que l’effet de serre est dû aux propriétés radiatives du milieu au dessus de la surface ainsi qu’à la conservation de l’énergie.\n\nOn néglige la conduction et la convection thermiques et on ne considère que les échanges radiatifs.\nOn suppose que l’atmosphère est isotherme et qu’elle peut être représentée par une vitre isotherme parfaitement transparente au rayonnement solaire."
+  },
+  {
+    "objectID": "index.html#le-modèle-à-1-couche-6",
+    "href": "index.html#le-modèle-à-1-couche-6",
+    "title": "Energie : sources et usages",
+    "section": "Le modèle à 1 couche",
+    "text": "Le modèle à 1 couche\nBut : montrer que l’effet de serre est dû aux propriétés radiatives du milieu au dessus de la surface ainsi qu’à la conservation de l’énergie.\n\nOn néglige la conduction et la convection thermiques et on ne considère que les échanges radiatifs.\nOn suppose que l’atmosphère est isotherme et qu’elle peut être représentée par une vitre isotherme parfaitement transparente au rayonnement solaire."
+  },
+  {
+    "objectID": "index.html#le-modèle-à-1-couche-7",
+    "href": "index.html#le-modèle-à-1-couche-7",
+    "title": "Energie : sources et usages",
+    "section": "Le modèle à 1 couche",
+    "text": "Le modèle à 1 couche\nBut : montrer que l’effet de serre est dû aux propriétés radiatives du milieu au dessus de la surface ainsi qu’à la conservation de l’énergie.\n\nOn néglige la conduction et la convection thermiques et on ne considère que les échanges radiatifs.\nOn suppose que l’atmosphère est isotherme et qu’elle peut être représentée par une vitre isotherme parfaitement transparente au rayonnement solaire.\n\n\n\n\n\n\n\n\nImportant\n\n\nC’est l’équilibre énergétique du système (vitre + plaque) qui conduit à un réchauffement de la surface. C’est parce que la vitre se réchauffe (par rapport à sa température initiale) que la plaque se réchauffe.\n\n\n\n\n\n\n\n\n\nNote\n\n\nLa plupart des serres horticoles actuelles ayant des parois en polyéthylène, le réchauffement à l’intérieur n’est pas dû à l’absorption du rayonnement infrarouge mais à la seule diminution de la convection."
+  },
+  {
+    "objectID": "index.html#quest-ce-que-lénergie",
+    "href": "index.html#quest-ce-que-lénergie",
+    "title": "Energie : sources et usages",
+    "section": "Qu’est-ce que l’énergie ?",
+    "text": "Qu’est-ce que l’énergie ?\nDu grec energia, force en action.\nUnité SI : le Joule.\n\nLarousse : Grandeur caractérisant un système physique, gardant la même valeur au cours de toutes les transformations internes du système (loi de conservation) et exprimant sa capacité à modifier l’état d’autres systèmes avec lesquels il entre en interaction.\n\n\n\n\n\n\n\n\n\nPremier principe de la thermodynamique (J.R. von Mayer, 1841)\n\n\nLe premier principe (ou principe de conservation) stipule que l’énergie ne peut être ni créée ni détruite mais seulement transformée.\nIl établit donc l’équivalence des diﬀérentes formes d’énergie (cinétique, potentielle, interne) :\n\\[\\Delta E \\equiv \\Delta (E_p + E_c + U) = \\sum W + Q\\]"
+  },
+  {
+    "objectID": "index.html#a-léchelle-globale",
+    "href": "index.html#a-léchelle-globale",
+    "title": "Energie : sources et usages",
+    "section": "A l’échelle globale",
+    "text": "A l’échelle globale\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\nDans les pays développés, la consommation d’énergie est d’environ 150 kWh/jour/pers."
+  },
+  {
+    "objectID": "index.html#a-léchelle-des-continents",
+    "href": "index.html#a-léchelle-des-continents",
+    "title": "Energie : sources et usages",
+    "section": "A l’échelle des continents",
+    "text": "A l’échelle des continents\n(données 2008)"
+  },
+  {
+    "objectID": "index.html#les-émissions-de-co_2-associées",
+    "href": "index.html#les-émissions-de-co_2-associées",
+    "title": "Energie : sources et usages",
+    "section": "Les émissions de CO\\(_2\\) associées",
+    "text": "Les émissions de CO\\(_2\\) associées\nA l’échelle des continents\n(données 2008)"
+  },
+  {
+    "objectID": "index.html#les-émissions-de-co_2-associées-1",
+    "href": "index.html#les-émissions-de-co_2-associées-1",
+    "title": "Energie : sources et usages",
+    "section": "Les émissions de CO\\(_2\\) associées",
+    "text": "Les émissions de CO\\(_2\\) associées\nA l’échelle des pays\n(données 2008)"
+  },
+  {
+    "objectID": "index.html#au-quotidien",
+    "href": "index.html#au-quotidien",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\nAvant Propos\n\n\nCette section s’appuie sur le livre de D. MacKay : L’énergie durable, Pas que du vent.\nL’objectif de l’ouvrage est de fournir au lecteur une vision claire des ordres de grandeurs en jeu en matière d’énergie, pour la consommation et pour le potentiel des énergies renouvelables.\nLes calculs sont délibérément simplifiés afin de concentrer le propos sur les ordres de grandeur (exprimés en kWh/j/pers)."
+  },
+  {
+    "objectID": "index.html#au-quotidien-1",
+    "href": "index.html#au-quotidien-1",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\n🚗 Voitures\n\n\n\n\ndistance moyenne parcourue / voiture, \\(D_m =\\) 33 \\(\\unit{km}\\)/jour1\nnombre de voitures en circulation, \\(N_v =\\) 38.9 millions (1.5 % sont électriques)\nconsommation moyenne d’une voiture, \\(C_m =\\) 7 \\(\\unit{\\liter}\\)/100 \\(\\unit{km}\\)2 (10.8 ans, l’âge moyen d’une voiture en circulation)\nteneur énergétique du carburant, \\(\\rho_\\text{carb} \\times PCI_\\text{carb} \\approx\\) 10 kWh\\(\\unit{\\per\\liter}\\)\n\\(N_\\text{hab} =\\) 68 millions\n\n\n\n\\[\n\\text{énergie utilisée / jour} = \\frac{D_m \\times N_v \\times C_m \\times \\rho_\\text{carb} \\times PCI_\\text{carb}}{N_\\text{hab}} \\approx 13 \\text{kWh/j}\n\\]\n\n\nCalcul MacKay (UK, 2008) : \\(D_m =\\) 50 \\(\\unit{km}\\)/jour ; \\(C_m =\\) 8.5 \\(\\unit{\\liter}\\)/100 \\(\\unit{km}\\) \\(\\Rightarrow \\approx\\) 40 \\(\\text{kWh/j}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nVoitures :\n13 kWh/j\n\n\n\n\n\n\n\nSDESADEME"
+  },
+  {
+    "objectID": "index.html#au-quotidien-2",
+    "href": "index.html#au-quotidien-2",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\n✈️ Avion\n\ndistance moyenne parcourue / pers / an, \\(D_m =\\) 2500 - 3000 \\(\\unit{km}\\)1\n\n\n\n\n\n\n\n\nLa réalité des usages\n\n\nLa “moyenne” est ici trompeuse car la distribution est très asymétrique :\n\nEnviron 50 % des Français ne prennent pas du tout l’avion\nSeulement 2 % à 5 % de la population (les “grands voyageurs”) sont responsables de près de 50 % des émissions du secteur.\nDistance pour un voyageur actif : Un Français qui prend l’avion une seule fois pour un aller-retour long-courrier (ex: Paris-New York) parcourt 11 700 km, soit 4 fois la moyenne nationale annuelle en un seul voyage.\n\n\n\n\n\nStatistiques du trafic aérien"
+  },
+  {
+    "objectID": "index.html#au-quotidien-3",
+    "href": "index.html#au-quotidien-3",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\n✈️ Avion\n\n\n\ndistance moyenne parcourue / pers / an, \\(D_m =\\) 2500 - 3000 \\(\\unit{km}\\)1\nGénérations récentes (A320neo, B737 MAX) : \\(C_m \\approx\\) 2.1 à 2.5 L / 100 km par passager (si l’avion est rempli à 80-90 %).\nteneur énergétique du kérosène, \\(\\rho_\\text{k} \\times PCI_\\text{k} \\approx\\) 10 kWh\\(\\unit{\\per\\liter}\\)\n\n\\[\n\\text{énergie utilisée / jour} = \\frac{D_m / 100 * D_m\\times \\rho_\\text{k} \\times PCI_\\text{k}}{365} \\approx 2 \\text{kWh/j}\n\\]\nCalcul MacKay (UK, 2008) :  1 trajet Londres - Le Cap ou Londres - Los Angeles (\\(\\approx\\) 10\\(^4\\) km) en long courrier (Boeing 747, 416 passagers,\\(\\approx\\) 1.7 \\(\\times\\) 10\\(^5\\) \\(\\unit{\\liter}\\) / 10\\(^4\\) km) \\(\\Rightarrow \\approx\\) 30 kWh/j.\n\n\n\n\n\n\n\n\n\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j\n\n\n\n\n\nStatistiques du trafic aérien"
+  },
+  {
+    "objectID": "index.html#au-quotidien-4",
+    "href": "index.html#au-quotidien-4",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\n🏠 Chauffage\n\n\nCalcul MacKay (UK, 2008) :\n\neau chaude : \\(\\approx 12 \\text{kWh/j}\\)  douche \\(\\approx 1.5 \\text{kWh/j}\\), lave-linge \\(\\approx 1 \\text{kWh/j}\\), lave-vaisselle \\(\\approx 1.5 \\text{kWh/j}\\), cuisine \\(\\approx 4.5 \\text{kWh/j}\\), etc.\nchauffage : \\(\\approx 24 \\text{kWh/j}\\)  soit, \\(\\approx\\) un radiateur de 2 \\(\\unit{\\kilo\\watt}\\) branché 6 moins / an / personne.\nclimatisation + réfrigération : \\(\\approx 1 \\text{kWh/j}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
+  },
+  {
+    "objectID": "index.html#au-quotidien-5",
+    "href": "index.html#au-quotidien-5",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\n💡 Lumière\n\n\nCalcul MacKay (UK, 2008) :\n\nmélange 50/50 ampoules basse / haute consommation : \\(\\approx 1 \\text{kWh/j}\\)  90 % de la consommation estimée ici provenant des ampoules haute consommation.\n\n\n\n\n\n\n\n\n\n\n\n\nLumière : 4 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
+  },
+  {
+    "objectID": "index.html#au-quotidien-6",
+    "href": "index.html#au-quotidien-6",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\n🔌 Gadgets\n\n\n\n\n\n\nCoût énergétique des gadgets.\n\n\nGadget\nPuissance (W)\n\n\nAllumé\nAllumé inutilisé\nEn veille\nEteint branché\n\n\n\n\nOrdinateurs et périphériques :\n\n\n\nUnité centrale\n80\n55\n\n2\n\n\nEcran LCD\n34\n\n2\n1\n\n\nImprimante Laser\n500\n17\n\n\n\n\nOrdinateur portable\n16\n9\n\n0.5\n\n\nBox Wi-Fi\n9\n\n\n\n\n\nHome cinéma\n7\n7\n4\n\n\n\nDécodeur TV\n6\n\n5\n\n\n\nXBox\n160\n\n2.4\n\n\n\nPlayStation\n190\n\n2\n\n\n\nWii\n18\n\n2\n\n\n\nAspirateur\n1600\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nLa consommation associée aux serveurs informatiques a explosé depuis quelques années et poursuit une très forte croissance. Il conviendrait de la chiﬀrer et de l’ajouter au bilan ici.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGadgets : 5 kWh/j\n\n\nLumière : 4 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
+  },
+  {
+    "objectID": "units.html",
+    "href": "units.html",
+    "title": "Quarto Playground",
+    "section": "",
+    "text": "\\(\\unit{kg.m.s^{-1}}\\)\n\\(\\unit{\\micro\\meter}\\)\n\\(\\unit{\\um}\\)\n\\(\\unit{\\joule\\per\\mole\\per\\kelvin}\\)"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -7,325 +546,514 @@
     "text": "About this site"
   },
   {
-    "objectID": "index.html#fluid-mech.",
-    "href": "index.html#fluid-mech.",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Fluid Mech.:",
-    "text": "Fluid Mech.:\nequations are known!\n\\[\\begin{align}\n& \\frac{\\partial \\rho}{\\partial t} + \\nabla (\\rho \\vec{V}) = 0\\\\\n& \\rho \\left[ \\frac{\\partial \\vec{V}}{\\partial t} + (\\vec{V} \\cdot \\nabla ) \\vec{V} \\right] = -\\nabla p + \\nabla \\sigma + \\rho \\vec{g}\\\\\n& \\frac{\\partial \\rho E}{\\partial t} + \\nabla \\left[ (\\rho E + p) \\vec{V} \\right] = \\nabla (\\sigma \\vec{V}) + \\nabla \\vec{q} + \\vec{q}_R + \\rho \\vec{g} \\vec{V} + \\rho \\omega_E\\\\\n& \\frac{\\partial \\rho Y}{\\partial t} + \\nabla (\\rho Y \\vec{V}) = \\nabla \\left[ \\rho D \\nabla Y \\right] + \\rho \\omega_Y\n\\end{align}\\]\nBut very few analytical solutions!"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Energie : sources et usages",
+    "section": "",
+    "text": "Du grec energia, force en action.\n\nLarousse : Grandeur caractérisant un système physique, gardant la même valeur au cours de toutes les transformations internes du système (loi de conservation) et exprimant sa capacité à modifier l’état d’autres systèmes avec lesquels il entre en interaction. Unité SI : le joule."
   },
   {
-    "objectID": "index.html#then-if-i-want",
-    "href": "index.html#then-if-i-want",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Then, if I want…",
-    "text": "Then, if I want…\n\n\n\nvalidate — Are the models and approximations used correct?\nverify — some solution?\nsizing – Applications to industrial configurations?\n(just) better understand things?\n\n\n\\(\\rightarrow\\) (Costly) numerical simulations\n\\(\\rightarrow\\) (Costly) experimental measurements"
+    "objectID": "index.html#au-quotidien-7",
+    "href": "index.html#au-quotidien-7",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\n🍽️ Alimentation\n\n\nCalcul MacKay (UK, 2008) :\n\nlégumes : \\(\\approx 1.5 \\text{kWh/j}\\)\nlaitages : \\(\\approx 1.5 \\text{kWh/j}\\)\noeufs : \\(\\approx 1 \\text{kWh/j}\\)\nviande : \\(\\approx 8 \\text{kWh/j}\\)\nengrais et autres coûts énergétiques : \\(\\approx 3 \\text{kWh/j}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nNourriture, agriculture, engrais : 15 kWh/j\n\n\nLumière : 4 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
   },
   {
-    "objectID": "index.html#measuring-fluid-flow-velocity-principles",
-    "href": "index.html#measuring-fluid-flow-velocity-principles",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Measuring fluid-flow velocity principles",
-    "text": "Measuring fluid-flow velocity principles\n\nTo determine the velocity of an object, distance and time need to be measured (either the distance traveled during a given time or the time needed to travel a given distance).\nBut, gases as well as pure liquids do not contain moving objects that reveal the velocity of the fluid.\nThus, many measurement techniques have been developed, determining the flow velocity indirectly by measuring other quantities, such as:\n\npressure (pressure probes),\nrotational speed (wind anemometer),\nheat transfer (hot film, hot wire)."
+    "objectID": "index.html#au-quotidien-8",
+    "href": "index.html#au-quotidien-8",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\n📦 Consommables et leur transport\n\n\nCalcul MacKay (UK, 2008) :\n\ncannettes / bouteilles : 0.7 \\(\\text{kWh/j}\\)\nemballages (plastique, verre, carton, …) : 4 \\(\\text{kWh/j}\\)  soit \\(\\approx\\) 400 \\(\\unit{g}\\) de déchets / jour\njournaux, prospectus : 2 \\(\\text{kWh/j}\\)\nélectroménager, électronique, vêtements, …\nordinateur : 1800 \\(\\text{kWh\\)\nvoiture : 14 \\(\\text{kWh/j}\\) si changée tous les 15 ans\nroutes : 2 \\(\\text{kWh/j}\\)\nmaison : 1 \\(\\text{kWh/j}\\) à raison d’un taux de remplacement tous les 100 ans\nsupermarchés : 0.5 \\(\\text{kWh/j}\\)\nfret routier : 7 \\(\\text{kWh/j}\\)\nfret maritime : 4 \\(\\text{kWh/j}\\) assainissement des eaux : 0.5 \\(\\text{kWh/j}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nTransporter les trucs : 12 kWh/j\n\n\nTrucs : au moins 48 kWh/j\n\n\nNourriture, agriculture, engrais : 15 kWh/j\n\n\nLumière : 4 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
   },
   {
-    "objectID": "index.html#alternatives-to-piv-12",
-    "href": "index.html#alternatives-to-piv-12",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Alternatives to PIV (1/2)",
-    "text": "Alternatives to PIV (1/2)\n\n\n\n\n\n\n\n\n\n\nPitot tube\nHot Wire Anemometry\nLaser Doppler Anemometry\n\n\n\n\nSketch\n\n\n\n\n\nPrinciple (what is measured)\nStatic and dynamic pressures. Bernoulli\nJoule dissipation measurement in a wire\nInterferometric meas. of a Doppler shift on scattering particle\n\n\nPros\nEasy to use. Cheap (1 k€)\nHigh time resolution  Medium price (10 k€)\nNon intrusive. High time resolution. Suited for several components\n\n\nCons\nHighly intrusive. Very poor resolution\nIntrusive, fragile. Non linear calibration\nNon-regular sampling. High price (50-100 k€). Complex settings"
+    "objectID": "index.html#au-quotidien-9",
+    "href": "index.html#au-quotidien-9",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\n🏛️ Secteur public\n\n\nLa plus grosse dépense d’énergie du service public est associée à la défense militaire. Selon la politique du pays, le coût énergétique de la dissuasion nucléaire peut prendre une place très importante (voir détails dans le livre de D. MacKay). Au Royaume-Uni, le coût est estimé à environ 4 \\(\\text{kWh/j}\\).\nL’Université a un coût énergétique rapporté par habitant de 0,24 \\(\\text{kWh/j}\\).\n\n\n\n\n\n\n\n\n\n\n\n\"Défense\" : 4 kWh/j\n\n\nTransporter les trucs : 12 kWh/j\n\n\nTrucs : au moins 48 kWh/j\n\n\nNourriture, agriculture, engrais : 15 kWh/j\n\n\nLumière : 4 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
   },
   {
-    "objectID": "index.html#alternatives-to-piv-22",
-    "href": "index.html#alternatives-to-piv-22",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Alternatives to PIV (2/2)",
-    "text": "Alternatives to PIV (2/2)\n\n\n1d time resolved signal: \n\nTherefore, the structure of an unsteady flow field cannot be obtained by such methods.\n\n\n\nVideo"
+    "objectID": "index.html#au-quotidien-10",
+    "href": "index.html#au-quotidien-10",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\nLumière\n\n\nCalcul MacKay (UK, 2008) :\n\nmélange 50/50 ampoules basse / haute consommation : \\(\\approx 1 \\text{kWh/j}\\)  90 % de la consommation estimée ici provenant des ampoules haute consommation.\n\n\n\n\n\n\n\n\n\n\n\n\nLumière : 4 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n30 kWh/j\n\n\nVoitures :\n40 kWh/j"
   },
   {
-    "objectID": "index.html#piv-principles-12",
-    "href": "index.html#piv-principles-12",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "PIV principles (1/2)",
-    "text": "PIV principles (1/2)\n\n\n\n\n\n\n\n\n\nSeeding: tracer particles are added to the flow.\nIllumination: these tracer particles have to be illuminated (in a plane) of the flow at least twice within a short and known time interval.\nRecording: the light scattered by the tracer particles on a camera.\nCalibration: to determine the relation between the particle image displacement in the image plane and the tracer particle displacement in the flow."
+    "objectID": "index.html#au-quotidien-11",
+    "href": "index.html#au-quotidien-11",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\nGadgets\n\n\n\n\n\n\nCoût énergétique des gadgets.\n\n\nGadget\nPuissance (W)\n\n\nAllumé\nAllumé inutilisé\nEn veille\nEteint branché\n\n\n\n\nOrdinateurs et périphériques :\n\n\n\nUnité centrale\n80\n55\n\n2\n\n\nEcran LCD\n34\n\n2\n1\n\n\nImprimante Laser\n500\n17\n\n\n\n\nOrdinateur portable\n16\n9\n\n0.5\n\n\nBox Wi-Fi\n9\n\n\n\n\n\nHome cinéma\n7\n7\n4\n\n\n\nDécodeur TV\n6\n\n5\n\n\n\nXBox\n160\n\n2.4\n\n\n\nPlayStation\n190\n\n2\n\n\n\nWii\n18\n\n2\n\n\n\nAspirateur\n1600\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nLa consommation associée aux serveurs informatiques a explosé depuis quelques années et poursuit une très forte croissance. Il conviendrait de la chiﬀrer et de l’ajouter au bilan ici.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGadgets : 5 kWh/j\n\n\nLumière : 4 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n30 kWh/j\n\n\nVoitures :\n40 kWh/j"
   },
   {
-    "objectID": "index.html#piv-principles-22",
-    "href": "index.html#piv-principles-22",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "PIV principles (2/2)",
-    "text": "PIV principles (2/2)\n\n\n\nEvaluation: The displacement of the particle images between the light pulses has to be determined through evaluation of the PIV recordings.\nPost-Processing: In order to detect and remove invalid measurements and to extract complex flow quantities of interest, sophisticated post-processing is required."
+    "objectID": "index.html#au-quotidien-12",
+    "href": "index.html#au-quotidien-12",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\nAlimentation\n\n\nCalcul MacKay (UK, 2008) :\n\nlégumes : \\(\\approx 1.5 \\text{kWh/j}\\)\nlaitages : \\(\\approx 1.5 \\text{kWh/j}\\)\noeufs : \\(\\approx 1 \\text{kWh/j}\\)\nviande : \\(\\approx 8 \\text{kWh/j}\\)\nengrais et autres coûts énergétiques : \\(\\approx 3 \\text{kWh/j}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nNourriture, agriculture, engrais : 15 kWh/j\n\n\nLumière : 4 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n30 kWh/j\n\n\nVoitures :\n40 kWh/j"
   },
   {
-    "objectID": "index.html#piv-pros",
-    "href": "index.html#piv-pros",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "PIV pros",
-    "text": "PIV pros\n\nThe most widely applied velocity imaging technique in fluid mechanics.\nPIV is a very robust and accurate technique, which in its most common implementation enables the imaging of two components of velocity in a cross-section of the flow.\nPIV measurements are now commonplace and they have been applied in a wide range of gas- and liquid-phase flows, including microfluidics, large-scale wind tunnels, flames, plasmas, and supersonic and hypersonic flows."
+    "objectID": "index.html#au-quotidien-13",
+    "href": "index.html#au-quotidien-13",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\nConsommables et leur transport\n\n\nCalcul MacKay (UK, 2008) :\n\ncannettes / bouteilles : 0.7 \\(\\text{kWh/j}\\)\nemballages (plastique, verre, carton, …) : 4 \\(\\text{kWh/j}\\)  soit \\(\\approx\\) 400 \\(\\unit{g}\\) de déchets / jour\njournaux, prospectus : 2 \\(\\text{kWh/j}\\)\nélectroménager, électronique, vêtements, …\nordinateur : 1800 \\(\\text{kWh\\)\nvoiture : 14 \\(\\text{kWh/j}\\) si changée tous les 15 ans\nroutes : 2 \\(\\text{kWh/j}\\)\nmaison : 1 \\(\\text{kWh/j}\\) à raison d’un taux de remplacement tous les 100 ans\nsupermarchés : 0.5 \\(\\text{kWh/j}\\)\nfret routier : 7 \\(\\text{kWh/j}\\)\nfret maritime : 4 \\(\\text{kWh/j}\\) assainissement des eaux : 0.5 \\(\\text{kWh/j}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nTransporter les trucs : 12 kWh/j\n\n\nTrucs : au moins 48 kWh/j\n\n\nNourriture, agriculture, engrais : 15 kWh/j\n\n\nLumière : 4 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n30 kWh/j\n\n\nVoitures :\n40 kWh/j"
   },
   {
-    "objectID": "index.html#piv-refs",
-    "href": "index.html#piv-refs",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "PIV refs",
-    "text": "PIV refs\n\n\nExcellent introductions to PIV can be found in several references:"
+    "objectID": "index.html#au-quotidien-14",
+    "href": "index.html#au-quotidien-14",
+    "title": "Energie : sources et usages",
+    "section": "Au quotidien",
+    "text": "Au quotidien\nSecteur public\n\n\nLa plus grosse dépense d’énergie du service public est associée à la défense militaire. Selon la politique du pays, le coût énergétique de la dissuasion nucléaire peut prendre une place très importante (voir détails dans le livre de D. MacKay). Au Royaume-Uni, le coût est estimé à environ 4 \\(\\text{kWh/j}\\).\nL’Université a un coût énergétique rapporté par habitant de 0,24 \\(\\text{kWh/j}\\).\n\n\n\n\n\n\n\n\n\n\n\n\"Défense\" : 4 kWh/j\n\n\nTransporter les trucs : 12 kWh/j\n\n\nTrucs : au moins 48 kWh/j\n\n\nNourriture, agriculture, engrais : 15 kWh/j\n\n\nLumière : 4 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n30 kWh/j\n\n\nVoitures :\n40 kWh/j"
   },
   {
-    "objectID": "index.html#tracer-particles",
-    "href": "index.html#tracer-particles",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Tracer particles",
-    "text": "Tracer particles\n\nIn contrast to hot wire or pressure probe techniques, PIV is based on the direct determination of the 2 fundamental dimensions of the velocity: length and time.\nOn the other hand, the measurement technique is indirect as it determines the velocity of tracer particles instead of the velocity of the fluid.\nTherefore, the interaction of the particles and the surrounding fluid has to be examined in order to avoid significant discrepancies between fluid and particle motion."
+    "objectID": "index.html#demain-le-potentiel-des-énergies-renouvelables",
+    "href": "index.html#demain-le-potentiel-des-énergies-renouvelables",
+    "title": "Energie : sources et usages",
+    "section": "Demain, le potentiel des énergies renouvelables ?",
+    "text": "Demain, le potentiel des énergies renouvelables ?\nEolien"
   },
   {
-    "objectID": "index.html#tracer-particles-1",
-    "href": "index.html#tracer-particles-1",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Tracer particles",
-    "text": "Tracer particles\nFluid mech. properties (1/3)\n\nA primary source of error is the influence of gravitational forces on the velocity of the tracer particles, if the densities of the fluid \\(\\rho\\) and the tracer particles \\(\\rho_p\\) do not match.\nFrom Stokes’ drag law, assuming spherical particles in a viscous fluid at a very low Reynolds number: \\(\\vec{U}_g = d_p^2 \\frac{\\rho_p - \\rho}{18 \\mu} \\vec{g}\\).\nTherefore, the sedimentation of particles can be avoided if the density of the fluid and particles is identical (neutral buoyancy).\nThis is easily achieved in liquid flows, but not in gas flows. Therefore, the particle diameter must be chosen sufficiently small to minimize the settling velocity of the particles."
+    "objectID": "index.html#eolien",
+    "href": "index.html#eolien",
+    "title": "Energie : sources et usages",
+    "section": "💨 Eolien",
+    "text": "💨 Eolien\nL’énergie exploitable est l’énergie cinétique exploitable dans un tube d’air en amont de l’éolienne \\(\\dot{E}^c_\\text{air} = \\frac{1}{2} \\rho_\\text{air} A  v_\\text{air}^3\\)\nLa part d’énergie récupérable par l’éolienne (donc son rendement) est limitée par le compromis suivant : l’énergie collectée est d’autant plus grande que,\n\nla vitesse du vent est ralentie au travers des pales,\nle débit d’air au travers des pales est important.\n\n\n\n\n\n\nDans un cas extrême où la vitesse du vent serait réduite à 0 en aval de l’éolienne, le débit au travers de l’éolienne serait nul.\nOn montre que la limite physique du rendement d’une éolienne vaut \\(16/27\\). C’est la limite de Betz."
   },
   {
-    "objectID": "index.html#tracer-particles-2",
-    "href": "index.html#tracer-particles-2",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Tracer particles",
-    "text": "Tracer particles\nFluid mech. properties (2/3)\n\n\n\nParticle frequency response: \\(\\frac{d}{dt}U_p = -18 \\frac{\\nu}{d_p^2}\\frac{U_p - U_f}{\\rho_p / \\rho_f}\\) \\[ \\Rightarrow U_p(t) = U_f \\left(1-\\exp \\left( t / \\tau_p \\right )\\right)\\] with \\(\\tau_{\\rm p} = d_{\\rm p}^2 \\frac{\\rho_{\\rm p}}{18 \\mu}\\), relaxation time scale of the particle.\n\n\n\n\n\nA convenient measure for the tendency of particles to attain velocity equilibrium with the fluid is given by the Stokes number \\[ St = \\frac{\\tau_{\\rm p}}{\\tau_{\\rm f}}\\] where \\(\\tau_f\\) stands for the characteristic time scale of the flow (refers to velocity fluctuations along the particle trajectory).\nA value of the Stokes number below \\(10^{-1}\\) yields an acceptable flow tracing accuracy."
+    "objectID": "index.html#eolien-séance-rp",
+    "href": "index.html#eolien-séance-rp",
+    "title": "Energie : sources et usages",
+    "section": "💨 Eolien (Séance RP)",
+    "text": "💨 Eolien (Séance RP)\n\n\n\n\n\n\n\n\nCalcul MacKay (UK, 2008) :\n\nvitesse moyenne du vent : 22 \\(\\unit{\\km\\per\\hour}\\)\npuissance surfacique d’un parc d’éoliennes de 25 \\(\\unit{m}\\) de diamètre : 2 \\(\\unit{\\watt\\per\\square\\meter}\\)\nrecouvrir 10 % de la surface du pays représenterait une production d’environ 15 \\(\\text{kWh/j}\\)\n\n\n\n\n\n\n\n\n\nVent :\n15 kWh/j\n\n\nFermes PV (200 m2/p) :\n50 kWh/j\n\n\nPV (10 m2/p) :\n5 kWh/j\n\n\nChauffage solaire : 13 kWh/j"
   },
   {
-    "objectID": "index.html#tracer-particles-3",
-    "href": "index.html#tracer-particles-3",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Tracer particles",
-    "text": "Tracer particles\nFluid mech. properties (3/3)\n\n\n\n\n\n\n\n\n\n\n\n\nDiameter (\\(\\mu m\\))\nRelative density\nResponse time \\(\\tau_p\\) (\\(\\mu s\\))\n\n\n\n\nWater\nHollow glass spheres\n10\n1.05\n0.5\n\n\nWater\nAluminium powder\n3\n2.7\n0.9\n\n\nAir\nOil dropplets\n1\n920\n0.3\n\n\nAir\nSiO\\(_2\\) beads\n0.8\n2600\n5\n\n\nAir\nInflated bubbles\n300\n1\n0.3"
+    "objectID": "index.html#solaire",
+    "href": "index.html#solaire",
+    "title": "Energie : sources et usages",
+    "section": "🌞 Solaire",
+    "text": "🌞 Solaire\n\n\n\nDessin de Ron Tandberg\n\n\nPuissance solaire reçue au niveau de la Terre : \\(\\approx\\) 174 000 \\(\\unit{\\tera\\watt}\\).\nL’énergie solaire reçue annuellement &gt; 10000 fois nos besoins mondiaux."
   },
   {
-    "objectID": "index.html#tracer-particles-generation",
-    "href": "index.html#tracer-particles-generation",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Tracer particles generation",
-    "text": "Tracer particles generation"
+    "objectID": "index.html#solaire-1",
+    "href": "index.html#solaire-1",
+    "title": "Energie : sources et usages",
+    "section": "🌞 Solaire",
+    "text": "🌞 Solaire\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1360 \\(\\unit{\\watt\\per\\square\\meter}\\)\nrayonnement à l’équateur\n\n\n\n\n\\(\\times\\) 60 %\npertes liées à l’inclinaison de la Terre\n\n\n\\(\\times\\) 32 %\nratio intensité moyenne / intensité au zénith\n\n\n\\(\\times\\) 38 %\npertes liées à la couverture nuageuse\n\n\n\\(\\approx\\) 110 \\(\\unit{\\watt\\per\\square\\meter}\\)\nrayonnement (moyen) perçu en France\n\n\n\n\n\n\n\n\n\nNote\n\n\nEn juin : le flux moyen peut monter à 250 \\(\\unit{\\watt\\per\\square\\meter}\\).\nEn décembre : le flux moyen chute à environ 30 - 40 \\(\\unit{\\watt\\per\\square\\meter}\\)."
   },
   {
-    "objectID": "index.html#light-scattering",
-    "href": "index.html#light-scattering",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Light scattering",
-    "text": "Light scattering\n\n\nPIV image intensity and contrast \\(\\propto\\) scattered light power: selecting suitable scattering particles is usually more effective and cost-efficient than increasing laser (illumination) power."
+    "objectID": "index.html#solaire-2",
+    "href": "index.html#solaire-2",
+    "title": "Energie : sources et usages",
+    "section": "🌞 Solaire",
+    "text": "🌞 Solaire\nthermique\n\n\n\n\n\n\n\nRecouvrir tous les toîts orientés vers le sud (\\(\\approx\\) 10 \\(\\unit{\\square\\meter}\\)/pers) avec un rendement de 50 % fournit \\(\\approx\\) 550 \\(\\unit{\\watt}\\).\nSoit un potentiel d’environ 5 \\(\\text{kWh/j}\\).\n\n\n\n\n\n\n\n\nChauffage solaire : 5 kWh/j"
   },
   {
-    "objectID": "index.html#light-scattering-1",
-    "href": "index.html#light-scattering-1",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Light scattering",
-    "text": "Light scattering\nFor spherical particles with diameters \\(d_p\\) larger than the wavelength of the incident light \\(\\lambda\\), Mie’s scattering theory holds.\n\n\nMaximum light diffused at 0°\nImportant parameters:\n  – Particle type/shape/size\n  – Refraction index\n  – Nature of the environment"
+    "objectID": "index.html#solaire-3",
+    "href": "index.html#solaire-3",
+    "title": "Energie : sources et usages",
+    "section": "🌞 Solaire",
+    "text": "🌞 Solaire\nphotovoltaïque\n\n\n\n\n\n\n\nRecouvrir tous les toîts orientés vers le sud avec un rendement 20 % fournit : \\[20 \\% \\times 10 \\unit{\\square\\meter} \\times 110 \\unit{\\watt\\per\\square\\meter} \\times 9 \\text{heures} \\approx 2 \\text{kWh/j}\\]\n\n\n\n\n\n\n\n\nPV (10 m2/p) :\n2 kWh/j\n\n\nChauffage solaire : 5 kWh/j"
   },
   {
-    "objectID": "index.html#illumination-sheet",
-    "href": "index.html#illumination-sheet",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Illumination sheet",
-    "text": "Illumination sheet\nUse of spherical and cylindrical lenses\nImportant parameters:\n  – Cylindrical lens curvature and concavity (F2)\n  – Focal length of the spherical lens (F1)\n  – Divergence and diameter of the laser beam"
+    "objectID": "index.html#solaire-4",
+    "href": "index.html#solaire-4",
+    "title": "Energie : sources et usages",
+    "section": "🌞 Solaire",
+    "text": "🌞 Solaire\nphotovoltaïque\n\n\nSi l’on suppose que la construction de ferme photovoltaïque est possible à un coût abordable, alors recouvrir 5 % du territoire avec des panneaux d’un rendement de 10 % fournirait : \\[10 \\% \\times 400 \\unit{\\square\\meter} \\times 110 \\unit{\\watt\\per\\square\\meter} \\times 9 \\text{heures} \\approx 40 \\text{kWh/j}\\]\n\n\n\n\n\n\n\n\nFermes PV (400 m2/p) :\n40 kWh/j\n\n\nPV (10 m2/p) :\n2 kWh/j\n\n\nChauffage solaire : 5 kWh/j"
   },
   {
-    "objectID": "index.html#image-recording",
-    "href": "index.html#image-recording",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Image recording",
-    "text": "Image recording\nSee B. Radisson’s lecture."
+    "objectID": "index.html#hydroélectrique",
+    "href": "index.html#hydroélectrique",
+    "title": "Energie : sources et usages",
+    "section": "💧Hydroélectrique",
+    "text": "💧Hydroélectrique\nCe qui est exploitable ici est le poids de l’eau de pluie qui ruisselle des sommets des reliefs jusqu’au niveau de la mer.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nD’après les cartes, on estime \\(q_s \\approx 800\\) mm/an, la moyenne des précipitations sur l’ensemble du territoire et \\(Zm \\approx 350\\) m l’altitude moyenne."
   },
   {
-    "objectID": "index.html#complete-setup-overview",
-    "href": "index.html#complete-setup-overview",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Complete setup overview",
-    "text": "Complete setup overview"
+    "objectID": "index.html#eolien-offshore",
+    "href": "index.html#eolien-offshore",
+    "title": "Energie : sources et usages",
+    "section": "💨 Eolien offshore",
+    "text": "💨 Eolien offshore\n\n\nEn mer, le vent est plus fort (souvent entre 9 et 10 m/s à hauteur de moyeu) et plus régulier que sur terre : la puissance surfacique, \\(\\dot{e}_\\textrm{éol}\\) monte à 8 \\(\\unit{\\watt\\per\\square\\meter}\\).\nObjectif de l’État (Planification 2050) : La France prévoit d’installer 45 GW d’éolien en mer d’ici 2050, ce qui occuperait environ 10 000 \\(\\unit{\\square\\kilo\\meter}\\)(soit environ 2,5 % de l’espace maritime métropolitain)\nOn obtiendrait \\(E_\\textrm{parc offshore} \\approx 29\\) \\(\\text{kWh/j}\\).\n\n\n\n\n\n\nNote\n\n\nLe facteur de charge est le rapport entre l’énergie réellement produite sur une période donnée et l’énergie qu’une installation aurait produite si elle avait fonctionné à sa puissance puissance nominale pendant cette même période.\nIl est de l’ordre de 40 - 50 % pour l’offshore mais seulement de 20 - 25 % pour l’éolien terrestre.\n\n\n\n\n\n\n\n\n\n\n\nEolien en mer :\n29 kWh/j\n\n\nVent :\n15 kWh/j\n\n\nFermes PV (400 m2/p) :\n40 kWh/j\n\n\nPV (10 m2/p) :\n2 kWh/j\n\n\nChauffage solaire : 5 kWh/j"
   },
   {
-    "objectID": "index.html#resolution-requirements-in-fluid-flows-12",
-    "href": "index.html#resolution-requirements-in-fluid-flows-12",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Resolution requirements in fluid flows (1/2)",
-    "text": "Resolution requirements in fluid flows (1/2)\n\nOne of the major difficulties in flow imaging is achieving adequate spatial and temporal resolution. This is particularly the case when flows are turbulent, if it is desired to resolve the smallest scales at which fluctuations occur.\nLaminar flows pose less stringent requirements on resolution, compared to turbulent flows. In many laminar shear flows including boundary layers, pipe flows, wakes, jets, and mixing layers, the maximum gradient is the same order of magnitude as the overall gradient, \\[\\left(\\frac{\\partial U}{\\partial y} \\right)_{\\rm max} \\approx \\frac{\\Delta U}{\\delta}\\] where \\(\\Delta U\\) is the characteristic velocity difference, \\(\\delta\\) is the local width of the shear flow."
+    "objectID": "index.html#vagues",
+    "href": "index.html#vagues",
+    "title": "Energie : sources et usages",
+    "section": "🌊 Vagues",
+    "text": "🌊 Vagues\n\n\nLes vagues de houle apparaissent lorsque la vitesse du vent \\(&gt; \\approx\\) 2 \\(\\unit{km/h}\\). La longueur d’onde de la houle et sa période dépendent de la vitesse du vent.\n \nLa puissance de la houle atlantique a été mesurée à environ 40 kW/m. En supposant que l’on recouvre 1000 km de littoral de collecteurs de houle et que leur rendement soit de 50 %, on peut espérer récupérer 4 \\(\\text{kWh/j}\\)\n\n\n\n\n\n\nNote\n\n\nUn convertisseur de houle nécessite de très grandes quantités d’acier. Les prototypes actuels ont un rapport poids/puissance (crête) de 500 kg/kW \\(\\equiv\\) 3 \\(\\times\\) plus que l’éolien oﬀshore (\\(\\approx\\) 170 kg/kW).\n\n\n\n\n\n\n\n\n\n\n\nVagues :\n4 kWh/j\n\n\nHydroélectrique :\n17.5 kWh/j\n\n\nbiomasse :\n24 kWh/j\n\n\nEolien en mer :\n29 kWh/j\n\n\nVent :\n15 kWh/j\n\n\nFermes PV (400 m2/p) :\n40 kWh/j\n\n\nPV (10 m2/p) :\n2 kWh/j\n\n\nChauffage solaire : 5 kWh/j"
   },
   {
-    "objectID": "index.html#resolution-requirements-in-fluid-flows-22",
-    "href": "index.html#resolution-requirements-in-fluid-flows-22",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Resolution requirements in fluid flows (2/2)",
-    "text": "Resolution requirements in fluid flows (2/2)\n\nTurbulent flows have substantially more severe resolution requirements than laminar flows, owing to the much larger gradients that occur at the smallest scales of turbulence.\nIn turbulent flows, the spatial fluctuations range in scale from the largest physical dimension of the flow (e.g., the local width of the boundary layer or jet) to the scale at which diffusion acts to remove all gradients.\nThe largest scales are often called the ‘‘outer scales,’’ whereas the smallest scales are the ‘‘inner’’ or dissipation scales because these are the scales at which the energy of fluctuations, whether kinetic or scalar, is dissipated.\nIn classical turbulence theory, the kinetic energy dissipation scale is the Kolmogorov scale \\[\\eta \\equiv \\left( \\frac{\\nu ^3}{\\epsilon} \\right)^{1/4}.\\]\nUsing scaling arguments, the Kolmogorov scale can also be related to outer scale variables through the relationship, \\(\\eta \\propto Re^{-3/4}\\)."
+    "objectID": "index.html#marées",
+    "href": "index.html#marées",
+    "title": "Energie : sources et usages",
+    "section": "🌊 Marées",
+    "text": "🌊 Marées\n\n\nImaginons un bassin artificiel se remplissant et se vidant au rythme des marées en activant une turbine :\n\n\n\n\n\nCe qui est exploitable ici est le poids de l’eau dont le point d’application se déplace avec les marées. La puissance gravitationnelle s’exprime par unité de surface du bassin comme \\[\\dot{e} = \\frac{\\rho \\times 2 \\times g h^2}{\\textrm{6 heures}} \\approx 3.3 W/m^2\\] avec \\(h =\\) marnage\\(/2\\) et 4 marées rythment les journées.\n\nIl faudrait alors un bassin de 1000 km de long (\\(\\approx\\) le littoral français) et 1 km de large pour fournir 1 kWh/j.\n\n\n\n\n\n\n\n\n\nMarémométrice :\n1 kWh/j\n\n\nVagues :\n4 kWh/j\n\n\nHydroélectrique :\n17.5 kWh/j\n\n\nbiomasse :\n24 kWh/j\n\n\nEolien en mer :\n29 kWh/j\n\n\nVent :\n15 kWh/j\n\n\nFermes PV (400 m2/p) :\n40 kWh/j\n\n\nPV (10 m2/p) :\n2 kWh/j\n\n\nChauffage solaire : 5 kWh/j"
   },
   {
-    "objectID": "index.html#summary",
-    "href": "index.html#summary",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Summary",
-    "text": "Summary\nDevelopping a PIV setup is a seek for a compromise regarding,\n\n\nReduced inertia of the seeding particles:\n  – Neutrally buoyant\n  – As small as possible\nHigh visibility:\n  – Good light scattering\n  – Large enough\nAir vs water\nApplication"
+    "objectID": "index.html#géothermie",
+    "href": "index.html#géothermie",
+    "title": "Energie : sources et usages",
+    "section": "🌋 Géothermie",
+    "text": "🌋 Géothermie\n\n\n\nLe flux géothermique est l’énergie thermique issue\n\n\n\nde la désintégration radioactive des roches (croûte et manteau)\n\n\net de la chaleur initiale du noyau terrestre qui traverse la surface.\n\n\nEn France métropolitaine, le flux de chaleur géothermique moyen est estimé à1 : 70-80 \\(\\unit{\\milli\\watt\\per\\square\\meter}\\) (à comparer au flux solaire moyen !).\nEn exploitant toutes les surfaces de terres et en creusant à 15 km de profondeur, l’énergie récupérable s’élèverait à 2 kWh/j selon Mackay – L’énergie durable, Pas que du vent – chap 16.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGéothermie :\n1 kWh/j\n\n\nMarémométrice :\n1 kWh/j\n\n\nVagues :\n4 kWh/j\n\n\nHydroélectrique :\n17.5 kWh/j\n\n\nbiomasse :\n24 kWh/j\n\n\nEolien en mer :\n29 kWh/j\n\n\nVent :\n15 kWh/j\n\n\nFermes PV (400 m2/p) :\n40 kWh/j\n\n\nPV (10 m2/p) :\n2 kWh/j\n\n\nChauffage solaire : 5 kWh/j\n\n\n\n\n\n\n\nLe portail national de la géothermie"
   },
   {
-    "objectID": "index.html#frame-1",
-    "href": "index.html#frame-1",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Frame 1",
-    "text": "Frame 1"
+    "objectID": "index.html#comparaison-consommation-potentiel-énergies-renouvelables",
+    "href": "index.html#comparaison-consommation-potentiel-énergies-renouvelables",
+    "title": "Energie : sources et usages",
+    "section": "Comparaison Consommation / Potentiel énergies renouvelables",
+    "text": "Comparaison Consommation / Potentiel énergies renouvelables\n\n\nA l’issue de cette analyse, la pile rouge s’élève à 195 kWh/j/pers, la pile verte à 180 kWh/j/pers, i.e. le coup est presque joué !\nIl convient néanmoins d’aller au delà du potentiel “physique” des renouvelables et d’intégrer la faisabilité pratique (ressources en matériaux ?), politique (acceptabilité ?) et économique (financement ?). A titre d’exemple, le quadrillage de 5 % du pays par des fermes éoliennes coûterait, par citoyen, 250 000 € !\nPar ailleurs, à la présentation des diﬀérentes énergies, chacun aura compris qu’il n’y a pas d’énergie propre… Chaque exploitation aﬀectera, d’une façon ou d’une autre, l’environnement et c’est cet impact qu’il convient de limiter."
   },
   {
-    "objectID": "index.html#frame-2",
-    "href": "index.html#frame-2",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Frame 2",
-    "text": "Frame 2"
+    "objectID": "index.html#consommation-vs-potentiel-enr",
+    "href": "index.html#consommation-vs-potentiel-enr",
+    "title": "Energie : sources et usages",
+    "section": "Consommation vs Potentiel ENR",
+    "text": "Consommation vs Potentiel ENR\n\n\nA l’issue de cette analyse, la pile rouge s’élève à 195 kWh/j/pers, la pile verte à 180 kWh/j/pers, i.e. le coup est presque joué !\nIl convient néanmoins d’aller au delà du potentiel “physique” des renouvelables et d’intégrer la faisabilité pratique (ressources en matériaux ?), politique (acceptabilité ?) et économique (financement ?). A titre d’exemple, le quadrillage de 5 % du pays par des fermes éoliennes coûterait, par citoyen, 250 000 € !\nPar ailleurs, à la présentation des diﬀérentes énergies, chacun aura compris qu’il n’y a pas d’énergie propre… Chaque exploitation aﬀectera, d’une façon ou d’une autre, l’environnement et c’est cet impact qu’il convient de limiter."
   },
   {
-    "objectID": "index.html#objective",
-    "href": "index.html#objective",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Objective",
-    "text": "Objective\nEstimate a velocity-field from a couple of grayscale particle images, i.e. find \\(\\vec{V}(\\vec{x},t)\\) from \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\).\n\nIdeally, a high data density is preferred on the PIV vector fields, particularly when significant spatial flow variations must be resolved or when comparing experimental data with numerical results.\nThis requires a medium concentration of the images of the tracer particles in the PIV recording.\nMedium image concentration is characterized by the fact that matching pairs of particle images – due to subsequent illuminations – cannot be detected by visual inspection.\nHence, statistical approaches were developed."
+    "objectID": "index.html#consommation-potentiel-enr",
+    "href": "index.html#consommation-potentiel-enr",
+    "title": "Energie : sources et usages",
+    "section": "Consommation / Potentiel ENR",
+    "text": "Consommation / Potentiel ENR\n\n\nA l’issue de cette analyse, la pile rouge s’élève à 195 kWh/j/pers, la pile verte à 180 kWh/j/pers, i.e. le coup est presque joué !\nIl convient néanmoins d’aller au delà du potentiel “physique” des renouvelables et d’intégrer la faisabilité pratique (ressources en matériaux ?), politique (acceptabilité ?) et économique (financement ?). A titre d’exemple, le quadrillage de 5 % du pays par des fermes éoliennes coûterait, par citoyen, 250 000 € !\nPar ailleurs, à la présentation des diﬀérentes énergies, chacun aura compris qu’il n’y a pas d’énergie propre… Chaque exploitation aﬀectera, d’une façon ou d’une autre, l’environnement et c’est cet impact qu’il convient de limiter."
   },
   {
-    "objectID": "index.html#from-ivecxttdelta-t-i-in-0255",
-    "href": "index.html#from-ivecxttdelta-t-i-in-0255",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)",
-    "text": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)\n\n# import the standard numerical and plotting packages\nimport numpy as np\nimport matplotlib.pyplot as plt\n# import what is necessary from OpenPIV\nfrom openpiv import tools\n\n# load the images\na = tools.imread(\"./images/B005_1.tif\")\nb = tools.imread(\"./images/B005_2.tif\")"
+    "objectID": "index.html#consommation-potentiel-enr-1",
+    "href": "index.html#consommation-potentiel-enr-1",
+    "title": "Energie : sources et usages",
+    "section": "Consommation / Potentiel ENR",
+    "text": "Consommation / Potentiel ENR"
   },
   {
-    "objectID": "index.html#from-ivecxttdelta-t-i-in-0255-1",
-    "href": "index.html#from-ivecxttdelta-t-i-in-0255-1",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)",
-    "text": "From \\(I(\\vec{x},t,t+\\Delta t)\\), \\(I \\in [0,255]\\)\n\n# import the standard numerical and plotting packages\nimport numpy as np\nimport matplotlib.pyplot as plt\n# import what is necessary from OpenPIV\nfrom openpiv import tools\n\n# load the images\na = tools.imread(\"./images/B005_1.tif\")\nb = tools.imread(\"./images/B005_2.tif\")\n\nfig, axs = plt.subplots(1, 2, figsize=(9, 4))\nimg = axs[0].imshow(a, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[0].set_title('frame A')\nimg = axs[1].imshow(b, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[1].set_title('frame B')\ncbar = fig.add_axes([0.95, 0.1, 0.03, 0.8])\nfig.colorbar(img, cax=cbar)\nplt.show()"
+    "objectID": "index.html#consommation-potentiel-enr-2",
+    "href": "index.html#consommation-potentiel-enr-2",
+    "title": "Energie : sources et usages",
+    "section": "Consommation / Potentiel ENR",
+    "text": "Consommation / Potentiel ENR"
   },
   {
-    "objectID": "index.html#windowing",
-    "href": "index.html#windowing",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Windowing",
-    "text": "Windowing\nLet’s focus on small portions of the images:\n\nwin_size = 32\na_win = a[:win_size, :win_size].copy()\nb_win = b[:win_size, :win_size].copy()\n\nfig, axs = plt.subplots(1, 2, figsize=(9, 4))\nimg = axs[0].imshow(a_win, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[0].set_title('IA')\nimg = axs[1].imshow(b_win, vmin=0, vmax=100, cmap=plt.cm.gray)\naxs[1].set_title('IB')\ncbar = fig.add_axes([0.95, 0.1, 0.03, 0.8])\nfig.colorbar(img, cax=cbar)\nplt.show()\n\n\n\n\n\n\n\n\n\n\nThe movement of individual particles from frame A to frame B is untrackable by “hand”."
+    "objectID": "index.html#usage-potentiel-enr",
+    "href": "index.html#usage-potentiel-enr",
+    "title": "Energie : sources et usages",
+    "section": "Usage / Potentiel ENR",
+    "text": "Usage / Potentiel ENR\n\n\nA l’issue de cette analyse, la pile rouge s’élève à 137 kWh/j/pers, la pile verte à 138.5 kWh/j/pers, i.e. le coup est presque joué !\n\nIl convient néanmoins d’aller au delà du potentiel “physique” des renouvelables et d’intégrer la faisabilité pratique (ressources en matériaux ?), politique (acceptabilité ?) et économique (financement ?).\nPar ailleurs, à la présentation des diﬀérentes sources d’énergies, chacun aura compris qu’il n’y a pas de source d’énergie propre… Chaque exploitation aﬀectera, d’une façon ou d’une autre, l’environnement et c’est cet impact qu’il convient de limiter.\n\n\n\n\n\n\n\n\n\"Défense\" : 4 kWh/j\n\n\nTransporter les trucs : 12 kWh/j\n\n\nTrucs : au moins 48 kWh/j\n\n\nNourriture, agriculture, engrais : 15 kWh/j\n\n\nGadgets : 5 kWh/j\n\n\nLumière : 1 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j\n\n\n\n\n\n\n\n\n\n\nGéothermie :\n1 kWh/j\n\n\nMarémométrice :\n1 kWh/j\n\n\nVagues :\n4 kWh/j\n\n\nHydroélectrique :\n17.5 kWh/j\n\n\nbiomasse :\n24 kWh/j\n\n\nEolien en mer :\n29 kWh/j\n\n\nVent :\n15 kWh/j\n\n\nFermes PV (400 m2/p) :\n40 kWh/j\n\n\nPV (10 m2/p) :\n2 kWh/j\n\n\nChauffage solaire : 5 kWh/j"
   },
   {
-    "objectID": "index.html#shifting",
-    "href": "index.html#shifting",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Shifting",
-    "text": "Shifting\nWe could then try to shift the window IA by some pixels along the horizontal and/or vertical directions\n\nfig, axs = plt.subplots(1, 3, figsize=(9, 4))\nimg = axs[0].imshow(b_win - a_win, cmap=plt.cm.gray)\naxs[0].set_title(\"IB - IA(shift=0)\")\nimg = axs[1].imshow(b_win - np.roll(a_win, (1, 0), axis=(0, 1)), cmap=plt.cm.gray)\naxs[1].set_title(\"IB - IA(shift=1 pxl)\")\nimg = axs[2].imshow(b_win - np.roll(a_win, (2, 0), axis=(0, 1)), cmap=plt.cm.gray)\naxs[2].set_title(\"IB - IA(shift=2 pxl)\")\ncbar = fig.add_axes([0.95, 0.1, 0.03, 0.8])\nfig.colorbar(img, cax=cbar)\nplt.show()"
+    "objectID": "index.html#usage-potentiel-enr-1",
+    "href": "index.html#usage-potentiel-enr-1",
+    "title": "Energie : sources et usages",
+    "section": "Usage / Potentiel ENR",
+    "text": "Usage / Potentiel ENR\n`Peut-on vivre uniquement sur les renouvelables ?’ : L’énergie durable, Pas que du vent – chap 18"
   },
   {
-    "objectID": "index.html#optimal-matching",
-    "href": "index.html#optimal-matching",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Optimal matching?",
-    "text": "Optimal matching?\nLet’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.\n\ndef match_template(img, template, maxroll=8):\n    # img: input image to compare\n    # template: image to match against\n    # maxroll: max nbr of pxl to shift in each dir. Default value is 8.\n    best_dist = np.inf\n    best_shift = (-1, -1)\n    for y in range(-maxroll,maxroll):\n        for x in range(-maxroll,maxroll):\n            # calculate Euclidean distance\n            dist = np.sqrt(np.sum((img - np.roll(template, (y, x), axis=(0, 1))) ** 2))\n            if dist &lt; best_dist:\n                best_dist = dist\n                best_shift = (y, x)\n    return (best_dist, best_shift)\n# Let’s check that it works by manually shifting the same image (IA):\nmatch_template(np.roll(a_win, (2, 0), axis=(0, 1)), a_win)\n\n\n\n(0.0, (2, 0))"
+    "objectID": "index.html#usage-potentiel-enr-2",
+    "href": "index.html#usage-potentiel-enr-2",
+    "title": "Energie : sources et usages",
+    "section": "Usage / Potentiel ENR",
+    "text": "Usage / Potentiel ENR\n`Les ambitions vertes à la rencontre de la réalité sociale ?’ : L’énergie durable, Pas que du vent – chap 18"
   },
   {
-    "objectID": "index.html#optimal-matching-1",
-    "href": "index.html#optimal-matching-1",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Optimal matching?",
-    "text": "Optimal matching?\nLet’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.\n\n# Let’s try it on the two sub-windows\nmatch_template(b_win, a_win)\n\n\n\n(123.80226169178009, (-1, 1))\n\n\n\nWell, this is not the true displacement, but it gives a hint.\nThe problem is that shifting each image and repeating the loop many times is impractical."
+    "objectID": "index.html#quels-scenari-davenir",
+    "href": "index.html#quels-scenari-davenir",
+    "title": "Energie : sources et usages",
+    "section": "Quels scenari d’avenir ?",
+    "text": "Quels scenari d’avenir ?"
   },
   {
-    "objectID": "index.html#optimal-matching-2",
-    "href": "index.html#optimal-matching-2",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Optimal matching?",
-    "text": "Optimal matching?\nLet’s use a different matching principle, based on the cross-correlation:\n\n\n\\[R_{II}(x,y) = \\sum_{i=-K}^K \\sum_{j=-L}^L I(i,j) I'(i+x,j+y)\\]\n\n\\(I(x,y) =\\) Pixel grayscale \\((i,j)\\) of the 1st image (instant \\(t\\))\n\\(I'(x,y) =\\) Pixel grayscale \\((i,j)\\) of the 2nd image (instant \\(t+\\Delta t\\))\n\\(2K\\), \\(2L\\) = Dimension of the analysis area (mesh).\n\nThis is statistical information. We do not look for particle-to-particle speed!"
+    "objectID": "index.html#evolution-de-lusage-de-lénergie",
+    "href": "index.html#evolution-de-lusage-de-lénergie",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie"
   },
   {
-    "objectID": "index.html#cc-interrogation-technic",
-    "href": "index.html#cc-interrogation-technic",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "CC interrogation technic",
-    "text": "CC interrogation technic\nDirect calculation: very long! : \\(2M^2N^2\\) operations \\(\\Rightarrow\\) Calculation of the correlation function by FFT: \\(2N^2\\log_2N\\) (if \\(N=M\\))."
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-1",
+    "href": "index.html#evolution-de-lusage-de-lénergie-1",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie"
   },
   {
-    "objectID": "index.html#cc-interrogation-technic-1",
-    "href": "index.html#cc-interrogation-technic-1",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "CC interrogation technic",
-    "text": "CC interrogation technic\nCC is an efficient computational algorithm to find out the right shift.\n\n# import the required package\nfrom scipy.signal import correlate\n\ncross_corr = correlate(b_win - b_win.mean(), a_win - a_win.mean(), method=\"fft\")\n# let's see what the cross-correlation looks like\nY, X = np.meshgrid(np.arange(cross_corr.shape[0]), np.arange(cross_corr.shape[1]))\nfig = plt.figure()\nax = fig.add_subplot(projection=\"3d\")\nax.plot_surface(Y, X, cross_corr, cmap='jet', linewidth=0.2)\nplt.title(\"Correlation map — peak is the most probable shift\")\nplt.show()"
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-2",
+    "href": "index.html#evolution-de-lusage-de-lénergie-2",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie"
   },
   {
-    "objectID": "index.html#cc-interrogation-technic-2",
-    "href": "index.html#cc-interrogation-technic-2",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "CC interrogation technic",
-    "text": "CC interrogation technic\nWe can get the first velocity field by repeating this analysis for all windows.\n\ndef vel_field(curr_frame, next_frame, win_size):\n    ys = np.arange(0, curr_frame.shape[0], win_size)\n    xs = np.arange(0, curr_frame.shape[1], win_size)\n    dys = np.zeros((len(ys), len(xs)))\n    dxs = np.zeros((len(ys), len(xs)))\n    for iy, y in enumerate(ys):\n        for ix, x in enumerate(xs):\n            int_win = curr_frame[y : y + win_size, x : x + win_size]\n            search_win = next_frame[y : y + win_size, x : x + win_size]\n            cross_corr = correlate(\n                search_win - search_win.mean(), int_win - int_win.mean(), method=\"fft\"\n            )\n            dys[iy, ix], dxs[iy, ix] = (\n                np.unravel_index(np.argmax(cross_corr), cross_corr.shape)\n                - np.array([win_size, win_size])\n                + 1\n            )\n    # locate velocity vectors from the center of each window\n    ys = ys + win_size / 2\n    xs = xs + win_size / 2\n    return xs, ys, dxs, dys\n\nxs, ys, dxs, dys = vel_field(a, b, 32)\nnorm_drs = np.sqrt(dxs ** 2 + dys ** 2)\n\nfig, ax = plt.subplots(figsize=(9, 4))\nax.quiver(\n    xs,\n    ys[::-1],\n    dxs,\n    -dys,\n    norm_drs,\n    cmap=\"plasma\",\n    angles=\"xy\",\n    scale_units=\"xy\",\n    scale=0.25,\n)\nax.set_aspect(\"equal\")\nplt.show()"
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-3",
+    "href": "index.html#evolution-de-lusage-de-lénergie-3",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie"
   },
   {
-    "objectID": "index.html#cc-interrogation-technic-3",
-    "href": "index.html#cc-interrogation-technic-3",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "CC interrogation technic",
-    "text": "CC interrogation technic\nLet’s have a look back at the CC map:\n\n\n\nplt.imshow(cross_corr, cmap=plt.cm.gray)\ny, x = np.unravel_index(cross_corr.argmax(), cross_corr.shape)\nprint(f\"{y=}, {x=}\")\nplt.show()\n\n\n\ny=30, x=32\n\n\n\n\n\n\n\n\n\n\n\n\nThe information is discrete (pxl)! Very high uncertainty for displacements close to 1 pxl\nSub-pixel interpolation of the correlation peak (Gaussian, parabolic, etc.) over 3, 5 or 7 pxls \\(\\Rightarrow\\) theoretical accuracy 0.01 pxl."
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-4",
+    "href": "index.html#evolution-de-lusage-de-lénergie-4",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie"
   },
   {
-    "objectID": "index.html#cc-interrogation-technic-4",
-    "href": "index.html#cc-interrogation-technic-4",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "CC interrogation technic",
-    "text": "CC interrogation technic\nerrors\n\n\n\nThe interpolation of correlation peaks causes a bias towards integer values displacements (Peak locking effect)\nThis effect increases when the particle image size &lt; 2 pixels\nSolutions to correct this effect: choice of the interpolation function, iterative PIV, etc. \n\n\n\nParticle size on image results from:\n  – Actual particle size\n  – Particle brigthness\n  – Sensor pixel size\n  – Focus"
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-5",
+    "href": "index.html#evolution-de-lusage-de-lénergie-5",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie\nA partir de bases de données ouvertes comme ourworldindata.org, nous pouvons obtenir une représentation à jour de la consommation d’énergie par personne et par pays :\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom matplotlib.lines import Line2D\n\n# Chargement\nurl = \"https://ourworldindata.org/grapher/energy-use-per-person-vs-gdp-per-capita.csv?v=1&csvType=full&useColumnShortNames=true\"\ndf = pd.read_csv(url, storage_options={'User-Agent': 'Our World In Data data fetch/1.0'})\n\n# Setup colonnes\ncol_energy = 'primary_energy_consumption_per_capita__kwh'\ncol_gdp = 'ny_gdp_pcap_pp_kd'\ncol_region = 'owid_region'\n\ndf = df.dropna(subset=[col_energy, col_gdp, col_region])\ndf = df[(df[col_energy] &gt; 0) & (df[col_gdp] &gt; 0)]\nlatest_year = df['Year'].max()\ndf_latest = df[df['Year'] == latest_year].copy()\ndf_latest['energy_per_day'] = df_latest[col_energy] / 365\n\n# Moyennes\navg_world = df_latest['energy_per_day'].mean()\navg_europe = df_latest[df_latest[col_region] == 'Europe']['energy_per_day'].mean()\n\n# Pays à visualiser\ncountries_to_label = [\n    'France', 'United States', 'China', 'India', 'Qatar', 'Norway', \n    'Ethiopia', 'Brazil', 'Germany', 'Japan', 'South Korea', \n    'Saudi Arabia', 'Canada', 'Luxembourg', \n    'Australia', 'Russia'\n]\ndf_highlight = df_latest[df_latest['Entity'].isin(countries_to_label)]\ndf_others = df_latest[~df_latest['Entity'].isin(countries_to_label)]\n\n# Graphique\nfig, ax = plt.subplots(figsize=(12, 6))\nsns.set_style(\"whitegrid\")\n\n# Définition d'une palette de couleurs fixe\nregions = sorted(df_latest[col_region].unique())\ncolors = sns.color_palette(\"Set1\", len(regions))\nregion_colors = dict(zip(regions, colors))\n\n# Tracé des pays VIDES \nfor region, color in region_colors.items():\n    data_reg = df_others[df_others[col_region] == region]\n    ax.scatter(data_reg[col_gdp], data_reg['energy_per_day'], \n               edgecolor=color, facecolors='none', s=100, alpha=0.5, linewidth=1.2)\n\n# Tracé des pays PLEINS\nfor region, color in region_colors.items():\n    data_reg = df_highlight[df_highlight[col_region] == region]\n    ax.scatter(data_reg[col_gdp], data_reg['energy_per_day'], \n               color=color, edgecolor='black', s=100, alpha=1, linewidth=1.2)\n\n# Annotation des pays\nfor _, row in df_highlight.iterrows():\n    ax.text(row[col_gdp], row['energy_per_day'] * 1.15, row['Entity'], \n            fontsize=10, weight='bold', ha='center', va='bottom')\n\n# Lignes de rappel\nax.axhline(avg_world, color='black', linestyle=':', alpha=0.5)\nax.text(ax.get_xlim()[0]*1.1, avg_world * 1.05, f'Moyenne Mondiale ({avg_world:.1f} kWh/j)', color='black', alpha=0.8)\n\nax.axhline(avg_europe, color='blue', linestyle=':', alpha=0.4)\nax.text(ax.get_xlim()[0]*1.1, avg_europe * 1.05, f'Moyenne Europe ({avg_europe:.1f} kWh/j)', color='blue', alpha=0.8)\n\nlegend_elements = [Line2D([0], [0], marker='o', color='w', label=reg,\n                          markerfacecolor=col, markersize=12)\n                   for reg, col in region_colors.items()]\n\nax.legend(handles=legend_elements, title='Régions', loc='upper left')\n\nax.set_title(f'Énergie primaire quotidienne vs PIB par habitant ({latest_year})', fontsize=18, fontweight='bold')\nax.set_xlabel('PIB par habitant ($)', fontsize=14)\nax.set_ylabel('kWh / jour / pers', fontsize=14)\n\nplt.show()"
   },
   {
-    "objectID": "index.html#parameters",
-    "href": "index.html#parameters",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Parameters",
-    "text": "Parameters\nTaking good quality images is an art!\n\n\n\n\nHomogeneous, regular tracer density \\(\\rightarrow\\) correlation relevance\n\n\n\n\nParticle image size (ideal: ~3/4 pixels): Detectability / Pixel locking\n\n\n\n\nNo saturation of particle images on the CCD sensor\n\n\n\n\nNo reflection, background noise,…\n\n\n\n\n\nGaussian laser beams\n\n\n\n\nSuperimposed laser sheets, ideal thickness ~ 500μm\n\n\n\n\nTime between pulses: In plane displacement =&gt; resolution Out of plane displacement =&gt; lost particles"
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-1-1",
+    "href": "index.html#evolution-de-lusage-de-lénergie-1-1",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie [^1]",
+    "text": "Evolution de l’usage de l’énergie [^1]\n\n\n\n\nÉvolution de la consommation d'énergie primaire (kWh/jour/pers).\n\n\nEpoque / stade\nMonde\nEtats-Unis\nEurope\nInde\n\n\n\n\nPréhistoire\n2 - 3\n≈ 3\n≈ 3\n≈ 3\n\n\nAntiquité\n4 - 6\n≈ 5\n≈ 5\n≈ 5\n\n\nMoyen-Age\n10 - 15\n≈ 12\n≈ 15\n≈ 10\n\n\n1850 (Révolution industrielle)\n25 - 30\n40\n35\n12\n\n\n1950 (Après-guerre)\n40 - 50\n160\n60\n15\n\n\nAujourd'hui (2023-2024)\n58 - 60\n211\n104\n21\n\n\n\n[^1] : ourworldindata.org"
   },
   {
-    "objectID": "index.html#parameters-1",
-    "href": "index.html#parameters-1",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Parameters",
-    "text": "Parameters\nCorrelation coefficient for different displacements, i.e. different time between pulses"
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-6",
+    "href": "index.html#evolution-de-lusage-de-lénergie-6",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie\n\n\n\n\n\n\nImportant\n\n\nL’augmentation exponentielle des captations des sources d’énergie a également été accompagnée d’une augmentation exponentielle de la population. On constate cependant que la première a augmenté plus vite que la seconde. 1\n\n\n\n\n\n\n\nÉvolution de la consommation d'énergie primaire (kWh/jour/pers).\n\n\nEpoque / stade\nMonde\nEtats-Unis\nEurope\nInde\n\n\n\n\nPréhistoire\n2 - 3\n≈ 3\n≈ 3\n≈ 3\n\n\nAntiquité\n4 - 6\n≈ 5\n≈ 5\n≈ 5\n\n\nMoyen-Age\n10 - 15\n≈ 12\n≈ 15\n≈ 10\n\n\n1850 (Révolution industrielle)\n25 - 30\n40\n35\n12\n\n\n1950 (Après-guerre)\n40 - 50\n160\n60\n15\n\n\nAujourd'hui (2023-2024)\n58 - 60\n211\n104\n21\n\n\n\nourworldindata.org"
   },
   {
-    "objectID": "index.html#spatial-resolution",
-    "href": "index.html#spatial-resolution",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Spatial resolution",
-    "text": "Spatial resolution\nTypical mesh sizes: \\(32 \\times 32\\), \\(64 \\times 64\\), \\(128 \\times 128\\) pixel \\(^2\\)\nTypical pixel size: \\(0.1\\) mm to \\(1\\) mm"
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-6-output",
+    "href": "index.html#evolution-de-lusage-de-lénergie-6-output",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie"
   },
   {
-    "objectID": "index.html#spatial-resolution-1",
-    "href": "index.html#spatial-resolution-1",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Spatial resolution",
-    "text": "Spatial resolution\nOverlaping of the interrogation windows: typically 50%, 75%"
+    "objectID": "index.html#quest-ce-que-lénergie-1",
+    "href": "index.html#quest-ce-que-lénergie-1",
+    "title": "Energie : sources et usages",
+    "section": "Qu’est-ce que l’énergie ?",
+    "text": "Qu’est-ce que l’énergie ?\n\n\n\n\n\n\n\nPremier principe de la thermodynamique (J.R. von Mayer, 1841)\n\n\n\\[\\Delta E \\equiv \\Delta (E_p + E_c + U) = \\sum W + Q\\]\n– \\(E_p\\) : Energie potentielle macroscopique. Sa variation est égale à l’opposé de la somme des travaux des forces conservatives (poids, tension d’un ressort parfait, force électrostatique) : \\(\\Delta E_p \\equiv - \\sum W(\\vec{F}_\\text{cons})\\).\n– \\(E_c\\) : Energie cinétique macroscopique. Energie que possède un système du fait de son mouvement.\n– \\(U\\) : Energie interne. C’est la somme de toutes les formes d’énergie microscopique. Il s’agit des énergies cinétiques et potentielles des molécules, atomes, nucléons et électrons et de l’énergie qui les lie entre eux."
   },
   {
-    "objectID": "index.html#spatial-resolution-2",
-    "href": "index.html#spatial-resolution-2",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Spatial resolution",
-    "text": "Spatial resolution\nIf strong gradients\n\n\\(\\rightarrow\\) towards multi-pass"
+    "objectID": "index.html#quest-ce-que-lénergie-2",
+    "href": "index.html#quest-ce-que-lénergie-2",
+    "title": "Energie : sources et usages",
+    "section": "Qu’est-ce que l’énergie ?",
+    "text": "Qu’est-ce que l’énergie ?\n\n\n\n\n\n\n\nPremier principe de la thermodynamique (J.R. von Mayer, 1841)\n\n\n\\[\\Delta E \\equiv \\Delta (E_p + E_c + U) = \\sum W + Q\\]\n– \\(E_p\\) : Energie potentielle macroscopique. Sa variation est égale à l’opposé de la somme des travaux des forces conservatives (poids, tension d’un ressort parfait, force électrostatique) : \\(\\Delta E_p \\equiv - \\sum W(\\vec{F}_\\text{cons})\\).\n– \\(E_c\\) : Energie cinétique macroscopique. Energie que possède un système du fait de son mouvement.\n– \\(U\\) : Energie interne. C’est la somme de toutes les formes d’énergie microscopique. Il s’agit des énergies cinétiques et potentielles des molécules, atomes, nucléons et électrons et de l’énergie qui les lie entre eux."
   },
   {
-    "objectID": "index.html#multi-pass",
-    "href": "index.html#multi-pass",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Multi-pass",
-    "text": "Multi-pass"
+    "objectID": "index.html#quest-ce-que-lénergie-3",
+    "href": "index.html#quest-ce-que-lénergie-3",
+    "title": "Energie : sources et usages",
+    "section": "Qu’est-ce que l’énergie ?",
+    "text": "Qu’est-ce que l’énergie ?\n\n\n\n\n\n\n\nPremier principe de la thermodynamique (J.R. von Mayer, 1841)\n\n\n\\[\\Delta E \\equiv \\Delta (E_p + E_c + U) = \\sum W + Q\\]\n– \\(E_p\\) : Energie potentielle macroscopique. Sa variation est égale à l’opposé de la somme des travaux des forces conservatives (poids, tension d’un ressort parfait, force électrostatique) : \\(\\Delta E_p \\equiv - \\sum W(\\vec{F}_\\text{cons})\\).\n– \\(E_c\\) : Energie cinétique macroscopique. Energie que possède un système du fait de son mouvement.\n– \\(U\\) : Energie interne. C’est la somme de toutes les formes d’énergie microscopique. Il s’agit des énergies cinétiques et potentielles des molécules, atomes, nucléons et électrons et de l’énergie qui les lie entre eux."
   },
   {
-    "objectID": "index.html#validation-procedure",
-    "href": "index.html#validation-procedure",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Validation procedure",
-    "text": "Validation procedure\nQuality factor (signal-to-noise ratio):"
+    "objectID": "index.html#quest-ce-que-lénergie-4",
+    "href": "index.html#quest-ce-que-lénergie-4",
+    "title": "Energie : sources et usages",
+    "section": "Qu’est-ce que l’énergie ?",
+    "text": "Qu’est-ce que l’énergie ?\nJ.-M. Jancovici. Cours à l’Ecole des Mines (2019) : L’énergie est la grandeur physique qui permet de caractériser un changement d’état dans un système."
   },
   {
-    "objectID": "index.html#validation-procedure-1",
-    "href": "index.html#validation-procedure-1",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "Validation procedure",
-    "text": "Validation procedure\n\n\n\nComparison of vectors with their \\(k \\equiv [i-N:i+N,j-N:j+N]\\) neighbors: suppression/replacement if, e.g., \\[V_{ij} &gt; \\overline{V_k} \\pm K \\times {\\rm RMS(neighbors)}\\]\n\n\n\n\n\n\n\n\n\n\n\nSpatial filtering (vectors interpolation): Post-processing is not an artistic creation! It is necessary to remove the noise as much as possible without removing the signal"
+    "objectID": "index.html#unités-dérivées",
+    "href": "index.html#unités-dérivées",
+    "title": "Energie : sources et usages",
+    "section": "Unités dérivées",
+    "text": "Unités dérivées\nUnité SI de l’énergie : J (1 Newton \\(\\times\\) 1 mètre)\nIl existe d’autres unités usuelles :\n– 1 kWh = 3.6 10\\(^6\\) \\(\\unit{\\joule}\\)  correspond au fonctionnement d’un appareil de 1000 \\(\\unit{\\watt}\\) pendant 1 h\n– 1 tep (tonne équivalent pétrole) \\(\\approx\\) 12 MWh \\(\\approx\\) 43.2 \\(\\unit{\\giga\\joule}\\)  principalement utilisée en économie : correspond à la quantité de chaleur récupérée par la combustion d’une tonne de pétrole moyen\n– 1 kilocalorie = 4185 \\(\\unit{\\joule}\\)  principalement utilisée en chimie et physiologie : correspond à la quantité de chaleur fournie à 1 \\(\\unit{\\kilo\\gram}\\) d’eau pour élever sa température de 1 \\(\\unit{\\kelvin}\\)\n– 1 eV = 1.6 10\\(^{−19}\\) \\(\\unit{\\joule}\\)  en physique des particules : correspond à l’énergie acquise par un électron lorsque son potentiel électrique diminue de 1 V"
   },
   {
-    "objectID": "index.html#and-more",
-    "href": "index.html#and-more",
-    "title": "Particle Image Velocimetry (PIV)",
-    "section": "And More…",
-    "text": "And More…\n\nFooter & Logo (optionally specify custom footer per-slide or hide global footer)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations"
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-7",
+    "href": "index.html#evolution-de-lusage-de-lénergie-7",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie\nA partir de bases de données ouvertes comme ourworldindata.org, nous pouvons obtenir une représentation à jour de la consommation d’énergie par personne et par pays :\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom matplotlib.lines import Line2D\n\n# Chargement\nurl = \"https://ourworldindata.org/grapher/energy-use-per-person-vs-gdp-per-capita.csv?v=1&csvType=full&useColumnShortNames=true\"\ndf = pd.read_csv(url, storage_options={'User-Agent': 'Our World In Data data fetch/1.0'})\n\n# Setup colonnes\ncol_energy = 'primary_energy_consumption_per_capita__kwh'\ncol_gdp = 'ny_gdp_pcap_pp_kd'\ncol_region = 'owid_region'\n\ndf = df.dropna(subset=[col_energy, col_gdp, col_region])\ndf = df[(df[col_energy] &gt; 0) & (df[col_gdp] &gt; 0)]\nlatest_year = df['Year'].max()\ndf_latest = df[df['Year'] == latest_year].copy()\ndf_latest['energy_per_day'] = df_latest[col_energy] / 365\n\n# Moyennes\navg_world = df_latest['energy_per_day'].mean()\navg_europe = df_latest[df_latest[col_region] == 'Europe']['energy_per_day'].mean()\n\n# Pays à visualiser\ncountries_to_label = [\n    'France', 'United States', 'China', 'India', 'Qatar', 'Norway', \n    'Ethiopia', 'Brazil', 'Germany', 'Japan', 'South Korea', \n    'Saudi Arabia', 'Canada', 'Luxembourg', \n    'Australia', 'Russia'\n]\ndf_highlight = df_latest[df_latest['Entity'].isin(countries_to_label)]\ndf_others = df_latest[~df_latest['Entity'].isin(countries_to_label)]\n\n# Graphique\nfig, ax = plt.subplots(figsize=(12, 6))\nsns.set_style(\"whitegrid\")\n\n# Définition d'une palette de couleurs fixe\nregions = sorted(df_latest[col_region].unique())\ncolors = sns.color_palette(\"Set1\", len(regions))\nregion_colors = dict(zip(regions, colors))\n\n# Tracé des pays VIDES \nfor region, color in region_colors.items():\n    data_reg = df_others[df_others[col_region] == region]\n    ax.scatter(data_reg[col_gdp], data_reg['energy_per_day'], \n               edgecolor=color, facecolors='none', s=100, alpha=0.5, linewidth=1.2)\n\n# Tracé des pays PLEINS\nfor region, color in region_colors.items():\n    data_reg = df_highlight[df_highlight[col_region] == region]\n    ax.scatter(data_reg[col_gdp], data_reg['energy_per_day'], \n               color=color, edgecolor='black', s=100, alpha=1, linewidth=1.2)\n\n# Annotation des pays\nfor _, row in df_highlight.iterrows():\n    ax.text(row[col_gdp], row['energy_per_day'] * 1.15, row['Entity'], \n            fontsize=10, weight='bold', ha='center', va='bottom')\n\n# Lignes de rappel\nax.axhline(avg_world, color='black', linestyle=':', alpha=0.5)\nax.text(ax.get_xlim()[0]*1.1, avg_world * 1.05, f'Moyenne Mondiale ({avg_world:.1f} kWh/j)', color='black', alpha=0.8)\n\nax.axhline(avg_europe, color='blue', linestyle=':', alpha=0.4)\nax.text(ax.get_xlim()[0]*1.1, avg_europe * 1.05, f'Moyenne Europe ({avg_europe:.1f} kWh/j)', color='blue', alpha=0.8)\n\nlegend_elements = [Line2D([0], [0], marker='o', color='w', label=reg,\n                          markerfacecolor=col, markersize=12)\n                   for reg, col in region_colors.items()]\n\nax.legend(handles=legend_elements, title='Régions', loc='upper left')\n\nax.set_title(f'Énergie primaire quotidienne vs PIB par habitant ({latest_year})', fontsize=18, fontweight='bold')\nax.set_xlabel('PIB par habitant ($)', fontsize=14)\nax.set_ylabel('kWh / jour / pers', fontsize=14)\n\nplt.show()"
+  },
+  {
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-7-output",
+    "href": "index.html#evolution-de-lusage-de-lénergie-7-output",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie"
+  },
+  {
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-8",
+    "href": "index.html#evolution-de-lusage-de-lénergie-8",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie\nA partir de bases de données ouvertes comme ourworldindata.org, nous pouvons obtenir une représentation à jour de la consommation d’énergie par personne et par pays :\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom matplotlib.lines import Line2D\n\n# Chargement\nurl = \"https://ourworldindata.org/grapher/energy-use-per-person-vs-gdp-per-capita.csv?v=1&csvType=full&useColumnShortNames=true\"\ndf = pd.read_csv(url, storage_options={'User-Agent': 'Our World In Data data fetch/1.0'})\n\n# Setup colonnes\ncol_energy = 'primary_energy_consumption_per_capita__kwh'\ncol_gdp = 'ny_gdp_pcap_pp_kd'\ncol_region = 'owid_region'\n\ndf = df.dropna(subset=[col_energy, col_gdp, col_region])\ndf = df[(df[col_energy] &gt; 0) & (df[col_gdp] &gt; 0)]\nlatest_year = df['Year'].max()\ndf_latest = df[df['Year'] == latest_year].copy()\ndf_latest['energy_per_day'] = df_latest[col_energy] / 365\n\n# Moyennes\navg_world = df_latest['energy_per_day'].mean()\navg_europe = df_latest[df_latest[col_region] == 'Europe']['energy_per_day'].mean()\n\n# Pays à visualiser\ncountries_to_label = [\n    'France', 'United States', 'China', 'India', 'Qatar', 'Norway', \n    'Ethiopia', 'Brazil', 'Germany', 'Japan', 'South Korea', \n    'Saudi Arabia', 'Canada', 'Luxembourg', \n    'Australia', 'Russia'\n]\ndf_highlight = df_latest[df_latest['Entity'].isin(countries_to_label)]\ndf_others = df_latest[~df_latest['Entity'].isin(countries_to_label)]\n\n# Graphique\nfig, ax = plt.subplots(figsize=(12, 6))\nsns.set_style(\"whitegrid\")\n\n# Définition d'une palette de couleurs fixe\nregions = sorted(df_latest[col_region].unique())\ncolors = sns.color_palette(\"Set1\", len(regions))\nregion_colors = dict(zip(regions, colors))\n\n# Tracé des pays VIDES \nfor region, color in region_colors.items():\n    data_reg = df_others[df_others[col_region] == region]\n    ax.scatter(data_reg[col_gdp], data_reg['energy_per_day'], \n               edgecolor=color, facecolors='none', s=100, alpha=0.5, linewidth=1.2)\n\n# Tracé des pays PLEINS\nfor region, color in region_colors.items():\n    data_reg = df_highlight[df_highlight[col_region] == region]\n    ax.scatter(data_reg[col_gdp], data_reg['energy_per_day'], \n               color=color, edgecolor='black', s=100, alpha=1, linewidth=1.2)\n\n# Annotation des pays\nfor _, row in df_highlight.iterrows():\n    ax.text(row[col_gdp], row['energy_per_day'] * 1.15, row['Entity'], \n            fontsize=10, weight='bold', ha='center', va='bottom')\n\n# Lignes de rappel\nax.axhline(avg_world, color='black', linestyle=':', alpha=0.5)\nax.text(ax.get_xlim()[0]*1.1, avg_world * 1.05, f'Moyenne Mondiale ({avg_world:.1f} kWh/j)', color='black', alpha=0.8)\n\nax.axhline(avg_europe, color='blue', linestyle=':', alpha=0.4)\nax.text(ax.get_xlim()[0]*1.1, avg_europe * 1.05, f'Moyenne Europe ({avg_europe:.1f} kWh/j)', color='blue', alpha=0.8)\n\nlegend_elements = [Line2D([0], [0], marker='o', color='w', label=reg,\n                          markerfacecolor=col, markersize=12)\n                   for reg, col in region_colors.items()]\n\nax.legend(handles=legend_elements, title='Régions', loc='upper left')\n\nax.set_title(f'Énergie primaire quotidienne vs PIB par habitant ({latest_year})', fontsize=18, fontweight='bold')\nax.set_xlabel('PIB par habitant ($)', fontsize=14)\nax.set_ylabel('kWh / jour / pers', fontsize=14)\n\nplt.show()"
+  },
+  {
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-8-output",
+    "href": "index.html#evolution-de-lusage-de-lénergie-8-output",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie"
+  },
+  {
+    "objectID": "index.html#mix-énergétique-actuel",
+    "href": "index.html#mix-énergétique-actuel",
+    "title": "Energie : sources et usages",
+    "section": "Mix énergétique actuel",
+    "text": "Mix énergétique actuel\n\n\n\n\n\nMonde : International Energy Agency, 20251\n\n\n\n\n\n\nFrance : statistiques.developpement-durable.gouv.fr, 20242\n\n\n\nIEA World Energy Outlook 2025 Free DatasetSDES"
+  },
+  {
+    "objectID": "index.html#laccroissement-de-la-conso-individuelle",
+    "href": "index.html#laccroissement-de-la-conso-individuelle",
+    "title": "Energie : sources et usages",
+    "section": "L’accroissement de la conso individuelle",
+    "text": "L’accroissement de la conso individuelle\n\n\n\n\n\n\nImportant\n\n\nL’augmentation exponentielle des captations des sources d’énergie a également été accompagnée d’une augmentation exponentielle de la population. On constate cependant que la première a augmenté plus vite que la seconde. 1\n\n\n\n\n\n\n\nÉvolution de la consommation d'énergie primaire (kWh/jour/pers).\n\n\nEpoque / stade\nMonde\nEtats-Unis\nEurope\nInde\n\n\n\n\nPréhistoire\n2 - 3\n≈ 3\n≈ 3\n≈ 3\n\n\nAntiquité\n4 - 6\n≈ 5\n≈ 5\n≈ 5\n\n\nMoyen-Age\n10 - 15\n≈ 12\n≈ 15\n≈ 10\n\n\n1850 (Révolution industrielle)\n25 - 30\n40\n35\n12\n\n\n1950 (Après-guerre)\n40 - 50\n160\n60\n15\n\n\nAujourd'hui (2023-2024)\n58 - 60\n211\n104\n21\n\n\n\nourworldindata.org"
+  },
+  {
+    "objectID": "index.html#evolution-de-lusage-de-lénergie-5-output",
+    "href": "index.html#evolution-de-lusage-de-lénergie-5-output",
+    "title": "Energie : sources et usages",
+    "section": "Evolution de l’usage de l’énergie",
+    "text": "Evolution de l’usage de l’énergie"
+  },
+  {
+    "objectID": "index.html#disparités-régionales",
+    "href": "index.html#disparités-régionales",
+    "title": "Energie : sources et usages",
+    "section": "Disparités régionales",
+    "text": "Disparités régionales\nA partir de bases de données ouvertes comme ourworldindata.org, nous pouvons obtenir une représentation à jour de la consommation d’énergie par personne et par pays :\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom matplotlib.lines import Line2D\n\n# Chargement\nurl = \"https://ourworldindata.org/grapher/energy-use-per-person-vs-gdp-per-capita.csv?v=1&csvType=full&useColumnShortNames=true\"\ndf = pd.read_csv(url, storage_options={'User-Agent': 'Our World In Data data fetch/1.0'})\n\n# Setup colonnes\ncol_energy = 'primary_energy_consumption_per_capita__kwh'\ncol_gdp = 'ny_gdp_pcap_pp_kd'\ncol_region = 'owid_region'\n\ndf = df.dropna(subset=[col_energy, col_gdp, col_region])\ndf = df[(df[col_energy] &gt; 0) & (df[col_gdp] &gt; 0)]\nlatest_year = df['Year'].max()\ndf_latest = df[df['Year'] == latest_year].copy()\ndf_latest['energy_per_day'] = df_latest[col_energy] / 365\n\n# Moyennes\navg_world = df_latest['energy_per_day'].mean()\navg_europe = df_latest[df_latest[col_region] == 'Europe']['energy_per_day'].mean()\n\n# Pays à visualiser\ncountries_to_label = [\n    'France', 'United States', 'China', 'India', 'Qatar', 'Norway', \n    'Ethiopia', 'Brazil', 'Germany', 'Japan', 'South Korea', \n    'Saudi Arabia', 'Canada', 'Luxembourg', \n    'Australia', 'Russia'\n]\ndf_highlight = df_latest[df_latest['Entity'].isin(countries_to_label)]\ndf_others = df_latest[~df_latest['Entity'].isin(countries_to_label)]\n\n# Graphique\nfig, ax = plt.subplots(figsize=(12, 6))\nsns.set_style(\"whitegrid\")\n\n# Définition d'une palette de couleurs fixe\nregions = sorted(df_latest[col_region].unique())\ncolors = sns.color_palette(\"Set1\", len(regions))\nregion_colors = dict(zip(regions, colors))\n\n# Tracé des pays VIDES \nfor region, color in region_colors.items():\n    data_reg = df_others[df_others[col_region] == region]\n    ax.scatter(data_reg[col_gdp], data_reg['energy_per_day'], \n               edgecolor=color, facecolors='none', s=100, alpha=0.5, linewidth=1.2)\n\n# Tracé des pays PLEINS\nfor region, color in region_colors.items():\n    data_reg = df_highlight[df_highlight[col_region] == region]\n    ax.scatter(data_reg[col_gdp], data_reg['energy_per_day'], \n               color=color, edgecolor='black', s=100, alpha=1, linewidth=1.2)\n\n# Annotation des pays\nfor _, row in df_highlight.iterrows():\n    ax.text(row[col_gdp], row['energy_per_day'] * 1.15, row['Entity'], \n            fontsize=10, weight='bold', ha='center', va='bottom')\n\n# Lignes de rappel\nax.axhline(avg_world, color='black', linestyle=':', alpha=0.5)\nax.text(ax.get_xlim()[0]*1.1, avg_world * 1.05, f'Moyenne Mondiale ({avg_world:.1f} kWh/j)', color='black', alpha=0.8)\n\nax.axhline(avg_europe, color='blue', linestyle=':', alpha=0.4)\nax.text(ax.get_xlim()[0]*1.1, avg_europe * 1.05, f'Moyenne Europe ({avg_europe:.1f} kWh/j)', color='blue', alpha=0.8)\n\nlegend_elements = [Line2D([0], [0], marker='o', color='w', label=reg,\n                          markerfacecolor=col, markersize=12)\n                   for reg, col in region_colors.items()]\n\nax.legend(handles=legend_elements, title='Régions', loc='upper left')\n\nax.set_title(f'Énergie primaire quotidienne vs PIB par habitant ({latest_year})', fontsize=18, fontweight='bold')\nax.set_xlabel('PIB par habitant ($)', fontsize=14)\nax.set_ylabel('kWh / jour / pers', fontsize=14)\n\nplt.show()"
+  },
+  {
+    "objectID": "index.html#disparités-régionales-output",
+    "href": "index.html#disparités-régionales-output",
+    "title": "Energie : sources et usages",
+    "section": "Disparités régionales",
+    "text": "Disparités régionales"
+  },
+  {
+    "objectID": "index.html#avant-propos",
+    "href": "index.html#avant-propos",
+    "title": "Energie : sources et usages",
+    "section": "Avant propos",
+    "text": "Avant propos\nCe qui suit était auparavant présenté par Alexis Matynia (alexis.matynia@sorbonne-universite.fr) dans l’UE optionnelle de L2 de Mécanique Energie et Environnement."
+  },
+  {
+    "objectID": "index.html#voitures",
+    "href": "index.html#voitures",
+    "title": "Energie : sources et usages",
+    "section": "🚗 Voitures",
+    "text": "🚗 Voitures\n\n\n\n\ndistance moyenne parcourue / voiture, \\(D_m =\\) 33 \\(\\unit{km}\\)/jour1\nnombre de voitures en circulation, \\(N_v =\\) 38.9 millions (1.5 % sont électriques)\nconsommation moyenne d’une voiture, \\(C_m =\\) 7 \\(\\unit{\\liter}\\)/100 \\(\\unit{km}\\)2 (10.8 ans, l’âge moyen d’une voiture en circulation)\nteneur énergétique du carburant, \\(\\rho_\\text{carb} \\times PCI_\\text{carb} \\approx\\) 10 kWh\\(\\unit{\\per\\liter}\\)\n\\(N_\\text{hab} =\\) 68 millions\n\n\n\n\\[\n\\text{énergie utilisée / jour} = \\frac{D_m \\times N_v \\times C_m \\times \\rho_\\text{carb} \\times PCI_\\text{carb}}{N_\\text{hab}} \\approx 13 \\text{kWh/j}\n\\]\n\n\nCalcul MacKay (UK, 2008) : \\(D_m =\\) 50 \\(\\unit{km}\\)/jour ; \\(C_m =\\) 8.5 \\(\\unit{\\liter}\\)/100 \\(\\unit{km}\\) \\(\\Rightarrow \\approx\\) 40 \\(\\text{kWh/j}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nVoitures :\n13 kWh/j\n\n\n\n\n\n\n\nSDESADEME"
+  },
+  {
+    "objectID": "index.html#avion",
+    "href": "index.html#avion",
+    "title": "Energie : sources et usages",
+    "section": "✈️ Avion",
+    "text": "✈️ Avion\n\ndistance moyenne parcourue / pers / an, \\(D_m =\\) 2500 - 3000 \\(\\unit{km}\\)1\n\n\n\n\n\n\n\n\nLa réalité des usages\n\n\nLa “moyenne” est ici trompeuse car la distribution est très asymétrique :\n\nEnviron 50 % des Français ne prennent pas du tout l’avion\nSeulement 2 % à 5 % de la population (les “grands voyageurs”) sont responsables de près de 50 % des émissions du secteur.\nDistance pour un voyageur actif : Un Français qui prend l’avion une seule fois pour un aller-retour long-courrier (ex: Paris-New York) parcourt 11 700 km, soit 4 fois la moyenne nationale annuelle en un seul voyage.\n\n\n\n\n\nStatistiques du trafic aérien"
+  },
+  {
+    "objectID": "index.html#avion-1",
+    "href": "index.html#avion-1",
+    "title": "Energie : sources et usages",
+    "section": "✈️ Avion",
+    "text": "✈️ Avion\n\n\n\ndistance moyenne parcourue / pers / an, \\(D_m =\\) 2500 - 3000 \\(\\unit{km}\\)1\nGénérations récentes (A320neo, B737 MAX) : \\(C_m \\approx\\) 2.1 à 2.5 L / 100 km par passager (si l’avion est rempli à 80-90 %).\nteneur énergétique du kérosène, \\(\\rho_\\text{k} \\times PCI_\\text{k} \\approx\\) 10 kWh\\(\\unit{\\per\\liter}\\)\n\n\\[\n\\text{énergie utilisée / jour} = \\frac{D_m / 100 * D_m\\times \\rho_\\text{k} \\times PCI_\\text{k}}{365} \\approx 2 \\text{kWh/j}\n\\]\nCalcul MacKay (UK, 2008) :  1 trajet Londres - Le Cap ou Londres - Los Angeles (\\(\\approx\\) 10\\(^4\\) km) en long courrier (Boeing 747, 416 passagers,\\(\\approx\\) 1.7 \\(\\times\\) 10\\(^5\\) \\(\\unit{\\liter}\\) / 10\\(^4\\) km) \\(\\Rightarrow \\approx\\) 30 kWh/j.\n\n\n\n\n\n\n\n\n\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j\n\n\n\n\n\nStatistiques du trafic aérien"
+  },
+  {
+    "objectID": "index.html#chauffage",
+    "href": "index.html#chauffage",
+    "title": "Energie : sources et usages",
+    "section": "🏠 Chauffage",
+    "text": "🏠 Chauffage\n\n\nCalcul MacKay (UK, 2008) :\n\neau chaude : \\(12 \\text{kWh/j}\\)  douche \\(\\approx 1.5 \\text{kWh/j}\\), lave-linge \\(\\approx 1 \\text{kWh/j}\\), lave-vaisselle \\(\\approx 1.5 \\text{kWh/j}\\), cuisine \\(\\approx 4.5 \\text{kWh/j}\\), etc.\nchauffage : \\(24 \\text{kWh/j}\\)  soit, \\(\\approx\\) un radiateur de 2 \\(\\unit{\\kilo\\watt}\\) branché 6 moins / an / personne.\nclimatisation + réfrigération : \\(1 \\text{kWh/j}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
+  },
+  {
+    "objectID": "index.html#lumière",
+    "href": "index.html#lumière",
+    "title": "Energie : sources et usages",
+    "section": "💡 Lumière",
+    "text": "💡 Lumière\n\n\nCalcul MacKay (UK, 2008) :\n\nmélange 50/50 ampoules basse / haute consommation : \\(\\approx 1 \\text{kWh/j}\\)  90 % de la consommation estimée ici provenant des ampoules haute consommation.\n\n\n\n\n\n\n\n\n\n\n\n\nLumière : 1 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
+  },
+  {
+    "objectID": "index.html#gadgets",
+    "href": "index.html#gadgets",
+    "title": "Energie : sources et usages",
+    "section": "🔌 Gadgets",
+    "text": "🔌 Gadgets\n\n\n\n\n\n\nCoût énergétique des gadgets.\n\n\nGadget\nPuissance (W)\n\n\nAllumé\nAllumé inutilisé\nEn veille\nEteint branché\n\n\n\n\nOrdinateurs et périphériques :\n\n\n\nUnité centrale\n80\n55\n\n2\n\n\nEcran LCD\n34\n\n2\n1\n\n\nImprimante Laser\n500\n17\n\n\n\n\nOrdinateur portable\n16\n9\n\n0.5\n\n\nBox Wi-Fi\n9\n\n\n\n\n\nHome cinéma\n7\n7\n4\n\n\n\nDécodeur TV\n6\n\n5\n\n\n\nXBox\n160\n\n2.4\n\n\n\nPlayStation\n190\n\n2\n\n\n\nWii\n18\n\n2\n\n\n\nAspirateur\n1600\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nLa consommation associée aux serveurs informatiques a explosé depuis quelques années et poursuit une très forte croissance. Il conviendrait de la chiﬀrer et de l’ajouter au bilan ici.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGadgets : 5 kWh/j\n\n\nLumière : 1 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
+  },
+  {
+    "objectID": "index.html#alimentation",
+    "href": "index.html#alimentation",
+    "title": "Energie : sources et usages",
+    "section": "🍽️ Alimentation",
+    "text": "🍽️ Alimentation\n\n\nCalcul MacKay (UK, 2008) :\n\nlégumes : \\(\\approx 1.5 \\text{kWh/j}\\)\nlaitages : \\(\\approx 1.5 \\text{kWh/j}\\)\noeufs : \\(\\approx 1 \\text{kWh/j}\\)\nviande : \\(\\approx 8 \\text{kWh/j}\\)\nengrais et autres coûts énergétiques : \\(\\approx 3 \\text{kWh/j}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nNourriture, agriculture, engrais : 15 kWh/j\n\n\nGadgets : 5 kWh/j\n\n\nLumière : 1 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
+  },
+  {
+    "objectID": "index.html#consommables-et-leur-transport",
+    "href": "index.html#consommables-et-leur-transport",
+    "title": "Energie : sources et usages",
+    "section": "📦 Consommables et leur transport",
+    "text": "📦 Consommables et leur transport\n\n\nCalcul MacKay (UK, 2008) :\n\ncannettes / bouteilles : 0.7 \\(\\text{kWh/j}\\)\nemballages (plastique, verre, carton, …) : 4 \\(\\text{kWh/j}\\)  soit \\(\\approx\\) 400 \\(\\unit{g}\\) de déchets / jour\njournaux, prospectus : 2 \\(\\text{kWh/j}\\)\nélectroménager, électronique, vêtements, …\nordinateur : 2.5 \\(\\text{kWh/j}\\) si changé tous les 2 ans\nvoiture : 14 \\(\\text{kWh/j}\\) si changée tous les 15 ans\nroutes : 2 \\(\\text{kWh/j}\\)\nmaison : 1 \\(\\text{kWh/j}\\) à raison d’un taux de remplacement tous les 100 ans\nsupermarchés : 0.5 \\(\\text{kWh/j}\\)\nfret routier : 7 \\(\\text{kWh/j}\\)\nfret maritime : 4 \\(\\text{kWh/j}\\) assainissement des eaux : 0.5 \\(\\text{kWh/j}\\)\n\n\n\n\n\n\n\n\n\n\n\n\nTransporter les trucs : 12 kWh/j\n\n\nTrucs : au moins 48 kWh/j\n\n\nNourriture, agriculture, engrais : 15 kWh/j\n\n\nGadgets : 5 kWh/j\n\n\nLumière : 1 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
+  },
+  {
+    "objectID": "index.html#secteur-public",
+    "href": "index.html#secteur-public",
+    "title": "Energie : sources et usages",
+    "section": "🏛️ Secteur public",
+    "text": "🏛️ Secteur public\n\n\nLa plus grosse dépense d’énergie du service public est associée à la défense militaire. Selon la politique du pays, le coût énergétique de la dissuasion nucléaire peut prendre une place très importante (voir détails dans le livre de D. MacKay). Au Royaume-Uni, le coût est estimé à environ 4 \\(\\text{kWh/j}\\).\nL’Université a un coût énergétique rapporté par habitant de 0,24 \\(\\text{kWh/j}\\).\n\n\n\n\n\n\n\n\n\n\n\n\"Défense\" : 4 kWh/j\n\n\nTransporter les trucs : 12 kWh/j\n\n\nTrucs : au moins 48 kWh/j\n\n\nNourriture, agriculture, engrais : 15 kWh/j\n\n\nGadgets : 5 kWh/j\n\n\nLumière : 1 kWh/j\n\n\nChauffage, refroidiss. :\n37 kWh/j\n\n\nAvions :\n2 kWh/j\n\n\nVoitures :\n13 kWh/j"
+  },
+  {
+    "objectID": "index.html#avant-propos-1",
+    "href": "index.html#avant-propos-1",
+    "title": "Energie : sources et usages",
+    "section": "Avant Propos",
+    "text": "Avant Propos\n\n\nCette section s’appuie sur le livre de D. MacKay : L’énergie durable, Pas que du vent.\nL’objectif de l’ouvrage est de fournir au lecteur une vision claire des ordres de grandeurs en jeu en matière d’énergie, pour la consommation et pour le potentiel des énergies renouvelables.\nLes calculs sont délibérément simplifiés afin de concentrer le propos sur les ordres de grandeur (exprimés en kWh/j/pers)."
+  },
+  {
+    "objectID": "index.html#biomasse",
+    "href": "index.html#biomasse",
+    "title": "Energie : sources et usages",
+    "section": "🌱 biomasse",
+    "text": "🌱 biomasse\n\n\n\n\n\n\n\nCalcul MacKay (UK, 2008) : recouvrir 75 % de la surface de la GB (3000 \\(\\unit{\\square\\meter}\\)/pers) par des cultures énergétiques : \\[0.5 \\unit{\\watt\\per\\square\\meter} \\times 3000 \\unit{\\square\\meter}  \\times 24 \\times 3600 / 3.6 \\ 10^6 \\approx 36 \\ \\text{kWh/j}\\]\nIl faut prendre en compte les pertes inévitables (rendement de Carnot) associées à la conversion, y compris pour le chauffage, qui imposent de définir une limite plutôt de l’ordre de 24 \\(\\text{kWh/j}\\).\n\n\n\n\n\n\n\n\nbiomasse :\n24 kWh/j\n\n\nEolien en mer :\n29 kWh/j\n\n\nVent :\n15 kWh/j\n\n\nFermes PV (400 m2/p) :\n40 kWh/j\n\n\nPV (10 m2/p) :\n2 kWh/j\n\n\nChauffage solaire : 5 kWh/j"
+  },
+  {
+    "objectID": "index.html#quel-scenario-davenir",
+    "href": "index.html#quel-scenario-davenir",
+    "title": "Energie : sources et usages",
+    "section": "Quel scenario d’avenir ?",
+    "text": "Quel scenario d’avenir ?\n5 plans de mix énergétique pour la GB : L’énergie durable, Pas que du vent – chap 27"
+  },
+  {
+    "objectID": "index.html#géothermie-1",
+    "href": "index.html#géothermie-1",
+    "title": "Energie : sources et usages",
+    "section": "🌋 Géothermie",
+    "text": "🌋 Géothermie\n\n\n\nL’énergie géothermique provient de 2 sources :\n\n\nde la désintégration radioactive qui a lieu dans la croûte\n\n\nde la lente évacuation de la chaleur provenant du coeur de la terre et traversant le manteau terrestre.\n\n\nDans un continent typique (ie. sans pendre en compte les cas particuliers de points chauds tels qu’en Islande) le flux de chaleur total est de 50 mW/m2 en surface. En exploitant l’intégralité de la chaleur présente sous la Grande-Bretagne à 15 km de profondeur, de manière durable (c’est à dire en n’exploitant pas plus que le flux entrant), l’énergie récupérable s’élève à 2 kWh/j. Et il est diﬃcilement envisageable de creuser des trous à 15 km de profondeur sur toute la surface du Royaume-Uni…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGéothermie : 1 kWh/j\n\n\nMarémométrice :\n11 kWh/j\n\n\nVagues :\n4 kWh/j\n\n\nHydroélectrique :\n24 kWh/j\n\n\nbiomasse :\n24 kWh/j\n\n\nEolien en mer profonde :\n32 kWh/j\n\n\nEolien en mer peu profonde :\n16 kWh/j\n\n\nVent :\n15 kWh/j\n\n\nFermes PV (200 m2/p) :\n50 kWh/j\n\n\nPV (10 m2/p) :\n5 kWh/j\n\n\nChauffage solaire : 13 kWh/j"
+  },
+  {
+    "objectID": "index.html#hydroélectrique-1",
+    "href": "index.html#hydroélectrique-1",
+    "title": "Energie : sources et usages",
+    "section": "💧Hydroélectrique",
+    "text": "💧Hydroélectrique\n\n\nD’après les cartes, on estime \\(q_s \\approx 800\\) mm/an, la moyenne des précipitations sur l’ensemble du territoire et \\(Zm \\approx 350\\) m l’altitude moyenne.\nOn aboutit donc à l’estimation de la puissance gravitationnelle surfacique : \\[ \\dot{g}_\\textrm{Fr} = \\frac{\\rho_{eau} \\times q_s}{t_{1\\ an}} \\times g \\times Zm \\approx 17.5 \\ \\text{kWh/j}\\]\n\n\n\n\n\n\nNote\n\n\nLa puissance hydroélectrique installée en France était de 25.6 GW en 2019. Notre estimation de la puissance gravitationnelle surfacique nous donnerait 48.8 GW pour l’ensemble du territoire.\n\n\n\n\n\n\n\n\n\n\n\nHydroélectrique :\n17.5 kWh/j\n\n\nbiomasse :\n24 kWh/j\n\n\nEolien en mer :\n29 kWh/j\n\n\nVent :\n15 kWh/j\n\n\nFermes PV (400 m2/p) :\n40 kWh/j\n\n\nPV (10 m2/p) :\n2 kWh/j\n\n\nChauffage solaire : 5 kWh/j"
+  },
+  {
+    "objectID": "index.html#eolien-1",
+    "href": "index.html#eolien-1",
+    "title": "Energie : sources et usages",
+    "section": "💨 Eolien",
+    "text": "💨 Eolien\nOn estime qu’une vitesse de vent moyenne minimale de 7 m/s est nécessaire pour qu’un parc éolien soit économiquement viable. De telles vitesses sont atteintes sur environ 2 % du territoire :"
+  },
+  {
+    "objectID": "index.html#eolien-2",
+    "href": "index.html#eolien-2",
+    "title": "Energie : sources et usages",
+    "section": "💨 Eolien",
+    "text": "💨 Eolien\n\n\nUne distance minimale de 5 diamètres doit séparée deux éoliennes voisines. On en déduit donc la puissance par unité de surface au sol de l’éolienne : \\[\\dot{e}_\\textrm{éol} = \\eta \\frac{\\pi d^2}{4 \\times (5d \\times 5d)} \\dot{e}^c_\\textrm{air}\\]\nAvec un rendement optimal de 16/27 et un vent de vitesse moyenne de 7 m/s, on obtient \\(\\dot{e}_\\textrm{éol} =\\) 3.8 W/m\\(^2\\)1.\nEn supposant une couverture de 2 % du territoire, on obtiendrait \\(E_\\textrm{parc} \\approx 15.1\\) \\(\\text{kWh/j}\\).\n\n\n\n\n\n\n\n\nVent :\n15 kWh/j\n\n\nFermes PV (400 m2/p) :\n40 kWh/j\n\n\nPV (10 m2/p) :\n2 kWh/j\n\n\nChauffage solaire : 5 kWh/j\n\n\n\n\n\n\n\nEn moyenne réelle sur un parc installé, on est souvent plus proche de 2 - 2.5 W/m\\(^2\\)"
+  },
+  {
+    "objectID": "index.html#avant-propos-2",
+    "href": "index.html#avant-propos-2",
+    "title": "Energie : sources et usages",
+    "section": "Avant Propos",
+    "text": "Avant Propos\n\n\nCette section s’appuie sur le livre de D. MacKay : L’énergie durable, Pas que du vent.\nL’objectif de l’ouvrage est de fournir au lecteur une vision claire des ordres de grandeurs en jeu en matière d’énergie, pour la consommation et pour le potentiel des énergies renouvelables.\nLes calculs sont délibérément simplifiés afin de concentrer le propos sur les ordres de grandeur (exprimés en kWh/j/pers)."
+  },
+  {
+    "objectID": "index.html#usage-potentiel-enr-3",
+    "href": "index.html#usage-potentiel-enr-3",
+    "title": "Energie : sources et usages",
+    "section": "Usage / Potentiel ENR",
+    "text": "Usage / Potentiel ENR\n`Les ambitions vertes à la rencontre de la réalité sociale ?’ : L’énergie durable, Pas que du vent – chap 18"
   }
 ]
