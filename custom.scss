@@ -1,0 +1,49 @@
+/*-- scss:defaults --*/
+
+// Base settings for all themes that can optionally be
+// overridden by the super-theme
+
+// Background of the presentation
+$body-bg: #ffffff;
+
+// Primary/body text
+$font-family-sans-serif: 'Georgia', sans-serif;
+$presentation-font-size-root: 38px;
+// $body-color: #eee;
+
+// Vertical spacing between blocks of text
+$presentation-block-margin: 20px;
+
+// Headings
+// $headingMargin: 0 0 $blockMargin 0;
+// $presentation-heading-font: 'League Gothic', Impact, sans-serif;
+// $presentation-heading-color: #eee;
+$presentation-heading-line-height: 1;
+$presentation-heading-letter-spacing: normal;
+$presentation-heading-text-transform: uppercase;
+$presentation-heading-text-shadow: none;
+$presentation-heading-font-weight: normal;
+
+$presentation-h1-font-size: 2.8em;
+$presentation-h2-font-size: 1.8em;
+// $presentation-h3-font-size: 1.55em;
+// $presentation-h4-font-size: 1.00em;
+
+$font-family-monospace: monospace;
+
+// Links and actions
+$link-color: #137fec;
+$link-color-hover: lighten( $link-color, 20% );
+
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+	background: $backgroundColor;
+}
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.3em;
+}
