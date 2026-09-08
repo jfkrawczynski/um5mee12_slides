@@ -6,11 +6,14 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.24">
 
-  <meta name="author" content="jean-francois.krawczynski@sorbonne-universite.fr, 2025">
-  <title>slides – Energie : sources et usages</title>
+  <meta name="author" content="jean-francois.krawczynski@sorbonne-universite.fr, 2026">
+  <title>slides – Particle Image Velocimetry (PIV)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -191,1955 +194,816 @@
       margin-right: 0; 
     }
   </style>
-  <script>
-  window.MathJax = {
-    loader: {
-      load: ['[custom]/siunitx.js', '[tex]/html', '[tex]/gensymb'],
-      paths: { custom: './assets/' }
-    },
-    tex: {
-      packages: { '[+]': ['siunitx', 'html', 'gensymb'] },
-      siunitx: {
-        'per-mode': 'power'
-      }
-    }
-  };
-  </script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Energie : sources et usages</h1>
+  <h1 class="title">Particle Image Velocimetry (PIV)</h1>
+  <p class="subtitle">Insights of fluid-flow velocity characterization</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-jean-francois.krawczynski@sorbonne-universite.fr, 2025 
+jean-francois.krawczynski@sorbonne-universite.fr, 2026 
 </div>
 </div>
 </div>
 
 </section>
-<section id="avant-propos" class="slide level2">
-<h2>Avant propos</h2>
-<p>Ce qui suit était auparavant présenté par Alexis Matynia (alexis.matynia@sorbonne-universite.fr) dans l’UE optionnelle de L2 de Mécanique Energie et Environnement.</p>
+<section id="fluid-mech." class="slide level2">
+<h2>Fluid Mech.:</h2>
+<h3 id="equations-are-known">equations are known!</h3>
+<span class="math display">\[\begin{align}
+&amp; \frac{\partial \rho}{\partial t} + \nabla (\rho \vec{V}) = 0\\
+&amp; \rho \left[ \frac{\partial \vec{V}}{\partial t} + (\vec{V} \cdot \nabla ) \vec{V} \right] = -\nabla p + \nabla \sigma + \rho \vec{g}\\
+&amp; \frac{\partial \rho E}{\partial t} + \nabla \left[ (\rho E + p) \vec{V} \right] = \nabla (\sigma \vec{V}) + \nabla \vec{q} + \vec{q}_R + \rho \vec{g} \vec{V} + \rho \omega_E\\
+&amp; \frac{\partial \rho Y}{\partial t} + \nabla (\rho Y \vec{V}) = \nabla \left[ \rho D \nabla Y \right] + \rho \omega_Y
+\end{align}\]</span>
+<p>But very few analytical solutions!</p>
+</section>
+<section id="then-if-i-want" class="slide level2">
+<h2>Then, if I want…</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>validate — Are the models and approximations used correct?</li>
+<li>verify — some solution?</li>
+<li>sizing – Applications to industrial configurations?</li>
+<li>(just) better understand things?</li>
+</ul>
+<div class="fragment fade-in">
+<p><span class="math inline">\(\rightarrow\)</span> (Costly) numerical simulations</p>
+<p><span class="math inline">\(\rightarrow\)</span> (Costly) experimental measurements</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/F18v.png" class="quarto-figure quarto-figure-center" width="350"></p>
+</figure>
+</div>
+</div></div>
 </section>
 <section>
-<section id="aspects-physiques" class="title-slide slide level1 center">
-<h1>Aspects physiques</h1>
+<section id="why-piv" class="title-slide slide level1 center">
+<h1>Why PIV?</h1>
 
 </section>
-<section id="quest-ce-que-lénergie" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Qu’est-ce que l’énergie ?</h2>
-<p>Du grec <em>energia</em>, force en action.</p>
-<p>Unité SI : le Joule.</p>
-<div class="fragment fade-in">
-<p><a href="https://www.larousse.fr/dictionnaires/francais/%c3%a9nergie/29421?q=%c3%a9nergie#29300">Larousse</a> : Grandeur caractérisant un système physique, gardant la même valeur au cours de toutes les transformations internes du système (loi de conservation) et exprimant sa capacité à modifier l’état d’autres systèmes avec lesquels il entre en interaction.</p>
-</div>
-<div class="fragment fade-in">
-<div title="Premier principe de la thermodynamique (J.R. von Mayer, 1841)">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Premier principe de la thermodynamique (J.R. von Mayer, 1841)</strong></p>
-</div>
-<div class="callout-content">
-<p>Le premier principe (ou principe de conservation) stipule que l’énergie ne peut être ni créée ni détruite mais seulement transformée.</p>
-<p>Il établit donc l’équivalence des diﬀérentes formes d’énergie (cinétique, potentielle, interne) :</p>
-<p><span class="math display">\[\Delta E \equiv \Delta (E_p + E_c + U) = \sum W + Q\]</span></p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<section id="measuring-fluid-flow-velocity-principles" class="slide level2">
+<h2>Measuring fluid-flow velocity principles</h2>
+<ul>
+<li>To determine the velocity of an object, <strong>distance</strong> and <strong>time</strong> need to be measured (either the distance traveled during a given time or the time needed to travel a given distance).</li>
+<li>But, gases as well as pure liquids do not contain moving objects that reveal the velocity of the fluid.</li>
+<li>Thus, many measurement techniques have been developed, determining the flow velocity <strong>indirectly</strong> by measuring other quantities, such as:
+<ul>
+<li>pressure (pressure probes),</li>
+<li>rotational speed (wind anemometer),</li>
+<li>heat transfer (hot film, hot wire).</li>
+</ul></li>
+</ul>
 </section>
-<section id="quest-ce-que-lénergie-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Qu’est-ce que l’énergie ?</h2>
-<div title="Premier principe de la thermodynamique (J.R. von Mayer, 1841)">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Premier principe de la thermodynamique (J.R. von Mayer, 1841)</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math display">\[\Delta E \equiv \Delta (E_p + E_c + U) = \sum W + Q\]</span></p>
-<p>– <span class="math inline">\(E_p\)</span> : <strong>Energie potentielle macroscopique</strong>. Sa variation est égale à l’opposé de la somme des travaux des forces conservatives (poids, tension d’un ressort parfait, force électrostatique) : <span class="math inline">\(\Delta E_p \equiv - \sum W(\vec{F}_\text{cons})\)</span>.</p>
-<p>– <span class="math inline">\(E_c\)</span> : <strong>Energie cinétique macroscopique</strong>. Energie que possède un système du fait de son mouvement.</p>
-<p>– <span class="math inline">\(U\)</span> : <strong>Energie interne</strong>. C’est la somme de toutes les formes d’énergie microscopique. Il s’agit des énergies cinétiques et potentielles des molécules, atomes, nucléons et électrons et de l’énergie qui les lie entre eux.</p>
-</div>
-</div>
-</div>
-</div>
+<section id="alternatives-to-piv-12" class="slide level2">
+<h2>Alternatives to PIV (1/2)</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 29%">
+<col style="width: 29%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Pitot tube</th>
+<th>Hot Wire Anemometry</th>
+<th>Laser Doppler Anemometry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sketch</td>
+<td><img data-src="images/pitot1.png" width="250"></td>
+<td><img data-src="images/hwa1.png" width="200"></td>
+<td><a href="images/lda1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/lda1.png" width="250"></a></td>
+</tr>
+<tr class="even">
+<td>Principle<br> (what is measured)</td>
+<td>Static and dynamic pressures.<br> Bernoulli</td>
+<td>Joule dissipation measurement in a wire</td>
+<td>Interferometric meas. of a Doppler shift on scattering particle</td>
+</tr>
+<tr class="odd">
+<td>Pros</td>
+<td>Easy to use. Cheap (1 k€)</td>
+<td>High time resolution <br> Medium price (10 k€)</td>
+<td>Non intrusive. High time resolution. Suited for several components</td>
+</tr>
+<tr class="even">
+<td>Cons</td>
+<td>Highly intrusive.<br> Very poor resolution</td>
+<td>Intrusive, fragile. Non linear calibration</td>
+<td>Non-regular sampling. High price (50-100 k€). Complex settings</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="alternatives-to-piv-22" class="slide level2">
+<h2>Alternatives to PIV (2/2)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>1d time resolved signal: <img data-src="images/1d_sig.png" width="600"></p>
 <div class="fragment fade-in">
+<p>Therefore, the structure of an unsteady flow field cannot be obtained by such methods.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment fade-in">
+<p><video data-src="images/media1.mp4" width="600" controls=""><a href="images/media1.mp4">Video</a></video></p>
+</div>
+</div></div>
+</section>
+<section id="piv-principles-12" class="slide level2">
+<h2>PIV principles (1/2)</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/Energie_Interne1.png" class="quarto-figure quarto-figure-center" width="750"></p>
+<p><img data-src="images/piv_princ1.png" class="quarto-figure quarto-figure-center" width="600"></p>
 </figure>
 </div>
-</div>
+</div><div class="column" style="width:40%;">
+<ul>
+<li><strong>Seeding</strong>: tracer particles are added to the flow.</li>
+<li><strong>Illumination</strong>: these tracer particles have to be illuminated (in a plane) of the flow at least twice within a short and known time interval.</li>
+<li><strong>Recording</strong>: the light scattered by the tracer particles on a camera.</li>
+<li><strong>Calibration</strong>: to determine the relation between the particle image displacement in the image plane and the tracer particle displacement in the flow.</li>
+</ul>
+</div></div>
 </section>
-<section id="quest-ce-que-lénergie-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Qu’est-ce que l’énergie ?</h2>
-<div title="Premier principe de la thermodynamique (J.R. von Mayer, 1841)">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Premier principe de la thermodynamique (J.R. von Mayer, 1841)</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math display">\[\Delta E \equiv \Delta (E_p + E_c + U) = \sum W + Q\]</span></p>
-<p>– <span class="math inline">\(E_p\)</span> : <strong>Energie potentielle macroscopique</strong>. Sa variation est égale à l’opposé de la somme des travaux des forces conservatives (poids, tension d’un ressort parfait, force électrostatique) : <span class="math inline">\(\Delta E_p \equiv - \sum W(\vec{F}_\text{cons})\)</span>.</p>
-<p>– <span class="math inline">\(E_c\)</span> : <strong>Energie cinétique macroscopique</strong>. Energie que possède un système du fait de son mouvement.</p>
-<p>– <span class="math inline">\(U\)</span> : <strong>Energie interne</strong>. C’est la somme de toutes les formes d’énergie microscopique. Il s’agit des énergies cinétiques et potentielles des molécules, atomes, nucléons et électrons et de l’énergie qui les lie entre eux.</p>
-</div>
-</div>
-</div>
-</div>
+<section id="piv-principles-22" class="slide level2">
+<h2>PIV principles (2/2)</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><strong>Evaluation</strong>: The displacement of the particle images between the light pulses has to be determined through evaluation of the PIV recordings.</li>
+<li><strong>Post-Processing</strong>: In order to detect and remove invalid measurements and to extract complex flow quantities of interest, sophisticated post-processing is required.</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/piv_princ2.png" width="800"></p>
+</div></div>
+</section>
+<section id="piv-pros" class="slide level2">
+<h2>PIV pros</h2>
+<ul>
+<li>The most widely applied velocity imaging technique in fluid mechanics.</li>
+<li>PIV is a very robust and accurate technique, which in its most common implementation enables the imaging of two components of velocity in a cross-section of the flow.</li>
+<li>PIV measurements are now commonplace and they have been applied in a wide range of gas- and liquid-phase flows, including microfluidics, large-scale wind tunnels, flames, plasmas, and supersonic and hypersonic flows.</li>
+</ul>
+</section>
+<section id="piv-refs" class="slide level2">
+<h2>PIV refs</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Excellent introductions to PIV can be found in several references:</p>
+</div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/Energie_Interne2.png" class="quarto-figure quarto-figure-center" width="750"></p>
+<p><img data-src="images/raffel.png" class="quarto-figure quarto-figure-center" width="350"></p>
 </figure>
 </div>
-</section>
-<section id="quest-ce-que-lénergie-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Qu’est-ce que l’énergie ?</h2>
-<div title="Premier principe de la thermodynamique (J.R. von Mayer, 1841)">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Premier principe de la thermodynamique (J.R. von Mayer, 1841)</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math display">\[\Delta E \equiv \Delta (E_p + E_c + U) = \sum W + Q\]</span></p>
-<p>– <span class="math inline">\(E_p\)</span> : <strong>Energie potentielle macroscopique</strong>. Sa variation est égale à l’opposé de la somme des travaux des forces conservatives (poids, tension d’un ressort parfait, force électrostatique) : <span class="math inline">\(\Delta E_p \equiv - \sum W(\vec{F}_\text{cons})\)</span>.</p>
-<p>– <span class="math inline">\(E_c\)</span> : <strong>Energie cinétique macroscopique</strong>. Energie que possède un système du fait de son mouvement.</p>
-<p>– <span class="math inline">\(U\)</span> : <strong>Energie interne</strong>. C’est la somme de toutes les formes d’énergie microscopique. Il s’agit des énergies cinétiques et potentielles des molécules, atomes, nucléons et électrons et de l’énergie qui les lie entre eux.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Energie_Interne3.png" class="quarto-figure quarto-figure-center" width="750"></p>
-</figure>
-</div>
-</section>
-<section id="quest-ce-que-lénergie-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Qu’est-ce que l’énergie ?</h2>
-<p><a href="https://jancovici.com/">J.-M. Jancovici. Cours à l’Ecole des Mines (2019)</a> : L’énergie est la grandeur physique qui permet de caractériser un changement d’état dans un système.</p>
-<div class="fragment fade-in">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/E_def.png" class="quarto-figure quarto-figure-center" width="750"></p>
-</figure>
-</div>
-</div>
-</section>
-<section id="unités-dérivées" class="slide level2">
-<h2>Unités dérivées</h2>
-<p>Unité SI de l’énergie : J (1 Newton <span class="math inline">\(\times\)</span> 1 mètre)</p>
-<p>Il existe d’autres unités usuelles :</p>
-<p>– <strong>1 kWh = 3.6 10<span class="math inline">\(^6\)</span> <span class="math inline">\(\unit{\joule}\)</span></strong> <br> <em>correspond au fonctionnement d’un appareil de 1000 <span class="math inline">\(\unit{\watt}\)</span> pendant 1 h</em></p>
-<p>– 1 tep (tonne équivalent pétrole) <span class="math inline">\(\approx\)</span> 12 MWh <span class="math inline">\(\approx\)</span> 43.2 <span class="math inline">\(\unit{\giga\joule}\)</span> <br> <em>principalement utilisée en économie : correspond à la quantité de chaleur récupérée par la combustion d’une tonne de pétrole moyen</em></p>
-<p>– 1 kilocalorie = 4185 <span class="math inline">\(\unit{\joule}\)</span> <br> <em>principalement utilisée en chimie et physiologie : correspond à la quantité de chaleur fournie à 1 <span class="math inline">\(\unit{\kilo\gram}\)</span> d’eau pour élever sa température de 1 <span class="math inline">\(\unit{\kelvin}\)</span></em></p>
-<p>– 1 eV = 1.6 10<span class="math inline">\(^{−19}\)</span> <span class="math inline">\(\unit{\joule}\)</span> <br> <em>en physique des particules : correspond à l’énergie acquise par un électron lorsque son potentiel électrique diminue de 1 V</em></p>
+</div></div>
 </section></section>
-<section id="lénergie-unité-de-compte-de-transformation-de-lenvironnement" class="title-slide slide level1 center" style="font-size: 0.5em;">
-<h1>L’énergie : <br> unité de compte de transformation de l’environnement</h1>
+<section>
+<section id="physical-and-technical-background" class="title-slide slide level1 center">
+<h1>Physical and technical background</h1>
 
 </section>
-
-<section id="evolution-de-lusage-de-lénergie" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Evolution de l’usage de l’énergie</h2>
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Time_1.png" class="nostretch quarto-figure quarto-figure-center" width="750"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/E_Prod1.png" class="nostretch quarto-figure quarto-figure-center" style="margin-top: -2em;" width="750"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
+<section id="tracer-particles" class="slide level2">
+<h2>Tracer particles</h2>
+<ul>
+<li>In contrast to hot wire or pressure probe techniques, PIV is based on the <strong>direct</strong> determination of the 2 fundamental dimensions of the velocity: length and time.</li>
+<li>On the other hand, the measurement technique is <strong>indirect</strong> as it determines the velocity of tracer particles instead of the velocity of the fluid.</li>
+<li>Therefore, the interaction of the particles and the surrounding fluid has to be examined in order to avoid significant discrepancies between fluid and particle motion.</li>
+</ul>
 </section>
-<section id="evolution-de-lusage-de-lénergie-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Evolution de l’usage de l’énergie</h2>
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Time_2.png" class="nostretch quarto-figure quarto-figure-center" width="750"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/E_Prod2.png" class="nostretch quarto-figure quarto-figure-center" style="margin-top: -2em;" width="750"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
+<section id="tracer-particles-1" class="slide level2">
+<h2>Tracer particles</h2>
+<h3 id="fluid-mech.-properties-13">Fluid mech. properties (1/3)</h3>
+<ul>
+<li>A primary source of error is the influence of <strong>gravitational forces</strong> on the velocity of the tracer particles, if the densities of the fluid <span class="math inline">\(\rho\)</span> and the tracer particles <span class="math inline">\(\rho_p\)</span> do not match.</li>
+<li>From Stokes’ drag law, assuming spherical particles in a viscous fluid at a very low Reynolds number: <span class="math inline">\(\vec{U}_g = d_p^2 \frac{\rho_p - \rho}{18 \mu} \vec{g}\)</span>.</li>
+<li>Therefore, the sedimentation of particles can be avoided if the density of the fluid and particles is identical (<strong>neutral buoyancy</strong>).</li>
+<li>This is easily achieved in liquid flows, but not in gas flows. Therefore, the particle diameter must be chosen sufficiently small to minimize the settling velocity of the particles.</li>
+</ul>
 </section>
-<section id="evolution-de-lusage-de-lénergie-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Evolution de l’usage de l’énergie</h2>
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Time_3.png" class="nostretch quarto-figure quarto-figure-center" width="750"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/E_Prod3.png" class="nostretch quarto-figure quarto-figure-center" style="margin-top: -2em;" width="750"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="evolution-de-lusage-de-lénergie-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Evolution de l’usage de l’énergie</h2>
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Time_4.png" class="nostretch quarto-figure quarto-figure-center" width="750"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/E_Prod4.png" class="nostretch quarto-figure quarto-figure-center" style="margin-top: -2em;" width="750"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="evolution-de-lusage-de-lénergie-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Evolution de l’usage de l’énergie</h2>
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Time_5.png" class="nostretch quarto-figure quarto-figure-center" width="750"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/E_Prod5.png" class="nostretch quarto-figure quarto-figure-center" style="margin-top: -2em;" width="750"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="mix-énergétique-actuel" class="slide level2 scrollable">
-<h2>Mix énergétique actuel</h2>
+<section id="tracer-particles-2" class="slide level2">
+<h2>Tracer particles</h2>
+<h3 id="fluid-mech.-properties-23">Fluid mech. properties (2/3)</h3>
 <div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Conso_monde_iea.png" class="nostretch" width="430"></p>
-<figcaption>Monde : International Energy Agency, 2025<sup>1</sup></figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Conso_fr.png" class="nostretch" width="380"></p>
-<figcaption>France : statistiques.developpement-durable.gouv.fr, 2024<sup>2</sup></figcaption>
-</figure>
-</div>
+<div class="column" style="width:70%;">
+<ul>
+<li>Particle frequency response: <span class="math inline">\(\frac{d}{dt}U_p = -18 \frac{\nu}{d_p^2}\frac{U_p - U_f}{\rho_p / \rho_f}\)</span> <span class="math display">\[ \Rightarrow U_p(t) = U_f \left(1-\exp \left( t / \tau_p \right )\right)\]</span> with <span class="math inline">\(\tau_{\rm p} = d_{\rm p}^2 \frac{\rho_{\rm p}}{18 \mu}\)</span>, relaxation time scale of the particle.</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="images/tau_p.png" width="300"></p>
 </div></div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://www.iea.org/data-and-statistics/data-product/world-energy-outlook-2025-free-dataset#data-files">IEA World Energy Outlook 2025 Free Dataset</a></p></li><li id="fn2"><p><a href="https://www.statistiques.developpement-durable.gouv.fr/bilan-energetique-de-la-france-en-2024-donnees-provisoires">SDES</a></p></li></ol></aside></section>
-<section id="laccroissement-de-la-conso-individuelle" class="slide level2 scrollable">
-<h2>L’accroissement de la conso individuelle</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>L’augmentation <em>exponentielle</em> des captations des sources d’énergie a également été accompagnée d’une augmentation <em>exponentielle</em> de la population. On constate cependant que la première a augmenté plus vite que la seconde. <sup>1</sup></p>
-</div>
-</div>
-</div>
-<style>
-.table-hr { border-collapse: collapse; border-top:4px solid #000; border-bottom:4px solid #000; }
-.table-hr th, .table-hr td { border: none; padding: 6px 8px; }
-/* Per-row controls: add one of these classes to a <tr> to show or hide the horizontal rule */
-.table-hr tr.hr-top td { border-top:1px solid #000 !important; }
-.table-hr tr.hr-thick td { border-top:4px solid #000 !important; }
-.table-hr tr.no-hr td { border-top: none !important; border-bottom: none !important; }
-</style>
-<!-- Usage: add class="hr-top" or class="hr-thick" (or class="no-hr") to a <tr> to control the horizontal line above that row -->
-
-<table class="table-hr caption-top">
-<caption>Évolution de la consommation d'énergie primaire (kWh/jour/pers).</caption>
+<ul>
+<li>A convenient measure for the tendency of particles to attain velocity equilibrium with the fluid is given by the Stokes number <span class="math display">\[ St = \frac{\tau_{\rm p}}{\tau_{\rm f}}\]</span> where <span class="math inline">\(\tau_f\)</span> stands for the characteristic time scale of the flow (refers to velocity fluctuations along the particle trajectory).</li>
+<li>A value of the Stokes number below <span class="math inline">\(10^{-1}\)</span> yields an acceptable flow tracing accuracy.</li>
+</ul>
+</section>
+<section id="tracer-particles-3" class="slide level2">
+<h2>Tracer particles</h2>
+<h3 id="fluid-mech.-properties-33">Fluid mech. properties (3/3)</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
 <thead>
 <tr class="header">
-<td>Epoque / stade</td>
-<td>Monde</td>
-<td>Etats-Unis</td>
-<td>Europe</td>
-<td>Inde</td>
+<th></th>
+<th></th>
+<th>Diameter (<span class="math inline">\(\mu m\)</span>)</th>
+<th>Relative density</th>
+<th>Response time <span class="math inline">\(\tau_p\)</span> (<span class="math inline">\(\mu s\)</span>)</th>
 </tr>
 </thead>
 <tbody>
-<tr class="no-hr odd">
-<td>Préhistoire</td>
-<td>2 - 3</td>
-<td>≈ 3</td>
-<td>≈ 3</td>
-<td>≈ 3</td>
-</tr>
-<tr class="no-hr even">
-<td>Antiquité</td>
-<td>4 - 6</td>
-<td>≈ 5</td>
-<td>≈ 5</td>
-<td>≈ 5</td>
-</tr>
-<tr class="no-hr odd">
-<td>Moyen-Age</td>
-<td>10 - 15</td>
-<td>≈ 12</td>
-<td>≈ 15</td>
-<td>≈ 10</td>
-</tr>
-<tr class="no-hr even">
-<td>1850 (Révolution industrielle)</td>
-<td>25 - 30</td>
-<td>40</td>
-<td>35</td>
-<td>12</td>
-</tr>
-<tr class="no-hr odd">
-<td>1950 (Après-guerre)</td>
-<td>40 - 50</td>
-<td>160</td>
-<td>60</td>
-<td>15</td>
-</tr>
-<tr class="no-hr even">
-<td>Aujourd'hui (2023-2024)</td>
-<td>58 - 60</td>
-<td>211</td>
-<td>104</td>
-<td>21</td>
-</tr>
-</tbody>
-</table>
-<aside><ol class="aside-footnotes"><li id="fn3"><p><a href="https://ourworldindata.org/grapher/per-capita-energy-use">ourworldindata.org</a></p></li></ol></aside></section>
-<section id="disparités-régionales" class="slide level2">
-<h2>Disparités régionales</h2>
-<p>A partir de bases de données ouvertes comme <a href="https://ourworldindata.org/grapher/per-capita-energy-use">ourworldindata.org</a>, nous pouvons obtenir une représentation à jour de la consommation d’énergie par personne et par pays :</p>
-<div id="9abdf326" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a></a><span class="im">from</span> matplotlib.lines <span class="im">import</span> Line2D</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a><span class="co"># Chargement</span></span>
-<span id="cb1-7"><a></a>url <span class="op">=</span> <span class="st">"https://ourworldindata.org/grapher/energy-use-per-person-vs-gdp-per-capita.csv?v=1&amp;csvType=full&amp;useColumnShortNames=true"</span></span>
-<span id="cb1-8"><a></a>df <span class="op">=</span> pd.read_csv(url, storage_options<span class="op">=</span>{<span class="st">'User-Agent'</span>: <span class="st">'Our World In Data data fetch/1.0'</span>})</span>
-<span id="cb1-9"><a></a></span>
-<span id="cb1-10"><a></a><span class="co"># Setup colonnes</span></span>
-<span id="cb1-11"><a></a>col_energy <span class="op">=</span> <span class="st">'primary_energy_consumption_per_capita__kwh'</span></span>
-<span id="cb1-12"><a></a>col_gdp <span class="op">=</span> <span class="st">'ny_gdp_pcap_pp_kd'</span></span>
-<span id="cb1-13"><a></a>col_region <span class="op">=</span> <span class="st">'owid_region'</span></span>
-<span id="cb1-14"><a></a></span>
-<span id="cb1-15"><a></a>df <span class="op">=</span> df.dropna(subset<span class="op">=</span>[col_energy, col_gdp, col_region])</span>
-<span id="cb1-16"><a></a>df <span class="op">=</span> df[(df[col_energy] <span class="op">&gt;</span> <span class="dv">0</span>) <span class="op">&amp;</span> (df[col_gdp] <span class="op">&gt;</span> <span class="dv">0</span>)]</span>
-<span id="cb1-17"><a></a>latest_year <span class="op">=</span> df[<span class="st">'Year'</span>].<span class="bu">max</span>()</span>
-<span id="cb1-18"><a></a>df_latest <span class="op">=</span> df[df[<span class="st">'Year'</span>] <span class="op">==</span> latest_year].copy()</span>
-<span id="cb1-19"><a></a>df_latest[<span class="st">'energy_per_day'</span>] <span class="op">=</span> df_latest[col_energy] <span class="op">/</span> <span class="dv">365</span></span>
-<span id="cb1-20"><a></a></span>
-<span id="cb1-21"><a></a><span class="co"># Moyennes</span></span>
-<span id="cb1-22"><a></a>avg_world <span class="op">=</span> df_latest[<span class="st">'energy_per_day'</span>].mean()</span>
-<span id="cb1-23"><a></a>avg_europe <span class="op">=</span> df_latest[df_latest[col_region] <span class="op">==</span> <span class="st">'Europe'</span>][<span class="st">'energy_per_day'</span>].mean()</span>
-<span id="cb1-24"><a></a></span>
-<span id="cb1-25"><a></a><span class="co"># Pays à visualiser</span></span>
-<span id="cb1-26"><a></a>countries_to_label <span class="op">=</span> [</span>
-<span id="cb1-27"><a></a>    <span class="st">'France'</span>, <span class="st">'United States'</span>, <span class="st">'China'</span>, <span class="st">'India'</span>, <span class="st">'Qatar'</span>, <span class="st">'Norway'</span>, </span>
-<span id="cb1-28"><a></a>    <span class="st">'Ethiopia'</span>, <span class="st">'Brazil'</span>, <span class="st">'Germany'</span>, <span class="st">'Japan'</span>, <span class="st">'South Korea'</span>, </span>
-<span id="cb1-29"><a></a>    <span class="st">'Saudi Arabia'</span>, <span class="st">'Canada'</span>, <span class="st">'Luxembourg'</span>, </span>
-<span id="cb1-30"><a></a>    <span class="st">'Australia'</span>, <span class="st">'Russia'</span></span>
-<span id="cb1-31"><a></a>]</span>
-<span id="cb1-32"><a></a>df_highlight <span class="op">=</span> df_latest[df_latest[<span class="st">'Entity'</span>].isin(countries_to_label)]</span>
-<span id="cb1-33"><a></a>df_others <span class="op">=</span> df_latest[<span class="op">~</span>df_latest[<span class="st">'Entity'</span>].isin(countries_to_label)]</span>
-<span id="cb1-34"><a></a></span>
-<span id="cb1-35"><a></a><span class="co"># Graphique</span></span>
-<span id="cb1-36"><a></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
-<span id="cb1-37"><a></a>sns.set_style(<span class="st">"whitegrid"</span>)</span>
-<span id="cb1-38"><a></a></span>
-<span id="cb1-39"><a></a><span class="co"># Définition d'une palette de couleurs fixe</span></span>
-<span id="cb1-40"><a></a>regions <span class="op">=</span> <span class="bu">sorted</span>(df_latest[col_region].unique())</span>
-<span id="cb1-41"><a></a>colors <span class="op">=</span> sns.color_palette(<span class="st">"Set1"</span>, <span class="bu">len</span>(regions))</span>
-<span id="cb1-42"><a></a>region_colors <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(regions, colors))</span>
-<span id="cb1-43"><a></a></span>
-<span id="cb1-44"><a></a><span class="co"># Tracé des pays VIDES </span></span>
-<span id="cb1-45"><a></a><span class="cf">for</span> region, color <span class="kw">in</span> region_colors.items():</span>
-<span id="cb1-46"><a></a>    data_reg <span class="op">=</span> df_others[df_others[col_region] <span class="op">==</span> region]</span>
-<span id="cb1-47"><a></a>    ax.scatter(data_reg[col_gdp], data_reg[<span class="st">'energy_per_day'</span>], </span>
-<span id="cb1-48"><a></a>               edgecolor<span class="op">=</span>color, facecolors<span class="op">=</span><span class="st">'none'</span>, s<span class="op">=</span><span class="dv">100</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, linewidth<span class="op">=</span><span class="fl">1.2</span>)</span>
-<span id="cb1-49"><a></a></span>
-<span id="cb1-50"><a></a><span class="co"># Tracé des pays PLEINS</span></span>
-<span id="cb1-51"><a></a><span class="cf">for</span> region, color <span class="kw">in</span> region_colors.items():</span>
-<span id="cb1-52"><a></a>    data_reg <span class="op">=</span> df_highlight[df_highlight[col_region] <span class="op">==</span> region]</span>
-<span id="cb1-53"><a></a>    ax.scatter(data_reg[col_gdp], data_reg[<span class="st">'energy_per_day'</span>], </span>
-<span id="cb1-54"><a></a>               color<span class="op">=</span>color, edgecolor<span class="op">=</span><span class="st">'black'</span>, s<span class="op">=</span><span class="dv">100</span>, alpha<span class="op">=</span><span class="dv">1</span>, linewidth<span class="op">=</span><span class="fl">1.2</span>)</span>
-<span id="cb1-55"><a></a></span>
-<span id="cb1-56"><a></a><span class="co"># Annotation des pays</span></span>
-<span id="cb1-57"><a></a><span class="cf">for</span> _, row <span class="kw">in</span> df_highlight.iterrows():</span>
-<span id="cb1-58"><a></a>    ax.text(row[col_gdp], row[<span class="st">'energy_per_day'</span>] <span class="op">*</span> <span class="fl">1.15</span>, row[<span class="st">'Entity'</span>], </span>
-<span id="cb1-59"><a></a>            fontsize<span class="op">=</span><span class="dv">10</span>, weight<span class="op">=</span><span class="st">'bold'</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'bottom'</span>)</span>
-<span id="cb1-60"><a></a></span>
-<span id="cb1-61"><a></a><span class="co"># Lignes de rappel</span></span>
-<span id="cb1-62"><a></a>ax.axhline(avg_world, color<span class="op">=</span><span class="st">'black'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb1-63"><a></a>ax.text(ax.get_xlim()[<span class="dv">0</span>]<span class="op">*</span><span class="fl">1.1</span>, avg_world <span class="op">*</span> <span class="fl">1.05</span>, <span class="ss">f'Moyenne Mondiale (</span><span class="sc">{</span>avg_world<span class="sc">:.1f}</span><span class="ss"> kWh/j)'</span>, color<span class="op">=</span><span class="st">'black'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb1-64"><a></a></span>
-<span id="cb1-65"><a></a>ax.axhline(avg_europe, color<span class="op">=</span><span class="st">'blue'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.4</span>)</span>
-<span id="cb1-66"><a></a>ax.text(ax.get_xlim()[<span class="dv">0</span>]<span class="op">*</span><span class="fl">1.1</span>, avg_europe <span class="op">*</span> <span class="fl">1.05</span>, <span class="ss">f'Moyenne Europe (</span><span class="sc">{</span>avg_europe<span class="sc">:.1f}</span><span class="ss"> kWh/j)'</span>, color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb1-67"><a></a></span>
-<span id="cb1-68"><a></a>legend_elements <span class="op">=</span> [Line2D([<span class="dv">0</span>], [<span class="dv">0</span>], marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'w'</span>, label<span class="op">=</span>reg,</span>
-<span id="cb1-69"><a></a>                          markerfacecolor<span class="op">=</span>col, markersize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb1-70"><a></a>                   <span class="cf">for</span> reg, col <span class="kw">in</span> region_colors.items()]</span>
-<span id="cb1-71"><a></a></span>
-<span id="cb1-72"><a></a>ax.legend(handles<span class="op">=</span>legend_elements, title<span class="op">=</span><span class="st">'Régions'</span>, loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
-<span id="cb1-73"><a></a></span>
-<span id="cb1-74"><a></a>ax.set_title(<span class="ss">f'Énergie primaire quotidienne vs PIB par habitant (</span><span class="sc">{</span>latest_year<span class="sc">}</span><span class="ss">)'</span>, fontsize<span class="op">=</span><span class="dv">18</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
-<span id="cb1-75"><a></a>ax.set_xlabel(<span class="st">'PIB par habitant ($)'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb1-76"><a></a>ax.set_ylabel(<span class="st">'kWh / jour / pers'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb1-77"><a></a></span>
-<span id="cb1-78"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-
-</section>
-<section id="disparités-régionales-output" class="slide level2 output-location-slide"><h2>Disparités régionales</h2><div class="cell output-location-slide" data-execution_count="1">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="index_files/figure-revealjs/cell-2-output-1.png" width="966" height="560"></p>
-</figure>
-</div>
-</div>
-</div></section><section>
-<section id="au-quotidien" class="title-slide slide level1 center">
-<h1>Au quotidien</h1>
-
-</section>
-<section id="avant-propos-1" class="slide level2">
-<h2>Avant Propos</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Cette section s’appuie sur le livre de D. MacKay : <a href="https://www.amides.fr/sewtha.html" data-preview-link="true">L’énergie durable, Pas que du vent</a>.</p>
-<p>L’objectif de l’ouvrage est de fournir au lecteur une vision claire des <strong>ordres de grandeurs</strong> en jeu en matière d’énergie, pour la <strong>consommation</strong> et pour le <strong>potentiel des énergies renouvelables</strong>.</p>
-<p>Les calculs sont <strong>délibérément simplifiés</strong> afin de concentrer le propos sur les ordres de grandeur (exprimés en <strong>kWh/j/pers</strong>).</p>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/MacKay.png" class="quarto-figure quarto-figure-center" width="350"></p>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="voitures" class="slide level2 scrollable">
-<h2>🚗 Voitures</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<div class="fragment fade-in">
-<ul>
-<li>distance moyenne parcourue / voiture, <span class="math inline">\(D_m =\)</span> 33 <span class="math inline">\(\unit{km}\)</span>/jour<sup>1</sup></li>
-<li>nombre de voitures en circulation, <span class="math inline">\(N_v =\)</span> 38.9 millions (1.5 % sont électriques)</li>
-<li>consommation moyenne d’une voiture, <span class="math inline">\(C_m =\)</span> 7 <span class="math inline">\(\unit{\liter}\)</span>/100 <span class="math inline">\(\unit{km}\)</span><sup>2</sup> (10.8 ans, l’âge moyen d’une voiture en circulation)</li>
-<li>teneur énergétique du carburant, <span class="math inline">\(\rho_\text{carb} \times PCI_\text{carb} \approx\)</span> 10 kWh<span class="math inline">\(\unit{\per\liter}\)</span></li>
-<li><span class="math inline">\(N_\text{hab} =\)</span> 68 millions</li>
-</ul>
-</div>
-<div class="fragment fade-in">
-<p><span class="math display">\[
-\text{énergie utilisée / jour} = \frac{D_m \times N_v \times C_m \times \rho_\text{carb} \times PCI_\text{carb}}{N_\text{hab}} \approx 13 \text{kWh/j}
-\]</span></p>
-</div>
-<div class="fragment fade-in">
-<p>Calcul MacKay (UK, 2008) : <span class="math inline">\(D_m =\)</span> 50 <span class="math inline">\(\unit{km}\)</span>/jour ; <span class="math inline">\(C_m =\)</span> 8.5 <span class="math inline">\(\unit{\liter}\)</span>/100 <span class="math inline">\(\unit{km}\)</span> <span class="math inline">\(\Rightarrow \approx\)</span> 40 <span class="math inline">\(\text{kWh/j}\)</span></p>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<style>
-.table-single-col {
-  border-collapse: separate !important;
-  border-spacing: 2px !important;
-  width: 95%;
-  margin: auto;
-}
-
-.table-single-col td {
-  border: 3px solid #dc143c;
-  border-bottom: 3px solid #dc143c !important;
-  background-color: rgba(220, 20, 60, 0.15);
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: bold;
-  font-size: 16px;
-}
-</style>
-
-
-<table class="table-single-col caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
 <tr class="odd">
-<td style="height: 26px">Voitures :<br>
-13 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div>
-</div></div>
-<aside><ol class="aside-footnotes"><li id="fn4"><p><a href="https://www.statistiques.developpement-durable.gouv.fr/389-millions-de-voitures-en-circulation-en-france-au-1er-janvier-2023">SDES</a></p></li><li id="fn5"><p><a href="https://carlabelling.ademe.fr/chiffrescles/r/evolutionConsoMoyenne">ADEME</a></p></li></ol></aside></section>
-<section id="avion" class="slide level2 scrollable" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">✈️ Avion</h2>
-<ul>
-<li>distance moyenne parcourue / pers / an, <span class="math inline">\(D_m =\)</span> 2500 - 3000 <span class="math inline">\(\unit{km}\)</span><sup>1</sup></li>
-</ul>
-<div title="La réalité des usages">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>La réalité des usages</strong></p>
-</div>
-<div class="callout-content">
-<p>La “moyenne” est ici trompeuse car la distribution est très asymétrique :</p>
-<ul>
-<li>Environ 50 % des Français ne prennent pas du tout l’avion</li>
-<li>Seulement 2 % à 5 % de la population (les “grands voyageurs”) sont responsables de près de 50 % des émissions du secteur.</li>
-<li>Distance pour un voyageur actif : Un Français qui prend l’avion une seule fois pour un aller-retour long-courrier (ex: Paris-New York) parcourt 11 700 km, soit 4 fois la moyenne nationale annuelle en un seul voyage.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<aside><ol class="aside-footnotes"><li id="fn6"><p><a href="https://www.ecologie.gouv.fr/politiques-publiques/statistiques-du-trafic-aerien">Statistiques du trafic aérien</a></p></li></ol></aside></section>
-<section id="avion-1" class="slide level2 scrollable" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">✈️ Avion</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<ul>
-<li>distance moyenne parcourue / pers / an, <span class="math inline">\(D_m =\)</span> 2500 - 3000 <span class="math inline">\(\unit{km}\)</span><sup>1</sup></li>
-<li>Générations récentes (A320neo, B737 MAX) : <span class="math inline">\(C_m \approx\)</span> 2.1 à 2.5 L / 100 km par passager (si l’avion est rempli à 80-90 %).</li>
-<li>teneur énergétique du kérosène, <span class="math inline">\(\rho_\text{k} \times PCI_\text{k} \approx\)</span> 10 kWh<span class="math inline">\(\unit{\per\liter}\)</span></li>
-</ul>
-<p><span class="math display">\[
-\text{énergie utilisée / jour} = \frac{D_m / 100 * D_m\times \rho_\text{k} \times PCI_\text{k}}{365} \approx 2 \text{kWh/j}
-\]</span></p>
-<p>Calcul MacKay (UK, 2008) : <br> 1 trajet Londres - Le Cap ou Londres - Los Angeles (<span class="math inline">\(\approx\)</span> 10<span class="math inline">\(^4\)</span> km) en long courrier (Boeing 747, 416 passagers,<span class="math inline">\(\approx\)</span> 1.7 <span class="math inline">\(\times\)</span> 10<span class="math inline">\(^5\)</span> <span class="math inline">\(\unit{\liter}\)</span> / 10<span class="math inline">\(^4\)</span> km) <span class="math inline">\(\Rightarrow \approx\)</span> 30 kWh/j.</p>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<style>
-.table-single-col {
-  border-collapse: separate !important;
-  border-spacing: 2px !important;
-  width: 95%;
-  margin: auto;
-}
-
-.table-single-col td {
-  border: 3px solid #dc143c;
-  border-bottom: 3px solid #dc143c !important;
-  background-color: rgba(220, 20, 60, 0.15);
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: bold;
-  font-size: 16px;
-}
-</style>
-
-
-<table class="table-single-col caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 4px">Avions :<br>
-2 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 26px">Voitures :<br>
-13 kWh/j</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div></div>
-<aside><ol class="aside-footnotes"><li id="fn7"><p><a href="https://www.ecologie.gouv.fr/politiques-publiques/statistiques-du-trafic-aerien">Statistiques du trafic aérien</a></p></li></ol></aside></section>
-<section id="chauffage" class="slide level2">
-<h2>🏠 Chauffage</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<p>Calcul MacKay (UK, 2008) :</p>
-<ul>
-<li><p>eau chaude : <span class="math inline">\(12 \text{kWh/j}\)</span> <br> <em>douche <span class="math inline">\(\approx 1.5 \text{kWh/j}\)</span>, lave-linge <span class="math inline">\(\approx 1 \text{kWh/j}\)</span>, lave-vaisselle <span class="math inline">\(\approx 1.5 \text{kWh/j}\)</span>, cuisine <span class="math inline">\(\approx 4.5 \text{kWh/j}\)</span>, etc.</em></p></li>
-<li><p>chauffage : <span class="math inline">\(24 \text{kWh/j}\)</span> <br> <em>soit, <span class="math inline">\(\approx\)</span> un radiateur de 2 <span class="math inline">\(\unit{\kilo\watt}\)</span> branché 6 moins / an / personne.</em></p></li>
-<li><p>climatisation + réfrigération : <span class="math inline">\(1 \text{kWh/j}\)</span></p></li>
-</ul>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<style>
-.table-single-col {
-  border-collapse: separate !important;
-  border-spacing: 2px !important;
-  width: 95%;
-  margin: auto;
-}
-
-.table-single-col td {
-  box-sizing: border-box !important;
-  border: 3px solid #dc143c;
-  border-bottom: 3px solid #dc143c !important;
-  background-color: rgba(220, 20, 60, 0.15);
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: bold;
-  font-size: 16px;
-}
-</style>
-
-
-<table class="table-single-col caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 74px">Chauffage, refroidiss. :<br>
-37 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 4px">Avions :<br>
-2 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 26px">Voitures :<br>
-13 kWh/j</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div></div>
-</section>
-<section id="lumière" class="slide level2">
-<h2>💡 Lumière</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<p>Calcul MacKay (UK, 2008) :</p>
-<ul>
-<li>mélange 50/50 ampoules basse / haute consommation : <span class="math inline">\(\approx 1 \text{kWh/j}\)</span> <br> 90 % de la consommation estimée ici provenant des ampoules haute consommation.</li>
-</ul>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<style>
-.table-single-col {
-  box-sizing: border-box !important;
-  border-collapse: separate !important;
-  border-spacing: 2px !important;
-  width: 95%;
-  margin: auto;
-}
-
-.table-single-col td {
-  border: 3px solid #dc143c;
-  border-bottom: 3px solid #dc143c !important;
-  background-color: rgba(220, 20, 60, 0.15);
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: bold;
-  font-size: 16px;
-}
-</style>
-
-
-<table class="table-single-col caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 2px">Lumière : 1 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 74px">Chauffage, refroidiss. :<br>
-37 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 4px">Avions :<br>
-2 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 26px">Voitures :<br>
-13 kWh/j</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div></div>
-</section>
-<section id="gadgets" class="slide level2">
-<h2>🔌 Gadgets</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<style>
-.table-hr { border-collapse: collapse; border-top:4px solid #000; border-bottom:4px solid #000; }
-.table-hr th, .table-hr td { border: none; padding: 6px 8px; }
-/* Per-row controls: add one of these classes to a <tr> to show or hide the horizontal rule */
-.table-hr tr.hr-top td { border-top:1px solid #000 !important; }
-.table-hr tr.hr-thick td { border-top:4px solid #000 !important; }
-.table-hr tr.no-hr td { border-top: none !important; border-bottom: none !important; }
-</style>
-<!-- Usage: add class="hr-top" or class="hr-thick" (or class="no-hr") to a <tr> to control the horizontal line above that row -->
-
-<table class="table-hr caption-top">
-<caption>Coût énergétique des gadgets.</caption>
-<thead>
-<tr class="header">
-<td rowspan="2">Gadget</td>
-<td colspan="4">Puissance (W)</td>
-</tr>
-<tr class="even">
-<td>Allumé</td>
-<td>Allumé inutilisé</td>
-<td>En veille</td>
-<td>Eteint branché</td>
-</tr>
-</thead>
-<tbody>
-<tr class="no-hr odd">
-<td>Ordinateurs et périphériques :</td>
-<td colspan="4"></td>
-</tr>
-<tr class="no-hr even">
-<td>Unité centrale</td>
-<td>80</td>
-<td>55</td>
-<td></td>
-<td>2</td>
-</tr>
-<tr class="no-hr odd">
-<td>Ecran LCD</td>
-<td>34</td>
-<td></td>
-<td>2</td>
-<td>1</td>
-</tr>
-<tr class="no-hr even">
-<td>Imprimante Laser</td>
-<td>500</td>
-<td>17</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="hr-top odd">
-<td>Ordinateur portable</td>
-<td>16</td>
-<td>9</td>
-<td></td>
+<td>Water</td>
+<td>Hollow glass spheres</td>
+<td>10</td>
+<td>1.05</td>
 <td>0.5</td>
 </tr>
 <tr class="even">
-<td>Box Wi-Fi</td>
-<td>9</td>
-<td></td>
-<td></td>
-<td></td>
+<td>Water</td>
+<td>Aluminium powder</td>
+<td>3</td>
+<td>2.7</td>
+<td>0.9</td>
 </tr>
 <tr class="odd">
-<td>Home cinéma</td>
-<td>7</td>
-<td>7</td>
-<td>4</td>
-<td></td>
+<td>Air</td>
+<td>Oil dropplets</td>
+<td>1</td>
+<td>920</td>
+<td>0.3</td>
 </tr>
 <tr class="even">
-<td>Décodeur TV</td>
-<td>6</td>
-<td></td>
+<td>Air</td>
+<td>SiO<span class="math inline">\(_2\)</span> beads</td>
+<td>0.8</td>
+<td>2600</td>
 <td>5</td>
-<td></td>
 </tr>
-<tr class="no-hr odd">
-<td>XBox</td>
-<td>160</td>
-<td></td>
-<td>2.4</td>
-<td></td>
-</tr>
-<tr class="no-hr even">
-<td>PlayStation</td>
-<td>190</td>
-<td></td>
-<td>2</td>
-<td></td>
-</tr>
-<tr class="no-hr odd">
-<td>Wii</td>
-<td>18</td>
-<td></td>
-<td>2</td>
-<td></td>
-</tr>
-<tr class="hr-top even">
-<td>Aspirateur</td>
-<td>1600</td>
-<td></td>
-<td></td>
-<td></td>
+<tr class="odd">
+<td>Air</td>
+<td>Inflated bubbles</td>
+<td>300</td>
+<td>1</td>
+<td>0.3</td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>La consommation associée aux serveurs informatiques a explosé depuis quelques années et poursuit une très forte croissance. Il conviendrait de la chiﬀrer et de l’ajouter au bilan ici.</p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<style>
-.table-single-col {
-  box-sizing: border-box !important;
-  border-collapse: separate !important;
-  border-spacing: 2px !important;
-  width: 95%;
-  margin: auto;
-}
-
-.table-single-col td {
-  border: 3px solid #dc143c;
-  border-bottom: 3px solid #dc143c !important;
-  background-color: rgba(220, 20, 60, 0.15);
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: bold;
-  font-size: 16px;
-}
-</style>
-
-
-<table class="table-single-col caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 10px">Gadgets : 5 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 2px">Lumière : 1 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 74px">Chauffage, refroidiss. :<br>
-37 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 4px">Avions :<br>
-2 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 26px">Voitures :<br>
-13 kWh/j</td>
-</tr>
-</tbody>
-</table>
+</section>
+<section id="tracer-particles-generation" class="slide level2">
+<h2>Tracer particles generation</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/laskin.png" width="500"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/pdf_part.png" width="700"></p>
+</div></div>
+</section>
+<section id="light-scattering" class="slide level2">
+<h2>Light scattering</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>PIV image intensity and contrast <span class="math inline">\(\propto\)</span> scattered light power: selecting suitable scattering particles is usually more effective and cost-efficient than increasing laser (illumination) power.</p>
+<p><img data-src="images/light_scattered.png" width="500"> <img data-src="images/piv_im1.png" width="700"></p>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/spectre2.png" class="nostretch quarto-figure quarto-figure-center" width="300"></p>
+</figure>
 </div>
 </div></div>
 </section>
-<section id="alimentation" class="slide level2">
-<h2>🍽️ Alimentation</h2>
+<section id="light-scattering-1" class="slide level2">
+<h2>Light scattering</h2>
+<p>For spherical particles with diameters <span class="math inline">\(d_p\)</span> larger than the wavelength of the incident light <span class="math inline">\(\lambda\)</span>, <strong>Mie’s scattering theory</strong> holds.</p>
 <div class="columns">
-<div class="column" style="width:80%;">
-<p>Calcul MacKay (UK, 2008) :</p>
+<div class="column" style="width:50%;">
+<p>Maximum light diffused at 0°</p>
+<div class="line-block">Important parameters:<br>
+&nbsp;&nbsp;– Particle type/shape/size<br>
+&nbsp;&nbsp;– Refraction index<br>
+&nbsp;&nbsp;– Nature of the environment</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/light_scattered2.png" width="700"></p>
+</div></div>
+</section>
+<section id="illumination-sheet" class="slide level2">
+<h2>Illumination sheet</h2>
+<p>Use of spherical and cylindrical lenses</p>
+<div class="line-block">Important parameters:<br>
+&nbsp;&nbsp;– Cylindrical lens curvature and concavity (F2)<br>
+&nbsp;&nbsp;– Focal length of the spherical lens (F1)<br>
+&nbsp;&nbsp;– Divergence and diameter of the laser beam</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/laser_sheet.png" class="quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
+</section>
+<section id="image-recording" class="slide level2">
+<h2>Image recording</h2>
+<p>See B. Radisson’s lecture.</p>
+</section>
+<section id="complete-setup-overview" class="slide level2">
+<h2>Complete setup overview</h2>
+
+<img data-src="images/piv_setup.png" class="quarto-figure quarto-figure-center r-stretch" width="700"></section>
+<section id="resolution-requirements-in-fluid-flows-12" class="slide level2">
+<h2>Resolution requirements in fluid flows (1/2)</h2>
 <ul>
-<li>légumes : <span class="math inline">\(\approx 1.5 \text{kWh/j}\)</span></li>
-<li>laitages : <span class="math inline">\(\approx 1.5 \text{kWh/j}\)</span></li>
-<li>oeufs : <span class="math inline">\(\approx 1 \text{kWh/j}\)</span></li>
-<li>viande : <span class="math inline">\(\approx 8 \text{kWh/j}\)</span></li>
-<li>engrais et autres coûts énergétiques : <span class="math inline">\(\approx 3 \text{kWh/j}\)</span></li>
+<li>One of the major difficulties in flow imaging is achieving adequate spatial and temporal resolution. This is particularly the case when flows are turbulent, if it is desired to resolve the smallest scales at which fluctuations occur.</li>
+<li>Laminar flows pose less stringent requirements on resolution, compared to turbulent flows. In many laminar shear flows including boundary layers, pipe flows, wakes, jets, and mixing layers, the maximum gradient is the same order of magnitude as the overall gradient, <span class="math display">\[\left(\frac{\partial U}{\partial y} \right)_{\rm max} \approx \frac{\Delta U}{\delta}\]</span> where <span class="math inline">\(\Delta U\)</span> is the characteristic velocity difference, <span class="math inline">\(\delta\)</span> is the local width of the shear flow.</li>
 </ul>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<style>
-.table-single-col {
-  box-sizing: border-box !important;
-  border-collapse: separate !important;
-  border-spacing: 2px !important;
-  width: 95%;
-  margin: auto;
-}
-
-.table-single-col td {
-  border: 3px solid #dc143c;
-  border-bottom: 3px solid #dc143c !important;
-  background-color: rgba(220, 20, 60, 0.15);
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: bold;
-  font-size: 16px;
-}
-</style>
-
-
-<table class="table-single-col caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 30px">Nourriture, agriculture, engrais : 15 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 10px">Gadgets : 5 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 2px">Lumière : 1 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 74px">Chauffage, refroidiss. :<br>
-37 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 4px">Avions :<br>
-2 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 26px">Voitures :<br>
-13 kWh/j</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div></div>
 </section>
-<section id="consommables-et-leur-transport" class="slide level2">
-<h2>📦 Consommables et leur transport</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<p>Calcul MacKay (UK, 2008) :</p>
+<section id="resolution-requirements-in-fluid-flows-22" class="slide level2">
+<h2>Resolution requirements in fluid flows (2/2)</h2>
 <ul>
-<li>cannettes / bouteilles : 0.7 <span class="math inline">\(\text{kWh/j}\)</span></li>
-<li>emballages (plastique, verre, carton, …) : 4 <span class="math inline">\(\text{kWh/j}\)</span> <br> soit <span class="math inline">\(\approx\)</span> 400 <span class="math inline">\(\unit{g}\)</span> de déchets / jour</li>
-<li>journaux, prospectus : 2 <span class="math inline">\(\text{kWh/j}\)</span></li>
-<li>électroménager, électronique, vêtements, …</li>
-<li>ordinateur : 2.5 <span class="math inline">\(\text{kWh/j}\)</span> si changé tous les 2 ans</li>
-<li>voiture : 14 <span class="math inline">\(\text{kWh/j}\)</span> si changée tous les 15 ans</li>
-<li>routes : 2 <span class="math inline">\(\text{kWh/j}\)</span></li>
-<li>maison : 1 <span class="math inline">\(\text{kWh/j}\)</span> à raison d’un taux de remplacement tous les 100 ans</li>
-<li>supermarchés : 0.5 <span class="math inline">\(\text{kWh/j}\)</span></li>
-<li>fret routier : 7 <span class="math inline">\(\text{kWh/j}\)</span></li>
-<li>fret maritime : 4 <span class="math inline">\(\text{kWh/j}\)</span> assainissement des eaux : 0.5 <span class="math inline">\(\text{kWh/j}\)</span></li>
+<li>Turbulent flows have substantially more severe resolution requirements than laminar flows, owing to the much larger gradients that occur at the smallest scales of turbulence.</li>
+<li>In turbulent flows, the spatial fluctuations range in scale from the largest physical dimension of the flow (e.g., the local width of the boundary layer or jet) to the scale at which diffusion acts to remove all gradients.</li>
+<li>The largest scales are often called the ‘‘outer scales,’’ whereas the smallest scales are the ‘‘inner’’ or dissipation scales because these are the scales at which the energy of fluctuations, whether kinetic or scalar, is dissipated.</li>
+<li>In classical turbulence theory, the kinetic energy dissipation scale is the Kolmogorov scale <span class="math display">\[\eta \equiv \left( \frac{\nu ^3}{\epsilon} \right)^{1/4}.\]</span></li>
+<li>Using scaling arguments, the Kolmogorov scale can also be related to outer scale variables through the relationship, <span class="math inline">\(\eta \propto Re^{-3/4}\)</span>.</li>
 </ul>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<style>
-.table-single-col {
-  box-sizing: border-box !important;
-  border-collapse: separate !important;
-  border-spacing: 2px !important;
-  width: 95%;
-  margin: auto;
-}
-
-.table-single-col td {
-  border: 3px solid #dc143c;
-  border-bottom: 3px solid #dc143c !important;
-  background-color: rgba(220, 20, 60, 0.15);
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: bold;
-  font-size: 16px;
-}
-</style>
-
-
-<table class="table-single-col caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 24px">Transporter les trucs : 12 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 96px">Trucs : au moins 48 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 30px">Nourriture, agriculture, engrais : 15 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 10px">Gadgets : 5 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 2px">Lumière : 1 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 74px">Chauffage, refroidiss. :<br>
-37 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 4px">Avions :<br>
-2 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 26px">Voitures :<br>
-13 kWh/j</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div></div>
 </section>
-<section id="secteur-public" class="slide level2">
-<h2>🏛️ Secteur public</h2>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<p>Developping a PIV setup is a seek for a compromise regarding,</p>
 <div class="columns">
-<div class="column" style="width:80%;">
-<p>La plus grosse dépense d’énergie du service public est associée à la défense militaire. Selon la politique du pays, le coût énergétique de la dissuasion nucléaire peut prendre une place très importante (voir détails dans le livre de D. MacKay). Au Royaume-Uni, le coût est estimé à environ 4 <span class="math inline">\(\text{kWh/j}\)</span>.</p>
-<p>L’Université a un coût énergétique rapporté par habitant de 0,24 <span class="math inline">\(\text{kWh/j}\)</span>.</p>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<style>
-.table-single-col {
-  box-sizing: border-box !important;
-  border-collapse: separate !important;
-  border-spacing: 2px !important;
-  width: 95%;
-  margin: auto;
-}
-
-.table-single-col td {
-  border: 3px solid #dc143c;
-  border-bottom: 3px solid #dc143c !important;
-  background-color: rgba(220, 20, 60, 0.15);
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: bold;
-  font-size: 16px;
-}
-</style>
-
-
-<table class="table-single-col caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 8px">"Défense" : 4 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 24px">Transporter les trucs : 12 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 96px">Trucs : au moins 48 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 30px">Nourriture, agriculture, engrais : 15 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 10px">Gadgets : 5 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 2px">Lumière : 1 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 74px">Chauffage, refroidiss. :<br>
-37 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 4px">Avions :<br>
-2 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 26px">Voitures :<br>
-13 kWh/j</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div class="column" style="width:50%;">
+<div class="line-block">Reduced inertia of the seeding particles:<br>
+&nbsp;&nbsp;– Neutrally buoyant<br>
+&nbsp;&nbsp;– As small as possible</div>
+<div class="line-block">High visibility:<br>
+&nbsp;&nbsp;– Good light scattering<br>
+&nbsp;&nbsp;– Large enough</div>
+<p>Air vs water</p>
+<p>Application</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/spectre_turb.png" width="700"></p>
 </div></div>
 </section></section>
 <section>
-<section id="demain-le-potentiel-des-énergies-renouvelables" class="title-slide slide level1 center">
-<h1>Demain, le potentiel des énergies renouvelables ?</h1>
+<section id="image-evaluation-methods" class="title-slide slide level1 center">
+<h1>Image evaluation methods</h1>
 
 </section>
-<section id="avant-propos-2" class="slide level2">
-<h2>Avant Propos</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Cette section s’appuie sur le livre de D. MacKay : <a href="https://www.amides.fr/sewtha.html" data-preview-link="true">L’énergie durable, Pas que du vent</a>.</p>
-<p>L’objectif de l’ouvrage est de fournir au lecteur une vision claire des <strong>ordres de grandeurs</strong> en jeu en matière d’énergie, pour la <strong>consommation</strong> et pour le <strong>potentiel des énergies renouvelables</strong>.</p>
-<p>Les calculs sont <strong>délibérément simplifiés</strong> afin de concentrer le propos sur les ordres de grandeur (exprimés en <strong>kWh/j/pers</strong>).</p>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/MacKay.png" class="quarto-figure quarto-figure-center" width="350"></p>
-</figure>
-</div>
-</div></div>
+<section id="frame-1" class="slide level2" data-background="#43464B" data-background-image="images/piv_frame1.png">
+<h2>Frame 1</h2>
 </section>
-<section id="solaire" class="slide level2">
-<h2>🌞 Solaire</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/sol1.png" class="" width="650"></p>
-<figcaption>Dessin de Ron Tandberg</figcaption>
-</figure>
-</div>
-<p>Puissance solaire reçue au niveau de la Terre : <span class="math inline">\(\approx\)</span> 174 000 <span class="math inline">\(\unit{\tera\watt}\)</span>.</p>
-<p><strong>L’énergie solaire reçue annuellement &gt; 10000 fois nos besoins mondiaux.</strong></p>
+<section id="frame-2" class="slide level2" data-background="#43464B" data-background-image="images/piv_frame2.png">
+<h2>Frame 2</h2>
 </section>
-<section id="solaire-1" class="slide level2">
-<h2>🌞 Solaire</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/sol_inclinaison.png" class="nostretch quarto-figure quarto-figure-center" width="350"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Solar_Europe.png" class="nostretch quarto-figure quarto-figure-center" width="350"></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<table class="caption-top">
-<colgroup>
-<col style="width: 40%">
-<col style="width: 60%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>1360 <span class="math inline">\(\unit{\watt\per\square\meter}\)</span></th>
-<th>rayonnement à l’équateur</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(\times\)</span> 60 %</td>
-<td>pertes liées à l’inclinaison de la Terre</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\times\)</span> 32 %</td>
-<td>ratio intensité moyenne / intensité au zénith</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\times\)</span> 38 %</td>
-<td>pertes liées à la couverture nuageuse</td>
-</tr>
-<tr class="even">
-<td><strong><span class="math inline">\(\approx\)</span> 110 <span class="math inline">\(\unit{\watt\per\square\meter}\)</span></strong></td>
-<td><strong>rayonnement (moyen) perçu en France</strong></td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>En juin : le flux moyen peut monter à 250 <span class="math inline">\(\unit{\watt\per\square\meter}\)</span>.</p>
-<p>En décembre : le flux moyen chute à environ 30 - 40 <span class="math inline">\(\unit{\watt\per\square\meter}\)</span>.</p>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="solaire-2" class="slide level2">
-<h2>🌞 Solaire</h2>
-<h3 id="thermique">thermique</h3>
-<div class="columns">
-<div class="column" style="width:80%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Solaire_thermique.png" class="quarto-figure quarto-figure-center" width="550"></p>
-</figure>
-</div>
-<p>Recouvrir tous les toîts orientés vers le sud (<span class="math inline">\(\approx\)</span> 10 <span class="math inline">\(\unit{\square\meter}\)</span>/pers) avec un rendement de 50 % fournit <span class="math inline">\(\approx\)</span> 550 <span class="math inline">\(\unit{\watt}\)</span>.</p>
-<p>Soit un potentiel d’environ <strong>5 <span class="math inline">\(\text{kWh/j}\)</span></strong>.</p>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<style>
-.table-single-col-green {
-  border-collapse: separate !important;
-  border-spacing: 2px !important;
-  width: 95%;
-  margin: auto;
-}
-
-.table-single-col-green td {
-  border: 3px solid #2d8659;
-  border-bottom: 3px solid #2d8659 !important;
-  background-color: rgba(45, 134, 89, 0.15);
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: bold;
-  font-size: 16px;
-}
-</style>
-
-
-<table class="table-single-col-green caption-top">
-<tbody>
-<tr class="odd">
-<td style="height: 10px">Chauffage solaire : 5 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div>
-</div></div>
-</section>
-<section id="solaire-3" class="slide level2">
-<h2>🌞 Solaire</h2>
-<h3 id="photovoltaïque">photovoltaïque</h3>
-<div class="columns">
-<div class="column" style="width:80%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Solaire_photovoltaique.png" class="quarto-figure quarto-figure-center" width="550"></p>
-</figure>
-</div>
-<p>Recouvrir tous les toîts orientés vers le sud avec un rendement 20 % fournit : <span class="math display">\[20 \% \times 10 \unit{\square\meter} \times 110 \unit{\watt\per\square\meter} \times 9 \text{heures} \approx 2 \text{kWh/j}\]</span></p>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<table class="table-single-col-green caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 4px">PV (10 m2/p) :<br>
-2 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 10px">Chauffage solaire : 5 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div>
-</div></div>
-</section>
-<section id="solaire-4" class="slide level2">
-<h2>🌞 Solaire</h2>
-<h3 id="photovoltaïque-1">photovoltaïque</h3>
-<div class="columns">
-<div class="column" style="width:80%;">
-<p>Si l’on suppose que la construction de ferme photovoltaïque est possible à un coût abordable, alors recouvrir 5 % du territoire avec des panneaux d’un rendement de 10 % fournirait : <span class="math display">\[10 \% \times 400 \unit{\square\meter} \times 110 \unit{\watt\per\square\meter} \times 9 \text{heures} \approx 40 \text{kWh/j}\]</span></p>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<table class="table-single-col-green caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 80px">Fermes PV (400 m2/p) :<br>
-40 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 4px">PV (10 m2/p) :<br>
-2 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 10px">Chauffage solaire : 5 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div>
-</div></div>
-</section>
-<section id="eolien" class="slide level2">
-<h2>💨 Eolien</h2>
-<p>L’énergie exploitable est l’énergie cinétique exploitable dans un tube d’air en amont de l’éolienne <span class="math inline">\(\dot{E}^c_\text{air} = \frac{1}{2} \rho_\text{air} A  v_\text{air}^3\)</span></p>
-<p>La part d’énergie récupérable par l’éolienne (donc son rendement) est limitée par le compromis suivant : l’énergie collectée est d’autant plus grande que,</p>
+<section id="objective" class="slide level2">
+<h2>Objective</h2>
+<p>Estimate a <strong>velocity-field</strong> from a couple of <strong>grayscale particle images</strong>, i.e.&nbsp;find <span class="math inline">\(\vec{V}(\vec{x},t)\)</span> from <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span>, <span class="math inline">\(I \in [0,255]\)</span>.</p>
 <ul>
-<li>la vitesse du vent est ralentie au travers des pales,</li>
-<li>le débit d’air au travers des pales est important.</li>
+<li>Ideally, a high data density is preferred on the PIV vector fields, particularly when significant spatial flow variations must be resolved or when comparing experimental data with numerical results.</li>
+<li>This requires a medium concentration of the images of the tracer particles in the PIV recording.</li>
+<li>Medium image concentration is characterized by the fact that matching pairs of particle images – due to subsequent illuminations – cannot be detected by visual inspection.</li>
+<li>Hence, statistical approaches were developed.</li>
+</ul>
+</section>
+<section id="from-ivecxttdelta-t-i-in-0255" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">From <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span>, <span class="math inline">\(I \in [0,255]\)</span></h2>
+<div id="e3b26595" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb1-1" class="hljs-ln-code"><a></a><span class="co"># import the standard numerical and plotting packages</span></span>
+<span id="cb1-2" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3" class="hljs-ln-code"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4" class="hljs-ln-code"><a></a><span class="co"># import what is necessary from OpenPIV</span></span>
+<span id="cb1-5" class="hljs-ln-code"><a></a><span class="im">from</span> openpiv <span class="im">import</span> tools</span>
+<span id="cb1-6" class="hljs-ln-code"><a></a></span>
+<span id="cb1-7" class="hljs-ln-code"><a></a><span class="co"># load the images</span></span>
+<span id="cb1-8" class="hljs-ln-code"><a></a>a <span class="op">=</span> tools.imread(<span class="st">"./images/B005_1.tif"</span>)</span>
+<span id="cb1-9" class="hljs-ln-code"><a></a>b <span class="op">=</span> tools.imread(<span class="st">"./images/B005_2.tif"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="from-ivecxttdelta-t-i-in-0255-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">From <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span>, <span class="math inline">\(I \in [0,255]\)</span></h2>
+<div id="04220d61" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb2-1" class="hljs-ln-code"><a></a><span class="co"># import the standard numerical and plotting packages</span></span>
+<span id="cb2-2" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3" class="hljs-ln-code"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4" class="hljs-ln-code"><a></a><span class="co"># import what is necessary from OpenPIV</span></span>
+<span id="cb2-5" class="hljs-ln-code"><a></a><span class="im">from</span> openpiv <span class="im">import</span> tools</span>
+<span id="cb2-6" class="hljs-ln-code"><a></a></span>
+<span id="cb2-7" class="hljs-ln-code"><a></a><span class="co"># load the images</span></span>
+<span id="cb2-8" class="hljs-ln-code"><a></a>a <span class="op">=</span> tools.imread(<span class="st">"./images/B005_1.tif"</span>)</span>
+<span id="cb2-9" class="hljs-ln-code"><a></a>b <span class="op">=</span> tools.imread(<span class="st">"./images/B005_2.tif"</span>)</span>
+<span id="cb2-10" class="hljs-ln-code"><a></a></span>
+<span id="cb2-11" class="hljs-ln-code"><a></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
+<span id="cb2-12" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">0</span>].imshow(a, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">100</span>, cmap<span class="op">=</span>plt.cm.gray)</span>
+<span id="cb2-13" class="hljs-ln-code"><a></a>axs[<span class="dv">0</span>].set_title(<span class="st">'frame A'</span>)</span>
+<span id="cb2-14" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">1</span>].imshow(b, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">100</span>, cmap<span class="op">=</span>plt.cm.gray)</span>
+<span id="cb2-15" class="hljs-ln-code"><a></a>axs[<span class="dv">1</span>].set_title(<span class="st">'frame B'</span>)</span>
+<span id="cb2-16" class="hljs-ln-code"><a></a>cbar <span class="op">=</span> fig.add_axes([<span class="fl">0.95</span>, <span class="fl">0.1</span>, <span class="fl">0.03</span>, <span class="fl">0.8</span>])</span>
+<span id="cb2-17" class="hljs-ln-code"><a></a>fig.colorbar(img, cax<span class="op">=</span>cbar)</span>
+<span id="cb2-18" class="hljs-ln-code"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/cell-3-output-1.png" width="823" height="357"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="windowing" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Windowing</h2>
+<p>Let’s focus on small portions of the images:</p>
+<div id="2f0bb1e0" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb3-1" class="hljs-ln-code"><a></a>win_size <span class="op">=</span> <span class="dv">32</span></span>
+<span id="cb3-2" class="hljs-ln-code"><a></a>a_win <span class="op">=</span> a[:win_size, :win_size].copy()</span>
+<span id="cb3-3" class="hljs-ln-code"><a></a>b_win <span class="op">=</span> b[:win_size, :win_size].copy()</span>
+<span id="cb3-4" class="hljs-ln-code"><a></a></span>
+<span id="cb3-5" class="hljs-ln-code"><a></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
+<span id="cb3-6" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">0</span>].imshow(a_win, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">100</span>, cmap<span class="op">=</span>plt.cm.gray)</span>
+<span id="cb3-7" class="hljs-ln-code"><a></a>axs[<span class="dv">0</span>].set_title(<span class="st">'IA'</span>)</span>
+<span id="cb3-8" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">1</span>].imshow(b_win, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">100</span>, cmap<span class="op">=</span>plt.cm.gray)</span>
+<span id="cb3-9" class="hljs-ln-code"><a></a>axs[<span class="dv">1</span>].set_title(<span class="st">'IB'</span>)</span>
+<span id="cb3-10" class="hljs-ln-code"><a></a>cbar <span class="op">=</span> fig.add_axes([<span class="fl">0.95</span>, <span class="fl">0.1</span>, <span class="fl">0.03</span>, <span class="fl">0.8</span>])</span>
+<span id="cb3-11" class="hljs-ln-code"><a></a>fig.colorbar(img, cax<span class="op">=</span>cbar)</span>
+<span id="cb3-12" class="hljs-ln-code"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/cell-4-output-1.png" width="815" height="357"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The movement of individual particles from frame A to frame B is untrackable by “hand”.</p>
+</section>
+<section id="shifting" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Shifting</h2>
+<p>We could then try to shift the window IA by some pixels along the horizontal and/or vertical directions</p>
+<div id="b004f323" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="2,4,6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb4-1" class="hljs-ln-code"><a></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
+<span id="cb4-2" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">0</span>].imshow(b_win <span class="op">-</span> a_win, cmap<span class="op">=</span>plt.cm.gray)</span>
+<span id="cb4-3" class="hljs-ln-code"><a></a>axs[<span class="dv">0</span>].set_title(<span class="st">"IB - IA(shift=0)"</span>)</span>
+<span id="cb4-4" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">1</span>].imshow(b_win <span class="op">-</span> np.roll(a_win, (<span class="dv">1</span>, <span class="dv">0</span>), axis<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>)), cmap<span class="op">=</span>plt.cm.gray)</span>
+<span id="cb4-5" class="hljs-ln-code"><a></a>axs[<span class="dv">1</span>].set_title(<span class="st">"IB - IA(shift=1 pxl)"</span>)</span>
+<span id="cb4-6" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">2</span>].imshow(b_win <span class="op">-</span> np.roll(a_win, (<span class="dv">2</span>, <span class="dv">0</span>), axis<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>)), cmap<span class="op">=</span>plt.cm.gray)</span>
+<span id="cb4-7" class="hljs-ln-code"><a></a>axs[<span class="dv">2</span>].set_title(<span class="st">"IB - IA(shift=2 pxl)"</span>)</span>
+<span id="cb4-8" class="hljs-ln-code"><a></a>cbar <span class="op">=</span> fig.add_axes([<span class="fl">0.95</span>, <span class="fl">0.1</span>, <span class="fl">0.03</span>, <span class="fl">0.8</span>])</span>
+<span id="cb4-9" class="hljs-ln-code"><a></a>fig.colorbar(img, cax<span class="op">=</span>cbar)</span>
+<span id="cb4-10" class="hljs-ln-code"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/cell-5-output-1.png" width="819" height="334"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="optimal-matching" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Optimal matching?</h2>
+<p>Let’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.</p>
+<div id="49e052c3" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="|16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb5-1" class="hljs-ln-code"><a></a><span class="kw">def</span> match_template(img, template, maxroll<span class="op">=</span><span class="dv">8</span>):</span>
+<span id="cb5-2" class="hljs-ln-code"><a></a>    <span class="co"># img: input image to compare</span></span>
+<span id="cb5-3" class="hljs-ln-code"><a></a>    <span class="co"># template: image to match against</span></span>
+<span id="cb5-4" class="hljs-ln-code"><a></a>    <span class="co"># maxroll: max nbr of pxl to shift in each dir. Default value is 8.</span></span>
+<span id="cb5-5" class="hljs-ln-code"><a></a>    best_dist <span class="op">=</span> np.inf</span>
+<span id="cb5-6" class="hljs-ln-code"><a></a>    best_shift <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb5-7" class="hljs-ln-code"><a></a>    <span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>maxroll,maxroll):</span>
+<span id="cb5-8" class="hljs-ln-code"><a></a>        <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>maxroll,maxroll):</span>
+<span id="cb5-9" class="hljs-ln-code"><a></a>            <span class="co"># calculate Euclidean distance</span></span>
+<span id="cb5-10" class="hljs-ln-code"><a></a>            dist <span class="op">=</span> np.sqrt(np.<span class="bu">sum</span>((img <span class="op">-</span> np.roll(template, (y, x), axis<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))) <span class="op">**</span> <span class="dv">2</span>))</span>
+<span id="cb5-11" class="hljs-ln-code"><a></a>            <span class="cf">if</span> dist <span class="op">&lt;</span> best_dist:</span>
+<span id="cb5-12" class="hljs-ln-code"><a></a>                best_dist <span class="op">=</span> dist</span>
+<span id="cb5-13" class="hljs-ln-code"><a></a>                best_shift <span class="op">=</span> (y, x)</span>
+<span id="cb5-14" class="hljs-ln-code"><a></a>    <span class="cf">return</span> (best_dist, best_shift)</span>
+<span id="cb5-15" class="hljs-ln-code"><a></a><span class="co"># Let’s check that it works by manually shifting the same image (IA):</span></span>
+<span id="cb5-16" class="hljs-ln-code"><a></a>match_template(np.roll(a_win, (<span class="dv">2</span>, <span class="dv">0</span>), axis<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>)), a_win)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>(0.0, (2, 0))</code></pre>
+</div>
+</div>
+</section>
+<section id="optimal-matching-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Optimal matching?</h2>
+<p>Let’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.</p>
+<div id="837cf6e9" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb7-1" class="hljs-ln-code"><a></a><span class="co"># Let’s try it on the two sub-windows</span></span>
+<span id="cb7-2" class="hljs-ln-code"><a></a>match_template(b_win, a_win)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>(123.80226169178009, (-1, 1))</code></pre>
+</div>
+</div>
+<div class="fragment fade-in">
+<p>Well, this is not the true displacement, but it gives a hint.</p>
+<p>The problem is that shifting each image and repeating the loop many times is impractical.</p>
+</div>
+</section>
+<section id="optimal-matching-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Optimal matching?</h2>
+<p>Let’s use a different matching principle, based on the <strong>cross-correlation</strong>:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="math display">\[R_{II}(x,y) = \sum_{i=-K}^K \sum_{j=-L}^L I(i,j) I'(i+x,j+y)\]</span></p>
+<ul>
+<li><span class="math inline">\(I(x,y) =\)</span> Pixel grayscale <span class="math inline">\((i,j)\)</span> of the 1st image (instant <span class="math inline">\(t\)</span>)</li>
+<li><span class="math inline">\(I'(x,y) =\)</span> Pixel grayscale <span class="math inline">\((i,j)\)</span> of the 2nd image (instant <span class="math inline">\(t+\Delta t\)</span>)</li>
+<li><span class="math inline">\(2K\)</span>, <span class="math inline">\(2L\)</span> = Dimension of the analysis area (mesh).</li>
+</ul>
+<p>This is statistical information. We do not look for particle-to-particle speed!</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/cc1.png" class="quarto-figure quarto-figure-center" width="400"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="cc-interrogation-technic" class="slide level2">
+<h2>CC interrogation technic</h2>
+<p>Direct calculation: very long! : <span class="math inline">\(2M^2N^2\)</span> operations <span class="math inline">\(\Rightarrow\)</span> Calculation of the correlation function by FFT: <span class="math inline">\(2N^2\log_2N\)</span> (if <span class="math inline">\(N=M\)</span>).</p>
+
+<img data-src="images/cc2.png" width="700" class="r-stretch"></section>
+<section id="cc-interrogation-technic-1" class="slide level2">
+<h2>CC interrogation technic</h2>
+<p>CC is an efficient computational algorithm to find out the right shift.</p>
+<div id="249fc0aa" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># import the required package</span></span>
+<span id="cb9-2"><a></a><span class="im">from</span> scipy.signal <span class="im">import</span> correlate</span>
+<span id="cb9-3"><a></a></span>
+<span id="cb9-4"><a></a>cross_corr <span class="op">=</span> correlate(b_win <span class="op">-</span> b_win.mean(), a_win <span class="op">-</span> a_win.mean(), method<span class="op">=</span><span class="st">"fft"</span>)</span>
+<span id="cb9-5"><a></a><span class="co"># let's see what the cross-correlation looks like</span></span>
+<span id="cb9-6"><a></a>Y, X <span class="op">=</span> np.meshgrid(np.arange(cross_corr.shape[<span class="dv">0</span>]), np.arange(cross_corr.shape[<span class="dv">1</span>]))</span>
+<span id="cb9-7"><a></a>fig <span class="op">=</span> plt.figure()</span>
+<span id="cb9-8"><a></a>ax <span class="op">=</span> fig.add_subplot(projection<span class="op">=</span><span class="st">"3d"</span>)</span>
+<span id="cb9-9"><a></a>ax.plot_surface(Y, X, cross_corr, cmap<span class="op">=</span><span class="st">'jet'</span>, linewidth<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb9-10"><a></a>plt.title(<span class="st">"Correlation map — peak is the most probable shift"</span>)</span>
+<span id="cb9-11"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/cell-8-output-1.png" width="439" height="414"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="cc-interrogation-technic-2" class="slide level2 scrollable">
+<h2>CC interrogation technic</h2>
+<p>We can get the first velocity field by repeating this analysis for all windows.</p>
+<div id="d385b8ad" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">def</span> vel_field(curr_frame, next_frame, win_size):</span>
+<span id="cb10-2"><a></a>    ys <span class="op">=</span> np.arange(<span class="dv">0</span>, curr_frame.shape[<span class="dv">0</span>], win_size)</span>
+<span id="cb10-3"><a></a>    xs <span class="op">=</span> np.arange(<span class="dv">0</span>, curr_frame.shape[<span class="dv">1</span>], win_size)</span>
+<span id="cb10-4"><a></a>    dys <span class="op">=</span> np.zeros((<span class="bu">len</span>(ys), <span class="bu">len</span>(xs)))</span>
+<span id="cb10-5"><a></a>    dxs <span class="op">=</span> np.zeros((<span class="bu">len</span>(ys), <span class="bu">len</span>(xs)))</span>
+<span id="cb10-6"><a></a>    <span class="cf">for</span> iy, y <span class="kw">in</span> <span class="bu">enumerate</span>(ys):</span>
+<span id="cb10-7"><a></a>        <span class="cf">for</span> ix, x <span class="kw">in</span> <span class="bu">enumerate</span>(xs):</span>
+<span id="cb10-8"><a></a>            int_win <span class="op">=</span> curr_frame[y : y <span class="op">+</span> win_size, x : x <span class="op">+</span> win_size]</span>
+<span id="cb10-9"><a></a>            search_win <span class="op">=</span> next_frame[y : y <span class="op">+</span> win_size, x : x <span class="op">+</span> win_size]</span>
+<span id="cb10-10"><a></a>            cross_corr <span class="op">=</span> correlate(</span>
+<span id="cb10-11"><a></a>                search_win <span class="op">-</span> search_win.mean(), int_win <span class="op">-</span> int_win.mean(), method<span class="op">=</span><span class="st">"fft"</span></span>
+<span id="cb10-12"><a></a>            )</span>
+<span id="cb10-13"><a></a>            dys[iy, ix], dxs[iy, ix] <span class="op">=</span> (</span>
+<span id="cb10-14"><a></a>                np.unravel_index(np.argmax(cross_corr), cross_corr.shape)</span>
+<span id="cb10-15"><a></a>                <span class="op">-</span> np.array([win_size, win_size])</span>
+<span id="cb10-16"><a></a>                <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb10-17"><a></a>            )</span>
+<span id="cb10-18"><a></a>    <span class="co"># locate velocity vectors from the center of each window</span></span>
+<span id="cb10-19"><a></a>    ys <span class="op">=</span> ys <span class="op">+</span> win_size <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb10-20"><a></a>    xs <span class="op">=</span> xs <span class="op">+</span> win_size <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb10-21"><a></a>    <span class="cf">return</span> xs, ys, dxs, dys</span>
+<span id="cb10-22"><a></a></span>
+<span id="cb10-23"><a></a>xs, ys, dxs, dys <span class="op">=</span> vel_field(a, b, <span class="dv">32</span>)</span>
+<span id="cb10-24"><a></a>norm_drs <span class="op">=</span> np.sqrt(dxs <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> dys <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb10-25"><a></a></span>
+<span id="cb10-26"><a></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
+<span id="cb10-27"><a></a>ax.quiver(</span>
+<span id="cb10-28"><a></a>    xs,</span>
+<span id="cb10-29"><a></a>    ys[::<span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb10-30"><a></a>    dxs,</span>
+<span id="cb10-31"><a></a>    <span class="op">-</span>dys,</span>
+<span id="cb10-32"><a></a>    norm_drs,</span>
+<span id="cb10-33"><a></a>    cmap<span class="op">=</span><span class="st">"plasma"</span>,</span>
+<span id="cb10-34"><a></a>    angles<span class="op">=</span><span class="st">"xy"</span>,</span>
+<span id="cb10-35"><a></a>    scale_units<span class="op">=</span><span class="st">"xy"</span>,</span>
+<span id="cb10-36"><a></a>    scale<span class="op">=</span><span class="fl">0.25</span>,</span>
+<span id="cb10-37"><a></a>)</span>
+<span id="cb10-38"><a></a>ax.set_aspect(<span class="st">"equal"</span>)</span>
+<span id="cb10-39"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/cell-9-output-1.png" width="351" height="337"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="cc-interrogation-technic-3" class="slide level2">
+<h2>CC interrogation technic</h2>
+<p>Let’s have a look back at the CC map:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="e478ad73" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>plt.imshow(cross_corr, cmap<span class="op">=</span>plt.cm.gray)</span>
+<span id="cb11-2"><a></a>y, x <span class="op">=</span> np.unravel_index(cross_corr.argmax(), cross_corr.shape)</span>
+<span id="cb11-3"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>y<span class="op">=</span><span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>x<span class="op">=</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-4"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment" data-execution_count="9">
+<div class="cell-output cell-output-stdout">
+<pre><code>y=30, x=32</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/cell-10-output-2.png" width="415" height="413"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment fade-in">
+<ul>
+<li><p>The information is discrete (pxl)! Very high uncertainty for displacements close to 1 pxl</p></li>
+<li><p>Sub-pixel interpolation of the correlation peak (Gaussian, parabolic, etc.) over 3, 5 or 7 pxls <span class="math inline">\(\Rightarrow\)</span> theoretical accuracy 0.01 pxl.</p></li>
+</ul>
+<p><img data-src="images/cc3.png" width="900"></p>
+</div>
+</div></div>
+</section>
+<section id="cc-interrogation-technic-4" class="slide level2">
+<h2>CC interrogation technic</h2>
+<h3 id="errors">errors</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>The interpolation of correlation peaks causes a bias towards integer values displacements (Peak locking effect)</li>
+<li>This effect increases when the particle image size &lt; 2 pixels</li>
+<li>Solutions to correct this effect: choice of the interpolation function, iterative PIV, etc. <img data-src="images/peak_lock.png" width="700"></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="fragment fade-in">
+<div class="line-block">Particle size on image results from:<br>
+&nbsp;&nbsp;– Actual particle size<br>
+&nbsp;&nbsp;– Particle brigthness<br>
+&nbsp;&nbsp;– Sensor pixel size<br>
+&nbsp;&nbsp;– Focus</div>
+<p><img data-src="images/error_dp.png" width="700"></p>
+</div>
+</div></div>
+</section>
+<section id="parameters" class="slide level2">
+<h2>Parameters</h2>
+<h3 id="taking-good-quality-images-is-an-art">Taking good quality images is an art!</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment fade-in">
+<ul>
+<li>Homogeneous, regular tracer density <span class="math inline">\(\rightarrow\)</span> correlation relevance</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li>Particle image size (ideal: ~3/4 pixels): Detectability / Pixel locking</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li>No saturation of particle images on the CCD sensor</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li>No reflection, background noise,…</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment fade-in">
+<ul>
+<li>Gaussian laser beams</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li>Superimposed laser sheets, ideal thickness ~ 500μm</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li>Time between pulses: In plane displacement =&gt; resolution Out of plane displacement =&gt; lost particles</li>
+</ul>
+</div>
+</div></div>
+<div class="fragment fade-in">
+<p><img data-src="images/cc_seeding.png" width="1000"></p>
+</div>
+</section>
+<section id="parameters-1" class="slide level2">
+<h2>Parameters</h2>
+<p>Correlation coefficient for different displacements, i.e.&nbsp;different time between pulses</p>
+<div class="fragment fade-in">
+<p><img data-src="images/cc_disp.png" width="1000"></p>
+</div>
+</section>
+<section id="spatial-resolution" class="slide level2">
+<h2>Spatial resolution</h2>
+<p>Typical mesh sizes: <span class="math inline">\(32 \times 32\)</span>, <span class="math inline">\(64 \times 64\)</span>, <span class="math inline">\(128 \times 128\)</span> pixel <span class="math inline">\(^2\)</span></p>
+<p>Typical pixel size: <span class="math inline">\(0.1\)</span> mm to <span class="math inline">\(1\)</span> mm</p>
+
+<img data-src="images/vort1.png" width="1000" class="r-stretch"></section>
+<section id="spatial-resolution-1" class="slide level2">
+<h2>Spatial resolution</h2>
+<p>Overlaping of the interrogation windows: typically 50%, 75%</p>
+
+<img data-src="images/overlap.png" width="1000" class="r-stretch"></section>
+<section id="spatial-resolution-2" class="slide level2">
+<h2>Spatial resolution</h2>
+<p>If strong gradients</p>
+
+<img data-src="images/grad.png" width="1000" class="r-stretch"><p><span class="math inline">\(\rightarrow\)</span> towards multi-pass</p>
+</section>
+<section id="multi-pass" class="slide level2">
+<h2>Multi-pass</h2>
+
+<img data-src="images/multipass.png" width="1000" class="r-stretch"></section>
+<section id="validation-procedure" class="slide level2">
+<h2>Validation procedure</h2>
+<p>Quality factor (signal-to-noise ratio):</p>
+
+<img data-src="images/qual_fac.png" class="quarto-figure quarto-figure-center r-stretch" width="1000"></section>
+<section id="validation-procedure-1" class="slide level2">
+<h2>Validation procedure</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Comparison of vectors with their <span class="math inline">\(k \equiv [i-N:i+N,j-N:j+N]\)</span> neighbors: suppression/replacement if, e.g., <span class="math display">\[V_{ij} &gt; \overline{V_k} \pm K \times {\rm RMS(neighbors)}\]</span></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/cyl_eol.png" class="quarto-figure quarto-figure-center" width="450"></p>
+<p><img data-src="images/val_neigh.png" class="quarto-figure quarto-figure-center" width="200"></p>
 </figure>
 </div>
-<p>Dans un cas extrême où la vitesse du vent serait réduite à 0 en aval de l’éolienne, le débit au travers de l’éolienne serait nul.</p>
-<p>On montre que la limite physique du rendement d’une éolienne vaut <span class="math inline">\(16/27\)</span>. C’est la limite de Betz.</p>
-</section>
-<section id="eolien-1" class="slide level2">
-<h2>💨 Eolien</h2>
-<p>On estime qu’une vitesse de vent moyenne minimale de 7 m/s est nécessaire pour qu’un parc éolien soit économiquement viable. De telles vitesses sont atteintes sur environ 2 % du territoire :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/vents.png" class="quarto-figure quarto-figure-center" width="500"></p>
-</figure>
-</div>
-</section>
-<section id="eolien-2" class="slide level2 scrollable">
-<h2>💨 Eolien</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<p>Une distance minimale de 5 diamètres doit séparée deux éoliennes voisines. On en déduit donc la puissance par unité de surface au sol de l’éolienne : <span class="math display">\[\dot{e}_\textrm{éol} = \eta \frac{\pi d^2}{4 \times (5d \times 5d)} \dot{e}^c_\textrm{air}\]</span></p>
-<p>Avec un rendement optimal de 16/27 et un vent de vitesse moyenne de 7 m/s, on obtient <span class="math inline">\(\dot{e}_\textrm{éol} =\)</span> 3.8 W/m<span class="math inline">\(^2\)</span><sup>1</sup>.</p>
-<p>En supposant une couverture de 2 % du territoire, on obtiendrait <span class="math inline">\(E_\textrm{parc} \approx 15.1\)</span> <span class="math inline">\(\text{kWh/j}\)</span>.</p>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<table class="table-single-col-green caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 30px">Vent :<br>
-15 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 80px">Fermes PV (400 m2/p) :<br>
-40 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 4px">PV (10 m2/p) :<br>
-2 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 10px">Chauffage solaire : 5 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div>
-</div></div>
-<aside><ol class="aside-footnotes"><li id="fn8"><p>En moyenne réelle sur un parc installé, on est souvent plus proche de 2 - 2.5 W/m<span class="math inline">\(^2\)</span></p></li></ol></aside></section>
-<section id="eolien-offshore" class="slide level2">
-<h2>💨 Eolien offshore</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<p>En mer, le vent est plus fort (souvent entre 9 et 10 m/s à hauteur de moyeu) et plus <strong>régulier</strong> que sur terre : la puissance surfacique, <span class="math inline">\(\dot{e}_\textrm{éol}\)</span> monte à 8 <span class="math inline">\(\unit{\watt\per\square\meter}\)</span>.</p>
-<p>Objectif de l’État (Planification 2050) : La France prévoit d’installer 45 GW d’éolien en mer d’ici 2050, ce qui occuperait environ 10 000 <span class="math inline">\(\unit{\square\kilo\meter}\)</span>(soit environ 2,5 % de l’espace maritime métropolitain)</p>
-<p>On obtiendrait <span class="math inline">\(E_\textrm{parc offshore} \approx 29\)</span> <span class="math inline">\(\text{kWh/j}\)</span>.</p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Le facteur de charge est le rapport entre l’énergie réellement produite sur une période donnée et l’énergie qu’une installation aurait produite si elle avait fonctionné à sa puissance puissance nominale pendant cette même période.</p>
-<p>Il est de l’ordre de 40 - 50 % pour l’offshore mais seulement de 20 - 25 % pour l’éolien terrestre.</p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<table class="table-single-col-green caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 58px">Eolien en mer :<br>
-29 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 30px">Vent :<br>
-15 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 80px">Fermes PV (400 m2/p) :<br>
-40 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 4px">PV (10 m2/p) :<br>
-2 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 10px">Chauffage solaire : 5 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div>
-</div></div>
-</section>
-<section id="biomasse" class="slide level2">
-<h2>🌱 biomasse</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/biomasse.png" class="quarto-figure quarto-figure-center" width="350"></p>
-</figure>
-</div>
-<p>Calcul MacKay (UK, 2008) : recouvrir 75 % de la surface de la GB (3000 <span class="math inline">\(\unit{\square\meter}\)</span>/pers) par des cultures énergétiques : <span class="math display">\[0.5 \unit{\watt\per\square\meter} \times 3000 \unit{\square\meter}  \times 24 \times 3600 / 3.6 \ 10^6 \approx 36 \ \text{kWh/j}\]</span></p>
-<p>Il faut prendre en compte les pertes inévitables (rendement de Carnot) associées à la conversion, y compris pour le chauffage, qui imposent de définir une limite plutôt de l’ordre de 24 <span class="math inline">\(\text{kWh/j}\)</span>.</p>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<table class="table-single-col-green caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 48px">biomasse :<br>
-24 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 58px">Eolien en mer :<br>
-29 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 30px">Vent :<br>
-15 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 80px">Fermes PV (400 m2/p) :<br>
-40 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 4px">PV (10 m2/p) :<br>
-2 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 10px">Chauffage solaire : 5 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div>
-</div></div>
-</section>
-<section id="hydroélectrique" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">💧Hydroélectrique</h2>
-<p>Ce qui est exploitable ici est le poids de l’eau de pluie qui ruisselle des sommets des reliefs jusqu’au niveau de la mer.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/pluie.png" class="nostretch quarto-figure quarto-figure-center" width="500"></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/relief.png" class="nostretch quarto-figure quarto-figure-center" width="450"></p>
-</figure>
-</div>
-</div></div>
-<p>D’après les cartes, on estime <span class="math inline">\(q_s \approx 800\)</span> mm/an, la moyenne des précipitations sur l’ensemble du territoire et <span class="math inline">\(Zm \approx 350\)</span> m l’altitude moyenne.</p>
-</section>
-<section id="hydroélectrique-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">💧Hydroélectrique</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<p>D’après les cartes, on estime <span class="math inline">\(q_s \approx 800\)</span> mm/an, la moyenne des précipitations sur l’ensemble du territoire et <span class="math inline">\(Zm \approx 350\)</span> m l’altitude moyenne.</p>
-<p>On aboutit donc à l’estimation de la puissance gravitationnelle surfacique : <span class="math display">\[ \dot{g}_\textrm{Fr} = \frac{\rho_{eau} \times q_s}{t_{1\ an}} \times g \times Zm \approx 17.5 \ \text{kWh/j}\]</span></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>La puissance hydroélectrique installée en France était de 25.6 GW en 2019. Notre estimation de la puissance gravitationnelle surfacique nous donnerait 48.8 GW pour l’ensemble du territoire.</p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<table class="table-single-col-green caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 35px">Hydroélectrique :<br>
-17.5 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 48px">biomasse :<br>
-24 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 58px">Eolien en mer :<br>
-29 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 30px">Vent :<br>
-15 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 80px">Fermes PV (400 m2/p) :<br>
-40 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 4px">PV (10 m2/p) :<br>
-2 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 10px">Chauffage solaire : 5 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div>
-</div></div>
-</section>
-<section id="vagues" class="slide level2">
-<h2>🌊 Vagues</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<p>Les vagues de houle apparaissent lorsque la vitesse du vent <span class="math inline">\(&gt; \approx\)</span> 2 <span class="math inline">\(\unit{km/h}\)</span>. La longueur d’onde de la houle et sa période dépendent de la vitesse du vent.</p>
-<p><img data-src="images/Vague_2.png" class="nostretch quarto-figure quarto-figure-center" width="350"> <img data-src="images/houle.png" class="nostretch quarto-figure quarto-figure-center" width="350"></p>
-<p>La puissance de la houle atlantique a été mesurée à environ 40 kW/m. En supposant que l’on recouvre 1000 km de littoral de collecteurs de houle et que leur rendement soit de 50 %, on peut espérer récupérer 4 <span class="math inline">\(\text{kWh/j}\)</span></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Un convertisseur de houle nécessite de très grandes quantités d’acier. Les prototypes actuels ont un rapport poids/puissance (crête) de 500 kg/kW <span class="math inline">\(\equiv\)</span> 3 <span class="math inline">\(\times\)</span> plus que l’éolien oﬀshore (<span class="math inline">\(\approx\)</span> 170 kg/kW).</p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<table class="table-single-col-green caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 8px">Vagues :<br>
-4 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 35px">Hydroélectrique :<br>
-17.5 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 48px">biomasse :<br>
-24 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 58px">Eolien en mer :<br>
-29 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 30px">Vent :<br>
-15 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 80px">Fermes PV (400 m2/p) :<br>
-40 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 4px">PV (10 m2/p) :<br>
-2 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 10px">Chauffage solaire : 5 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div>
-</div></div>
-</section>
-<section id="marées" class="slide level2">
-<h2>🌊 Marées</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<p>Imaginons un bassin artificiel se remplissant et se vidant au rythme des marées en activant une turbine :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Maree_b.png" class="quarto-figure quarto-figure-center" width="350"></p>
-</figure>
-</div>
-<p>Ce qui est exploitable ici est le poids de l’eau dont le point d’application se déplace avec les marées. La puissance gravitationnelle s’exprime par unité de surface du bassin comme <span class="math display">\[\dot{e} = \frac{\rho \times 2 \times g h^2}{\textrm{6 heures}} \approx 3.3 W/m^2\]</span> avec <span class="math inline">\(h =\)</span> marnage<span class="math inline">\(/2\)</span> et 4 marées rythment les journées.</p>
-<div class="fragment fade-in">
-<p>Il faudrait alors un bassin de 1000 km de long (<span class="math inline">\(\approx\)</span> le littoral français) et 1 km de large pour fournir 1 kWh/j.</p>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<table class="table-single-col-green caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 2px">Marémométrice :<br>
-1 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 8px">Vagues :<br>
-4 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 35px">Hydroélectrique :<br>
-17.5 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 48px">biomasse :<br>
-24 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 58px">Eolien en mer :<br>
-29 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 30px">Vent :<br>
-15 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 80px">Fermes PV (400 m2/p) :<br>
-40 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 4px">PV (10 m2/p) :<br>
-2 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 10px">Chauffage solaire : 5 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div>
-</div></div>
-</section>
-<section id="géothermie" class="slide level2 scrollable">
-<h2>🌋 Géothermie</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<style>
-  ul, ol { margin:0; padding-left:0.5em; }
-  li { margin:0; padding:0; line-height:1; }
-</style>
-Le flux géothermique est l’énergie thermique issue<br>
+</div><div class="column" style="width:10%;">
 
+</div><div class="column" style="width:50%;">
+<div class="fragment fade-in">
 <ul>
-<li>
-de la désintégration radioactive des roches (croûte et manteau)
-</li>
-<li>
-et de la chaleur initiale du noyau terrestre qui traverse la surface.
-</li>
+<li>Spatial filtering (vectors interpolation): Post-processing is not an artistic creation! It is necessary to remove the noise as much as possible without removing the signal</li>
 </ul>
-<p>En France métropolitaine, le flux de chaleur géothermique moyen est estimé à<sup>1</sup> : 70-80 <span class="math inline">\(\unit{\milli\watt\per\square\meter}\)</span> (à comparer au flux solaire moyen !).</p>
-<p>En exploitant toutes les surfaces de terres et en creusant à 15 km de profondeur, l’énergie récupérable s’élèverait à 2 kWh/j selon Mackay – <a href="https://www.amides.fr/sewtha.html" data-preview-link="true">L’énergie durable, Pas que du vent – chap 16</a>.</p>
-</div><div class="column" style="width:35%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Geoth_a.png" class="quarto-figure quarto-figure-center" width="350"></p>
-</figure>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="fragment fade-in">
-<table class="table-single-col-green caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 2px">Géothermie :<br>
-1 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 2px">Marémométrice :<br>
-1 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 8px">Vagues :<br>
-4 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 35px">Hydroélectrique :<br>
-17.5 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 48px">biomasse :<br>
-24 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 58px">Eolien en mer :<br>
-29 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 30px">Vent :<br>
-15 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 80px">Fermes PV (400 m2/p) :<br>
-40 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 4px">PV (10 m2/p) :<br>
-2 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 10px">Chauffage solaire : 5 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div>
-</div></div>
-<aside><ol class="aside-footnotes"><li id="fn9"><p><a href="https://www.geothermies.fr/">Le portail national de la géothermie</a></p></li></ol></aside></section></section>
-<section>
-<section id="synthèse" class="title-slide slide level1 center">
-<h1>Synthèse</h1>
-
-</section>
-<section id="usage-potentiel-enr" class="slide level2">
-<h2>Usage / Potentiel ENR</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>A l’issue de cette analyse, la pile rouge s’élève à 137 kWh/j/pers, la pile verte à 138.5 kWh/j/pers, i.e.&nbsp;le coup est presque joué !</p>
-<div class="fragment fade-in">
-<p>Il convient néanmoins d’aller au delà du <strong>potentiel “physique”</strong> des renouvelables et d’intégrer la <strong>faisabilité pratique</strong> (ressources en matériaux ?), <strong>politique</strong> (acceptabilité ?) et <strong>économique</strong> (financement ?).</p>
-<p>Par ailleurs, à la présentation des diﬀérentes sources d’énergies, chacun aura compris qu’il n’y a pas de source d’énergie propre… Chaque exploitation aﬀectera, d’une façon ou d’une autre, l’environnement et c’est cet impact qu’il convient de limiter.</p>
-</div>
-</div><div class="column" style="width:20%;">
-<table class="table-single-col caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 8px">"Défense" : 4 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 24px">Transporter les trucs : 12 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 96px">Trucs : au moins 48 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 30px">Nourriture, agriculture, engrais : 15 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 10px">Gadgets : 5 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 2px">Lumière : 1 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 74px">Chauffage, refroidiss. :<br>
-37 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 4px">Avions :<br>
-2 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 26px">Voitures :<br>
-13 kWh/j</td>
-</tr>
-</tbody>
-</table>
-</div><div class="column" style="width:20%;">
-<table class="table-single-col-green caption-top">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="height: 2px">Géothermie :<br>
-1 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 2px">Marémométrice :<br>
-1 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 8px">Vagues :<br>
-4 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 35px">Hydroélectrique :<br>
-17.5 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 48px">biomasse :<br>
-24 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 58px">Eolien en mer :<br>
-29 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 30px">Vent :<br>
-15 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 80px">Fermes PV (400 m2/p) :<br>
-40 kWh/j</td>
-</tr>
-<tr class="odd">
-<td style="height: 4px">PV (10 m2/p) :<br>
-2 kWh/j</td>
-</tr>
-<tr class="even">
-<td style="height: 10px">Chauffage solaire : 5 kWh/j</td>
-</tr>
-</tbody>
-<tbody>
-</tbody>
-</table>
-</div></div>
-</section>
-<section id="usage-potentiel-enr-1" class="slide level2">
-<h2>Usage / Potentiel ENR</h2>
-<p><em>`Peut-on vivre uniquement sur les renouvelables ?’</em> : <a href="https://www.amides.fr/sewtha.html" data-preview-link="true">L’énergie durable, Pas que du vent – chap 18</a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/Comp_renouv.png" class="quarto-figure quarto-figure-center" width="400"></p>
-</figure>
-</div>
-</section>
-<section id="usage-potentiel-enr-2" class="slide level2">
-<h2>Usage / Potentiel ENR</h2>
-<p><em>`Les ambitions vertes à la rencontre de la réalité sociale ?’</em> : <a href="https://www.amides.fr/sewtha.html" data-preview-link="true">L’énergie durable, Pas que du vent – chap 18</a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/renouv_c1.png" class="quarto-figure quarto-figure-center" width="450"></p>
-</figure>
-</div>
-</section>
-<section id="quel-scenario-davenir" class="slide level2">
-<h2>Quel scenario d’avenir ?</h2>
-<p>5 plans de mix énergétique pour la GB : <a href="https://www.amides.fr/sewtha.html" data-preview-link="true">L’énergie durable, Pas que du vent – chap 27</a></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/plan_gb.png" class="nostretch quarto-figure quarto-figure-center" width="400"></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="fragment fade-in">
-<p><img src="images/Plan_av.png" style="vertical-align: middle;"></p>
+<p><img data-src="images/fil_im.png" width="500"></p>
 </div>
 </div></div>
 </section>
 <section id="and-more" class="slide level2">
 <h2>And More…</h2>
 <ul>
-<li><p><a href="https://www.amides.fr/sewtha.html" data-preview-link="true">L’énergie durable, Pas que du vent, D. Mackay</a> Le support qui a inspiré cette présentation. Encore beaucoup d’aspects non couverts dans cette présentation.</p></li>
-<li><p><a href="https://escholarship.org/uc/item/9js5291m">Energy and Human Ambitions on a Finite Planet, T. Murphy 2021</a> Le pendant du travail de Mackay au US.</p></li>
+<li><a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/#footer-logo">Footer &amp; Logo</a> (optionally specify custom footer per-slide or hide global footer)</li>
+<li><a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/presenting.html#multiplex">Multiplex</a> (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).</li>
 </ul>
+<div class="footer">
+<p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/">Quarto Presentations</a></p>
+</div>
 
 
 </section></section>
-
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>U2ME010 – Transition environnementale, 2025</p>
+<p>UM5MEE12 – Experimental technics and data analysis, 2026</p>
 </div>
 </div></div>
 
@@ -2165,7 +1029,7 @@ et de la chaleur initiale du noyau terrestre qui traverse la surface.
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': false,
+'controlsAuto': true,
 'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -2178,7 +1042,7 @@ et de la chaleur initiale du noyau terrestre qui traverse la surface.
 'smaller': true,
  
         // Display controls in the bottom right corner
-        controls: true,
+        controls: false,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -2328,7 +1192,7 @@ et de la chaleur initiale du noyau terrestre qui traverse la surface.
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -2522,6 +1386,38 @@ et de la chaleur initiale du noyau terrestre qui traverse la surface.
         }
       });
       </script>
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+    (function() {
+      let previousOnload = window.onload;
+      window.onload = () => {
+        if (previousOnload) {
+          previousOnload();
+        }
+        lightboxQuarto.on('slide_before_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          const href = trigger.getAttribute('href');
+          if (href !== null) {
+            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+            if (imgEl !== null) {
+              const srcAttr = imgEl.getAttribute("src");
+              if (srcAttr && srcAttr.startsWith("data:")) {
+                slideConfig.href = srcAttr;
+              }
+            }
+          } 
+        });
+      
+        lightboxQuarto.on('slide_after_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(slideNode);
+          }
+        });
+      
+      };
+      
+    })();
+              </script>
     
 
 </body></html>
