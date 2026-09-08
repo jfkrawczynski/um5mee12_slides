@@ -586,7 +586,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 </section>
 <section id="from-ivecxttdelta-t-i-in-0255" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">From <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span>, <span class="math inline">\(I \in [0,255]\)</span></h2>
-<div id="e3b26595" class="cell" data-execution_count="1">
+<div id="795eabf2" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb1-1" class="hljs-ln-code"><a></a><span class="co"># import the standard numerical and plotting packages</span></span>
 <span id="cb1-2" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3" class="hljs-ln-code"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -600,7 +600,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 </section>
 <section id="from-ivecxttdelta-t-i-in-0255-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">From <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span>, <span class="math inline">\(I \in [0,255]\)</span></h2>
-<div id="04220d61" class="cell" data-execution_count="2">
+<div id="9aaa9bac" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb2-1" class="hljs-ln-code"><a></a><span class="co"># import the standard numerical and plotting packages</span></span>
 <span id="cb2-2" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3" class="hljs-ln-code"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -633,7 +633,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="windowing" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Windowing</h2>
 <p>Let’s focus on small portions of the images:</p>
-<div id="2f0bb1e0" class="cell" data-execution_count="3">
+<div id="c710b99b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb3-1" class="hljs-ln-code"><a></a>win_size <span class="op">=</span> <span class="dv">32</span></span>
 <span id="cb3-2" class="hljs-ln-code"><a></a>a_win <span class="op">=</span> a[:win_size, :win_size].copy()</span>
 <span id="cb3-3" class="hljs-ln-code"><a></a>b_win <span class="op">=</span> b[:win_size, :win_size].copy()</span>
@@ -661,7 +661,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="shifting" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Shifting</h2>
 <p>We could then try to shift the window IA by some pixels along the horizontal and/or vertical directions</p>
-<div id="b004f323" class="cell" data-execution_count="4">
+<div id="8dbf48ef" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="2,4,6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb4-1" class="hljs-ln-code"><a></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
 <span id="cb4-2" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">0</span>].imshow(b_win <span class="op">-</span> a_win, cmap<span class="op">=</span>plt.cm.gray)</span>
 <span id="cb4-3" class="hljs-ln-code"><a></a>axs[<span class="dv">0</span>].set_title(<span class="st">"IB - IA(shift=0)"</span>)</span>
@@ -686,7 +686,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="optimal-matching" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Optimal matching?</h2>
 <p>Let’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.</p>
-<div id="49e052c3" class="cell" data-execution_count="5">
+<div id="28e5595a" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="|16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb5-1" class="hljs-ln-code"><a></a><span class="kw">def</span> match_template(img, template, maxroll<span class="op">=</span><span class="dv">8</span>):</span>
 <span id="cb5-2" class="hljs-ln-code"><a></a>    <span class="co"># img: input image to compare</span></span>
 <span id="cb5-3" class="hljs-ln-code"><a></a>    <span class="co"># template: image to match against</span></span>
@@ -705,7 +705,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <span id="cb5-16" class="hljs-ln-code"><a></a>match_template(np.roll(a_win, (<span class="dv">2</span>, <span class="dv">0</span>), axis<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>)), a_win)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>(0.0, (2, 0))</code></pre>
 </div>
 </div>
@@ -713,12 +713,12 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="optimal-matching-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Optimal matching?</h2>
 <p>Let’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.</p>
-<div id="837cf6e9" class="cell" data-execution_count="6">
+<div id="79792741" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb7-1" class="hljs-ln-code"><a></a><span class="co"># Let’s try it on the two sub-windows</span></span>
 <span id="cb7-2" class="hljs-ln-code"><a></a>match_template(b_win, a_win)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>(123.80226169178009, (-1, 1))</code></pre>
 </div>
 </div>
@@ -755,7 +755,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="cc-interrogation-technic-1" class="slide level2">
 <h2>CC interrogation technic</h2>
 <p>CC is an efficient computational algorithm to find out the right shift.</p>
-<div id="249fc0aa" class="cell" data-execution_count="7">
+<div id="62141526" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># import the required package</span></span>
 <span id="cb9-2"><a></a><span class="im">from</span> scipy.signal <span class="im">import</span> correlate</span>
 <span id="cb9-3"><a></a></span>
@@ -781,7 +781,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="cc-interrogation-technic-2" class="slide level2 scrollable">
 <h2>CC interrogation technic</h2>
 <p>We can get the first velocity field by repeating this analysis for all windows.</p>
-<div id="d385b8ad" class="cell" data-execution_count="8">
+<div id="bb950adb" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">def</span> vel_field(curr_frame, next_frame, win_size):</span>
 <span id="cb10-2"><a></a>    ys <span class="op">=</span> np.arange(<span class="dv">0</span>, curr_frame.shape[<span class="dv">0</span>], win_size)</span>
 <span id="cb10-3"><a></a>    xs <span class="op">=</span> np.arange(<span class="dv">0</span>, curr_frame.shape[<span class="dv">1</span>], win_size)</span>
@@ -837,7 +837,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <p>Let’s have a look back at the CC map:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="e478ad73" class="cell" data-execution_count="9">
+<div id="b24be1d4" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>plt.imshow(cross_corr, cmap<span class="op">=</span>plt.cm.gray)</span>
 <span id="cb11-2"><a></a>y, x <span class="op">=</span> np.unravel_index(cross_corr.argmax(), cross_corr.shape)</span>
 <span id="cb11-3"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>y<span class="op">=</span><span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>x<span class="op">=</span><span class="sc">}</span><span class="ss">"</span>)</span>
