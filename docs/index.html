@@ -13,7 +13,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="jean-francois.krawczynski@sorbonne-universite.fr, 2026">
-  <title>slides – Particle Image Velocimetry (PIV)</title>
+  <title>slides – Insights of fluid-flow velocity characterization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -200,8 +200,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Particle Image Velocimetry (PIV)</h1>
-  <p class="subtitle">Insights of fluid-flow velocity characterization</p>
+  <h1 class="title">Insights of fluid-flow velocity characterization</h1>
+  <p class="subtitle">with Particle Image Velocimetry (PIV)</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -212,117 +212,121 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 </div>
 
 </section>
-<section id="fluid-mech." class="slide level2">
-<h2>Fluid Mech.:</h2>
-<h3 id="equations-are-known">equations are known!</h3>
+<section>
+<section id="intro" class="title-slide slide level1 center">
+<h1>Intro</h1>
+
+</section>
+<section id="fluid-mechanics-the-equations-are-known" class="slide level2">
+<h2>Fluid mechanics: the equations are known</h2>
 <span class="math display">\[\begin{align}
-&amp; \frac{\partial \rho}{\partial t} + \nabla (\rho \vec{V}) = 0\\
-&amp; \rho \left[ \frac{\partial \vec{V}}{\partial t} + (\vec{V} \cdot \nabla ) \vec{V} \right] = -\nabla p + \nabla \sigma + \rho \vec{g}\\
+&amp; \boxed{\frac{\partial \rho}{\partial t} + \nabla (\rho \vec{V}) = 0}\\
+&amp; \boxed{\rho \left[ \frac{\partial \vec{V}}{\partial t} + (\vec{V} \cdot \nabla ) \vec{V} \right] = -\nabla p + \nabla \sigma + \rho \vec{g}}\\
 &amp; \frac{\partial \rho E}{\partial t} + \nabla \left[ (\rho E + p) \vec{V} \right] = \nabla (\sigma \vec{V}) + \nabla \vec{q} + \vec{q}_R + \rho \vec{g} \vec{V} + \rho \omega_E\\
 &amp; \frac{\partial \rho Y}{\partial t} + \nabla (\rho Y \vec{V}) = \nabla \left[ \rho D \nabla Y \right] + \rho \omega_Y
 \end{align}\]</span>
-<p>But very few analytical solutions!</p>
-</section>
-<section id="then-if-i-want" class="slide level2">
-<h2>Then, if I want…</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>validate — Are the models and approximations used correct?</li>
-<li>verify — some solution?</li>
-<li>sizing – Applications to industrial configurations?</li>
-<li>(just) better understand things?</li>
-</ul>
 <div class="fragment fade-in">
-<p><span class="math inline">\(\rightarrow\)</span> (Costly) numerical simulations</p>
-<p><span class="math inline">\(\rightarrow\)</span> (Costly) experimental measurements</p>
+<p><strong>But very few analytical solutions!</strong> (Poiseuille flow, Couette flow, potential flow around a cylinder, …)</p>
 </div>
-</div><div class="column" style="width:50%;">
+</section>
+<section id="few-exact-solutions-and-everything-else" class="slide level2">
+<h2>Few exact solutions and… everything else</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/F18v.png" class="quarto-figure quarto-figure-center" width="350"></p>
+<p><img data-src="images/flows_examples.png" class="quarto-figure quarto-figure-center" width="700"></p>
 </figure>
 </div>
-</div></div>
 </section>
+<section id="so-simulate-or-measure" class="slide level2">
+<h2>So: simulate, or measure</h2>
+<p>Real flows of practical interest are usually turbulent, three-dimensional, geometrically complex, unsteady — exactly where analytical solutions disappear. For the vast majority of real applications, only two paths remain to get a quantitative answer:</p>
+<svg viewbox="0 0 1100 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:1100px; display:block; margin:0 auto; font-family: Georgia, serif;">
+  <defs>
+    <marker id="arrow-end" markerwidth="10" markerheight="10" refx="8" refy="4" orient="auto">
+      <polygon points="0 0, 9 4, 0 8" fill="#43464B"></polygon>
+    </marker>
+    <marker id="arrow-start" markerwidth="10" markerheight="10" refx="1" refy="4" orient="auto-start-reverse">
+      <polygon points="0 0, 9 4, 0 8" fill="#43464B"></polygon>
+    </marker>
+  </defs>
+
+  <rect x="350" y="4" width="400" height="58" rx="10" fill="none" stroke="#43464B" stroke-width="2.5"></rect>
+  <text x="550" y="28" text-anchor="middle" font-size="21" fill="#43464B">Navier–Stokes: known,</text>
+  <text x="550" y="52" text-anchor="middle" font-size="21" fill="#43464B">rarely solvable analytically</text>
+
+  <path d="M 550 62 L 550 82 L 250 82 L 250 92" stroke="#43464B" stroke-width="2.5" fill="none"></path>
+  <path d="M 250 92 L 250 100" stroke="#43464B" stroke-width="2.5" fill="none" marker-end="url(#arrow-end)"></path>
+  <path d="M 550 82 L 850 82 L 850 92" stroke="#43464B" stroke-width="2.5" fill="none"></path>
+  <path d="M 850 92 L 850 100" stroke="#43464B" stroke-width="2.5" fill="none" marker-end="url(#arrow-end)"></path>
+
+  <rect x="30" y="100" width="440" height="155" rx="10" fill="none" stroke="#137fec" stroke-width="2.5"></rect>
+  <text x="250" y="130" text-anchor="middle" font-size="22" font-weight="bold" fill="#137fec">Numerical simulation</text>
+  <text x="60" y="162" font-size="17" fill="#43464B">• discretize &amp; solve numerically</text>
+  <text x="60" y="188" font-size="17" fill="#43464B">• costly: compute power, meshing</text>
+  <text x="60" y="218" font-size="17" fill="#43464B">• relies on turbulence closure models</text>
+  <text x="76" y="242" font-size="17" fill="#43464B">(themselves approximate)</text>
+
+  <rect x="630" y="100" width="440" height="155" rx="10" fill="none" stroke="#137fec" stroke-width="2.5"></rect>
+  <text x="850" y="130" text-anchor="middle" font-size="22" font-weight="bold" fill="#137fec">Experimental measurement</text>
+  <text x="650" y="162" font-size="17" fill="#43464B">• build/instrument the (scaled) flow</text>
+  <text x="650" y="192" font-size="17" fill="#43464B">• costly: facility, instrumentation,</text>
+  <text x="666" y="216" font-size="17" fill="#43464B">campaign time</text>
+
+  <line x1="490" y1="178" x2="610" y2="178" stroke="#43464B" stroke-width="2.5" marker-start="url(#arrow-start)" marker-end=""></line>
+  <text x="550" y="168" text-anchor="middle" font-size="15" font-style="italic" fill="#43464B">calibration / validation</text>
+
+  <path d="M 850 255 L 850 278" stroke="#43464B" stroke-width="2.5" fill="none" marker-end="url(#arrow-end)"></path>
+
+  <rect x="680" y="282" width="340" height="58" rx="10" fill="#43464B" stroke="#43464B" stroke-width="2.5"></rect>
+  <text x="850" y="318" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">This course: PIV</text>
+</svg>
+<div class="fragment fade-in">
+<p>Both are costly — and neither fully replaces the other: a turbulence closure model is only as trustworthy as the experimental data used to calibrate and validate it.</p>
+</div>
+</section></section>
 <section>
 <section id="why-piv" class="title-slide slide level1 center">
 <h1>Why PIV?</h1>
 
 </section>
-<section id="measuring-fluid-flow-velocity-principles" class="slide level2">
-<h2>Measuring fluid-flow velocity principles</h2>
+<section id="measuring-fluid-flow-velocity-principles-12" class="slide level2">
+<h2>Measuring fluid-flow velocity principles (1/2)</h2>
 <ul>
-<li>To determine the velocity of an object, <strong>distance</strong> and <strong>time</strong> need to be measured (either the distance traveled during a given time or the time needed to travel a given distance).</li>
-<li>But, gases as well as pure liquids do not contain moving objects that reveal the velocity of the fluid.</li>
-<li>Thus, many measurement techniques have been developed, determining the flow velocity <strong>indirectly</strong> by measuring other quantities, such as:
+<li>To determine the velocity of an object, <strong>distance</strong> and <strong>time</strong> need to be measured (either one fixing the other).</li>
+</ul>
+<div class="fragment fade-in">
+<ul>
+<li>But, gases and pure liquids do not contain moving objects that reveal the velocity.</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li>Thus, many measurement techniques have been developed, determining the flow velocity <strong>indirectly</strong> by measuring another quantity instead (a <em>proxy</em>), such as:
 <ul>
 <li>pressure (pressure probes),</li>
 <li>rotational speed (wind anemometer),</li>
 <li>heat transfer (hot film, hot wire).</li>
 </ul></li>
 </ul>
-</section>
-<section id="alternatives-to-piv-12" class="slide level2">
-<h2>Alternatives to PIV (1/2)</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 9%">
-<col style="width: 29%">
-<col style="width: 29%">
-<col style="width: 32%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Pitot tube</th>
-<th>Hot Wire Anemometry</th>
-<th>Laser Doppler Anemometry</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Sketch</td>
-<td><img data-src="images/pitot1.png" width="250"></td>
-<td><img data-src="images/hwa1.png" width="200"></td>
-<td><a href="images/lda1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/lda1.png" width="250"></a></td>
-</tr>
-<tr class="even">
-<td>Principle<br> (what is measured)</td>
-<td>Static and dynamic pressures.<br> Bernoulli</td>
-<td>Joule dissipation measurement in a wire</td>
-<td>Interferometric meas. of a Doppler shift on scattering particle</td>
-</tr>
-<tr class="odd">
-<td>Pros</td>
-<td>Easy to use. Cheap (1 k€)</td>
-<td>High time resolution <br> Medium price (10 k€)</td>
-<td>Non intrusive. High time resolution. Suited for several components</td>
-</tr>
-<tr class="even">
-<td>Cons</td>
-<td>Highly intrusive.<br> Very poor resolution</td>
-<td>Intrusive, fragile. Non linear calibration</td>
-<td>Non-regular sampling. High price (50-100 k€). Complex settings</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="alternatives-to-piv-22" class="slide level2">
-<h2>Alternatives to PIV (2/2)</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>1d time resolved signal: <img data-src="images/1d_sig.png" width="600"></p>
-<div class="fragment fade-in">
-<p>Therefore, the structure of an unsteady flow field cannot be obtained by such methods.</p>
+<p>None of these is the velocity itself — each relies on an empirical or theoretical relationship (Bernoulli, Joule heating, a calibration curve…) to get there.</p>
 </div>
-</div><div class="column" style="width:50%;">
-<div class="fragment fade-in">
-<p><video data-src="images/media1.mp4" width="600" controls=""><a href="images/media1.mp4">Video</a></video></p>
-</div>
-</div></div>
 </section>
-<section id="piv-principles-12" class="slide level2">
+<section id="measuring-fluid-flow-velocity-principles-22" class="slide level2">
+<h2>Measuring fluid-flow velocity principles (2/2)</h2>
+<p>What if, instead of inferring velocity from a proxy quantity, <strong>we seed the flow with small objects that faithfully follow it</strong>? If these objects are visible : back to a purely kinematic (<strong>direct</strong>) measurement (distance / time), no physical relationship to invert <em>(what makes a good tracer is a question for later)</em>.</p>
+<div class="fragment fade-in">
+<p>This opens to <em>optical</em> techniques, differing in how much of the flow they capture at once:</p>
+<ul>
+<li>Laser Doppler Anemometry (LDA) — a single point, tracked continuously</li>
+<li><strong>Particle Image Velocimetry (PIV)</strong> — a whole plane, captured at once</li>
+<li>Particle Tracking Velocimetry (PTV) — a few points, tracked continuously</li>
+<li>Optical Flow — a whole plane, tracked continuously</li>
+<li>Tomographic PIV — a whole volume, captured at once</li>
+<li>…</li>
+</ul>
+</div>
+</section>
+<section id="piv-principles" class="slide level2">
 <h2>PIV principles (1/2)</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -351,70 +355,117 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 </div><div class="column" style="width:60%;">
 <p><img data-src="images/piv_princ2.png" width="800"></p>
 </div></div>
+<p><a href="#/piv-table">← back to the comparison table</a></p>
 </section>
-<section id="piv-pros" class="slide level2">
-<h2>PIV pros</h2>
-<ul>
-<li>The most widely applied velocity imaging technique in fluid mechanics.</li>
-<li>PIV is a very robust and accurate technique, which in its most common implementation enables the imaging of two components of velocity in a cross-section of the flow.</li>
-<li>PIV measurements are now commonplace and they have been applied in a wide range of gas- and liquid-phase flows, including microfluidics, large-scale wind tunnels, flames, plasmas, and supersonic and hypersonic flows.</li>
-</ul>
-</section>
-<section id="piv-refs" class="slide level2">
-<h2>PIV refs</h2>
+<section id="alternatives-to-piv-12" class="slide level2">
+<h2>Alternatives to PIV (1/2)</h2>
 <div class="columns">
-<div class="column" style="width:40%;">
-<p>Excellent introductions to PIV can be found in several references:</p>
-</div><div class="column" style="width:60%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/raffel.png" class="quarto-figure quarto-figure-center" width="350"></p>
-</figure>
+<div class="column" style="width:50%;">
+<p>1D time-resolved signal (e.g.&nbsp;a hot-wire or an LDA probe, fixed in space): <img data-src="images/1d_sig.png" width="600"></p>
+<p>Therefore, the structure of an unsteady flow field cannot be obtained by such methods.</p>
+</div><div class="column" style="width:50%;">
+<div class="fragment fade-in">
+<p><video data-src="images/media1.mp4" width="600" controls=""><a href="images/media1.mp4">Video</a></video></p>
+<p>The same flow, captured as a full velocity <strong>field</strong> — this is what PIV gives you.</p>
 </div>
 </div></div>
+</section>
+<section id="piv-table" class="slide level2">
+<h2>Alternatives to PIV (2/2)</h2>
+<div class="piv-comparison">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Pitot tube</th>
+<th>Hot Wire Anemometry</th>
+<th>Laser Doppler Anemometry</th>
+<th><strong>PIV</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sketch</td>
+<td><img data-src="images/pitot1.png" width="250"></td>
+<td><img data-src="images/hwa1.png" width="200"></td>
+<td><a href="images/lda1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/lda1.png" width="250"></a></td>
+<td><a href="#/piv-principles"><em>(click to preview)</em></a></td>
+</tr>
+<tr class="even">
+<td>Principle<br> (what is measured)</td>
+<td>Static and dynamic pressures.<br> Bernoulli</td>
+<td>Joule dissipation measurement in a wire</td>
+<td>Interferometric meas. of a Doppler shift on scattering particle</td>
+<td>Cross-correlation of tracer particle images</td>
+</tr>
+<tr class="odd">
+<td>Point or field?</td>
+<td>Point</td>
+<td>Point</td>
+<td>Point</td>
+<td><strong>Field</strong></td>
+</tr>
+<tr class="even">
+<td>Pros</td>
+<td>Easy to use. Cheap (1 k€)</td>
+<td>High time resolution <br> Medium price (10 k€)</td>
+<td>Non intrusive. High time resolution. Suited for several components</td>
+<td>Non intrusive. Whole velocity field at once</td>
+</tr>
+<tr class="odd">
+<td>Cons</td>
+<td>Highly intrusive.<br> Very poor resolution</td>
+<td>Intrusive, fragile. Non linear calibration</td>
+<td>Non-regular sampling.<br> High price (50-100 k€). Complex settings</td>
+<td>Lower time resolution than LDA/HWA.<br> Price 10-100+ k€</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section></section>
 <section>
 <section id="physical-and-technical-background" class="title-slide slide level1 center">
 <h1>Physical and technical background</h1>
 
 </section>
-<section id="tracer-particles" class="slide level2">
-<h2>Tracer particles</h2>
+<section id="tracer-particles-16" class="slide level2">
+<h2>Tracer particles (1/6)</h2>
 <ul>
-<li>In contrast to hot wire or pressure probe techniques, PIV is based on the <strong>direct</strong> determination of the 2 fundamental dimensions of the velocity: length and time.</li>
-<li>On the other hand, the measurement technique is <strong>indirect</strong> as it determines the velocity of tracer particles instead of the velocity of the fluid.</li>
-<li>Therefore, the interaction of the particles and the surrounding fluid has to be examined in order to avoid significant discrepancies between fluid and particle motion.</li>
+<li>In contrast to hot wire or pressure probe, velocity estimation in PIV is based on the <strong>direct</strong> determination of the 2 fundamental dimensions: length and time.</li>
 </ul>
-</section>
-<section id="tracer-particles-1" class="slide level2">
-<h2>Tracer particles</h2>
-<h3 id="fluid-mech.-properties-13">Fluid mech. properties (1/3)</h3>
+<div class="fragment fade-in">
 <ul>
-<li>A primary source of error is the influence of <strong>gravitational forces</strong> on the velocity of the tracer particles, if the densities of the fluid <span class="math inline">\(\rho\)</span> and the tracer particles <span class="math inline">\(\rho_p\)</span> do not match.</li>
+<li>On the other hand, the measurement technique is <strong>indirect</strong> as it determines the velocity of tracer particles instead of the velocity of the fluid.</li>
+<li>Therefore, the particle / surrounding fluid interaction has to be examined carefully in order to avoid significant discrepancies between fluid and particle motion.</li>
+</ul>
+</div>
+</section>
+<section id="tracer-particles-26" class="slide level2">
+<h2>Tracer particles (2/6)</h2>
+<h3 id="fluid-mechanics-properties-13">fluid mechanics properties (1/3)</h3>
+<ul>
+<li>A primary source of error: the influence of the <strong>gravitational forces</strong> on the velocity of the tracer particles.</li>
 <li>From Stokes’ drag law, assuming spherical particles in a viscous fluid at a very low Reynolds number: <span class="math inline">\(\vec{U}_g = d_p^2 \frac{\rho_p - \rho}{18 \mu} \vec{g}\)</span>.</li>
 <li>Therefore, the sedimentation of particles can be avoided if the density of the fluid and particles is identical (<strong>neutral buoyancy</strong>).</li>
 <li>This is easily achieved in liquid flows, but not in gas flows. Therefore, the particle diameter must be chosen sufficiently small to minimize the settling velocity of the particles.</li>
 </ul>
 </section>
-<section id="tracer-particles-2" class="slide level2">
-<h2>Tracer particles</h2>
-<h3 id="fluid-mech.-properties-23">Fluid mech. properties (2/3)</h3>
-<div class="columns">
-<div class="column" style="width:70%;">
+<section id="tracer-particles-36" class="slide level2">
+<h2>Tracer particles (3/6)</h2>
+<h3 id="fluid-mechanics-properties-23">fluid mechanics properties (2/3)</h3>
 <ul>
-<li>Particle frequency response: <span class="math inline">\(\frac{d}{dt}U_p = -18 \frac{\nu}{d_p^2}\frac{U_p - U_f}{\rho_p / \rho_f}\)</span> <span class="math display">\[ \Rightarrow U_p(t) = U_f \left(1-\exp \left( t / \tau_p \right )\right)\]</span> with <span class="math inline">\(\tau_{\rm p} = d_{\rm p}^2 \frac{\rho_{\rm p}}{18 \mu}\)</span>, relaxation time scale of the particle.</li>
+<li>Particle frequency response: <span class="math inline">\(\frac{d}{dt}U_p = -18 \frac{\nu}{d_p^2}\frac{U_p - U_f}{\rho_p / \rho_f} \Rightarrow U_p(t) = U_f \left(1-\exp \left( t / \tau_p \right )\right)\)</span> with <span class="math inline">\(\tau_{\rm p} = d_{\rm p}^2 \frac{\rho_{\rm p}}{18 \mu}\)</span>, relaxation time scale of the particle.</li>
 </ul>
-</div><div class="column" style="width:30%;">
-<p><img data-src="images/tau_p.png" width="300"></p>
-</div></div>
+<div class="fragment fade-in">
 <ul>
 <li>A convenient measure for the tendency of particles to attain velocity equilibrium with the fluid is given by the Stokes number <span class="math display">\[ St = \frac{\tau_{\rm p}}{\tau_{\rm f}}\]</span> where <span class="math inline">\(\tau_f\)</span> stands for the characteristic time scale of the flow (refers to velocity fluctuations along the particle trajectory).</li>
-<li>A value of the Stokes number below <span class="math inline">\(10^{-1}\)</span> yields an acceptable flow tracing accuracy.</li>
+<li>A value of <span class="math inline">\(St &lt; 10^{-1}\)</span> yields an acceptable flow tracing accuracy.</li>
 </ul>
+</div>
 </section>
-<section id="tracer-particles-3" class="slide level2">
-<h2>Tracer particles</h2>
-<h3 id="fluid-mech.-properties-33">Fluid mech. properties (3/3)</h3>
+<section id="tracer-particles-46" class="slide level2">
+<h2>Tracer particles (4/6)</h2>
+<h3 id="fluid-mechanics-properties-33">fluid mechanics properties (3/3)</h3>
 <table class="caption-top">
 <colgroup>
 <col style="width: 4%">
@@ -438,130 +489,84 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <td>Hollow glass spheres</td>
 <td>10</td>
 <td>1.05</td>
-<td>0.5</td>
+<td>5</td>
 </tr>
 <tr class="even">
 <td>Water</td>
 <td>Aluminium powder</td>
 <td>3</td>
 <td>2.7</td>
-<td>0.9</td>
+<td>9</td>
 </tr>
 <tr class="odd">
 <td>Air</td>
 <td>Oil dropplets</td>
 <td>1</td>
 <td>920</td>
-<td>0.3</td>
+<td>3</td>
 </tr>
 <tr class="even">
 <td>Air</td>
 <td>SiO<span class="math inline">\(_2\)</span> beads</td>
 <td>0.8</td>
 <td>2600</td>
-<td>5</td>
+<td>50</td>
 </tr>
 <tr class="odd">
 <td>Air</td>
 <td>Inflated bubbles</td>
 <td>300</td>
 <td>1</td>
-<td>0.3</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td><strong>Water</strong></td>
+<td><strong>PSP-50 (this course)</strong></td>
+<td><strong>50</strong></td>
+<td><strong>1.03</strong></td>
+<td><strong>143</strong></td>
 </tr>
 </tbody>
 </table>
+<div class="fragment fade-in">
+<p>For our aquarium (cylinder <span class="math inline">\(D=12\)</span> mm, <span class="math inline">\(U_0\)</span> up to 90 mm/s): <span class="math inline">\(\tau_f \approx D/U_0 \approx 133\)</span> ms, so <span class="math inline">\(St = \tau_p/\tau_f \approx 1.1\times10^{-3} \ll 10^{-1}\)</span> — PSP-50 tracks this flow essentially perfectly, at every regime.</p>
+</div>
 </section>
-<section id="tracer-particles-generation" class="slide level2">
-<h2>Tracer particles generation</h2>
+<section id="tracer-particles-56" class="slide level2">
+<h2>Tracer particles (5/6)</h2>
+<h3 id="example-of-generation">example of generation</h3>
+<p>A <strong>Laskin nozzle</strong> atomizes oil through small orifices into a fine, narrow-distribution droplet spray — a standard, cheap way to seed air flows with the oil droplets.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="images/laskin.png" width="500"></p>
+<p><img data-src="images/laskin.png" width="450"></p>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/pdf_part.png" width="700"></p>
 </div></div>
 </section>
-<section id="light-scattering" class="slide level2">
-<h2>Light scattering</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>PIV image intensity and contrast <span class="math inline">\(\propto\)</span> scattered light power: selecting suitable scattering particles is usually more effective and cost-efficient than increasing laser (illumination) power.</p>
-<p><img data-src="images/light_scattered.png" width="500"> <img data-src="images/piv_im1.png" width="700"></p>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/spectre2.png" class="nostretch quarto-figure quarto-figure-center" width="300"></p>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="light-scattering-1" class="slide level2">
-<h2>Light scattering</h2>
-<p>For spherical particles with diameters <span class="math inline">\(d_p\)</span> larger than the wavelength of the incident light <span class="math inline">\(\lambda\)</span>, <strong>Mie’s scattering theory</strong> holds.</p>
+<section id="tracer-particles-66" class="slide level2">
+<h2>Tracer particles (6/6)</h2>
+<h3 id="light-scattering">Light scattering</h3>
+<p>PIV <strong>image intensity and contrast</strong> <span class="math inline">\(\propto\)</span> <strong>scattered light power</strong>:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Maximum light diffused at 0°</p>
+<p><img data-src="images/light_scattered.png" width="400"></p>
 <div class="line-block">Important parameters:<br>
 &nbsp;&nbsp;– Particle type/shape/size<br>
 &nbsp;&nbsp;– Refraction index<br>
 &nbsp;&nbsp;– Nature of the environment</div>
 </div><div class="column" style="width:50%;">
-<p><img data-src="images/light_scattered2.png" width="700"></p>
+<p>For particles with <span class="math inline">\(d_p &gt; \lambda\)</span>, <strong>Mie’s scattering theory</strong> holds — maximum light diffused near 0° (forward), increasingly focused as particle size grows:</p>
+<p><img data-src="images/light_scattered2.png" width="290"></p>
 </div></div>
-</section>
-<section id="illumination-sheet" class="slide level2">
-<h2>Illumination sheet</h2>
-<p>Use of spherical and cylindrical lenses</p>
-<div class="line-block">Important parameters:<br>
-&nbsp;&nbsp;– Cylindrical lens curvature and concavity (F2)<br>
-&nbsp;&nbsp;– Focal length of the spherical lens (F1)<br>
-&nbsp;&nbsp;– Divergence and diameter of the laser beam</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/laser_sheet.png" class="quarto-figure quarto-figure-center" width="700"></p>
-</figure>
-</div>
-</section>
-<section id="image-recording" class="slide level2">
-<h2>Image recording</h2>
-<p>See B. Radisson’s lecture.</p>
 </section>
 <section id="complete-setup-overview" class="slide level2">
 <h2>Complete setup overview</h2>
+<p>Seeding, illumination, recording, calibration — put together, this is the full acquisition chain behind a PIV measurement:</p>
 
 <img data-src="images/piv_setup.png" class="quarto-figure quarto-figure-center r-stretch" width="700"></section>
-<section id="resolution-requirements-in-fluid-flows-12" class="slide level2">
-<h2>Resolution requirements in fluid flows (1/2)</h2>
-<ul>
-<li>One of the major difficulties in flow imaging is achieving adequate spatial and temporal resolution. This is particularly the case when flows are turbulent, if it is desired to resolve the smallest scales at which fluctuations occur.</li>
-<li>Laminar flows pose less stringent requirements on resolution, compared to turbulent flows. In many laminar shear flows including boundary layers, pipe flows, wakes, jets, and mixing layers, the maximum gradient is the same order of magnitude as the overall gradient, <span class="math display">\[\left(\frac{\partial U}{\partial y} \right)_{\rm max} \approx \frac{\Delta U}{\delta}\]</span> where <span class="math inline">\(\Delta U\)</span> is the characteristic velocity difference, <span class="math inline">\(\delta\)</span> is the local width of the shear flow.</li>
-</ul>
-</section>
-<section id="resolution-requirements-in-fluid-flows-22" class="slide level2">
-<h2>Resolution requirements in fluid flows (2/2)</h2>
-<ul>
-<li>Turbulent flows have substantially more severe resolution requirements than laminar flows, owing to the much larger gradients that occur at the smallest scales of turbulence.</li>
-<li>In turbulent flows, the spatial fluctuations range in scale from the largest physical dimension of the flow (e.g., the local width of the boundary layer or jet) to the scale at which diffusion acts to remove all gradients.</li>
-<li>The largest scales are often called the ‘‘outer scales,’’ whereas the smallest scales are the ‘‘inner’’ or dissipation scales because these are the scales at which the energy of fluctuations, whether kinetic or scalar, is dissipated.</li>
-<li>In classical turbulence theory, the kinetic energy dissipation scale is the Kolmogorov scale <span class="math display">\[\eta \equiv \left( \frac{\nu ^3}{\epsilon} \right)^{1/4}.\]</span></li>
-<li>Using scaling arguments, the Kolmogorov scale can also be related to outer scale variables through the relationship, <span class="math inline">\(\eta \propto Re^{-3/4}\)</span>.</li>
-</ul>
-</section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
-<p>Developping a PIV setup is a seek for a compromise regarding,</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="line-block">Reduced inertia of the seeding particles:<br>
-&nbsp;&nbsp;– Neutrally buoyant<br>
-&nbsp;&nbsp;– As small as possible</div>
-<div class="line-block">High visibility:<br>
-&nbsp;&nbsp;– Good light scattering<br>
-&nbsp;&nbsp;– Large enough</div>
-<p>Air vs water</p>
-<p>Application</p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/spectre_turb.png" width="700"></p>
-</div></div>
+<section id="image-recording" class="slide level2">
+<h2>Image recording</h2>
+<p>Camera sensor type (CCD vs CMOS), exposure and shutter settings, and synchronization between illumination and acquisition all matter for PIV image quality — covered in detail in <strong>B. Radisson’s lecture</strong>, right after this one.</p>
 </section></section>
 <section>
 <section id="image-evaluation-methods" class="title-slide slide level1 center">
@@ -579,14 +584,17 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <p>Estimate a <strong>velocity-field</strong> from a couple of <strong>grayscale particle images</strong>, i.e.&nbsp;find <span class="math inline">\(\vec{V}(\vec{x},t)\)</span> from <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span>, <span class="math inline">\(I \in [0,255]\)</span>.</p>
 <ul>
 <li>Ideally, a high data density is preferred on the PIV vector fields, particularly when significant spatial flow variations must be resolved or when comparing experimental data with numerical results.</li>
-<li>This requires a medium concentration of the images of the tracer particles in the PIV recording.</li>
-<li>Medium image concentration is characterized by the fact that matching pairs of particle images – due to subsequent illuminations – cannot be detected by visual inspection.</li>
+<li>This requires a <strong>medium</strong> concentration of the images of the tracer particles in the PIV recording — a real compromise, not a default:
+<ul>
+<li>too sparse, and matching pairs of particle images – due to subsequent illuminations – cannot be detected by visual inspection;</li>
+<li>too dense, and particle images start to overlap, blurring the correlation peak they should sharpen.</li>
+</ul></li>
 <li>Hence, statistical approaches were developed.</li>
 </ul>
 </section>
-<section id="from-ivecxttdelta-t-i-in-0255" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">From <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span>, <span class="math inline">\(I \in [0,255]\)</span></h2>
-<div id="795eabf2" class="cell" data-execution_count="1">
+<section id="from-ivecxttdelta-t" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">From <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span></h2>
+<div id="d42602dd" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb1-1" class="hljs-ln-code"><a></a><span class="co"># import the standard numerical and plotting packages</span></span>
 <span id="cb1-2" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3" class="hljs-ln-code"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -598,9 +606,9 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <span id="cb1-9" class="hljs-ln-code"><a></a>b <span class="op">=</span> tools.imread(<span class="st">"./images/B005_2.tif"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="from-ivecxttdelta-t-i-in-0255-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">From <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span>, <span class="math inline">\(I \in [0,255]\)</span></h2>
-<div id="9aaa9bac" class="cell" data-execution_count="2">
+<section id="from-ivecxttdelta-t-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">From <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span></h2>
+<div id="beeb9f9a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb2-1" class="hljs-ln-code"><a></a><span class="co"># import the standard numerical and plotting packages</span></span>
 <span id="cb2-2" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3" class="hljs-ln-code"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -612,13 +620,14 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <span id="cb2-9" class="hljs-ln-code"><a></a>b <span class="op">=</span> tools.imread(<span class="st">"./images/B005_2.tif"</span>)</span>
 <span id="cb2-10" class="hljs-ln-code"><a></a></span>
 <span id="cb2-11" class="hljs-ln-code"><a></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
-<span id="cb2-12" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">0</span>].imshow(a, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">100</span>, cmap<span class="op">=</span>plt.cm.gray)</span>
-<span id="cb2-13" class="hljs-ln-code"><a></a>axs[<span class="dv">0</span>].set_title(<span class="st">'frame A'</span>)</span>
-<span id="cb2-14" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">1</span>].imshow(b, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">100</span>, cmap<span class="op">=</span>plt.cm.gray)</span>
-<span id="cb2-15" class="hljs-ln-code"><a></a>axs[<span class="dv">1</span>].set_title(<span class="st">'frame B'</span>)</span>
-<span id="cb2-16" class="hljs-ln-code"><a></a>cbar <span class="op">=</span> fig.add_axes([<span class="fl">0.95</span>, <span class="fl">0.1</span>, <span class="fl">0.03</span>, <span class="fl">0.8</span>])</span>
-<span id="cb2-17" class="hljs-ln-code"><a></a>fig.colorbar(img, cax<span class="op">=</span>cbar)</span>
-<span id="cb2-18" class="hljs-ln-code"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-12" class="hljs-ln-code"><a></a><span class="co"># 0-100 range boosts contrast for this plot only, the data itself is untouched</span></span>
+<span id="cb2-13" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">0</span>].imshow(a, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">100</span>, cmap<span class="op">=</span>plt.cm.gray)</span>
+<span id="cb2-14" class="hljs-ln-code"><a></a>axs[<span class="dv">0</span>].set_title(<span class="st">'frame A'</span>)</span>
+<span id="cb2-15" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">1</span>].imshow(b, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">100</span>, cmap<span class="op">=</span>plt.cm.gray)</span>
+<span id="cb2-16" class="hljs-ln-code"><a></a>axs[<span class="dv">1</span>].set_title(<span class="st">'frame B'</span>)</span>
+<span id="cb2-17" class="hljs-ln-code"><a></a>cbar <span class="op">=</span> fig.add_axes([<span class="fl">0.95</span>, <span class="fl">0.1</span>, <span class="fl">0.03</span>, <span class="fl">0.8</span>])</span>
+<span id="cb2-18" class="hljs-ln-code"><a></a>fig.colorbar(img, cax<span class="op">=</span>cbar)</span>
+<span id="cb2-19" class="hljs-ln-code"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-execution_count="2">
 <div class="cell-output cell-output-display">
@@ -633,7 +642,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="windowing" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Windowing</h2>
 <p>Let’s focus on small portions of the images:</p>
-<div id="c710b99b" class="cell" data-execution_count="3">
+<div id="dccf8a83" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb3-1" class="hljs-ln-code"><a></a>win_size <span class="op">=</span> <span class="dv">32</span></span>
 <span id="cb3-2" class="hljs-ln-code"><a></a>a_win <span class="op">=</span> a[:win_size, :win_size].copy()</span>
 <span id="cb3-3" class="hljs-ln-code"><a></a>b_win <span class="op">=</span> b[:win_size, :win_size].copy()</span>
@@ -661,7 +670,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="shifting" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Shifting</h2>
 <p>We could then try to shift the window IA by some pixels along the horizontal and/or vertical directions</p>
-<div id="8dbf48ef" class="cell" data-execution_count="4">
+<div id="3e6c4f1b" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="2,4,6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb4-1" class="hljs-ln-code"><a></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
 <span id="cb4-2" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">0</span>].imshow(b_win <span class="op">-</span> a_win, cmap<span class="op">=</span>plt.cm.gray)</span>
 <span id="cb4-3" class="hljs-ln-code"><a></a>axs[<span class="dv">0</span>].set_title(<span class="st">"IB - IA(shift=0)"</span>)</span>
@@ -686,7 +695,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="optimal-matching" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Optimal matching?</h2>
 <p>Let’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.</p>
-<div id="28e5595a" class="cell" data-execution_count="5">
+<div id="70036b09" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="|16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb5-1" class="hljs-ln-code"><a></a><span class="kw">def</span> match_template(img, template, maxroll<span class="op">=</span><span class="dv">8</span>):</span>
 <span id="cb5-2" class="hljs-ln-code"><a></a>    <span class="co"># img: input image to compare</span></span>
 <span id="cb5-3" class="hljs-ln-code"><a></a>    <span class="co"># template: image to match against</span></span>
@@ -705,7 +714,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <span id="cb5-16" class="hljs-ln-code"><a></a>match_template(np.roll(a_win, (<span class="dv">2</span>, <span class="dv">0</span>), axis<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>)), a_win)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="75">
 <pre><code>(0.0, (2, 0))</code></pre>
 </div>
 </div>
@@ -713,12 +722,12 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="optimal-matching-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Optimal matching?</h2>
 <p>Let’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.</p>
-<div id="79792741" class="cell" data-execution_count="6">
+<div id="b52ebd7c" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb7-1" class="hljs-ln-code"><a></a><span class="co"># Let’s try it on the two sub-windows</span></span>
 <span id="cb7-2" class="hljs-ln-code"><a></a>match_template(b_win, a_win)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="76">
 <pre><code>(123.80226169178009, (-1, 1))</code></pre>
 </div>
 </div>
@@ -755,7 +764,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="cc-interrogation-technic-1" class="slide level2">
 <h2>CC interrogation technic</h2>
 <p>CC is an efficient computational algorithm to find out the right shift.</p>
-<div id="62141526" class="cell" data-execution_count="7">
+<div id="7d77d587" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># import the required package</span></span>
 <span id="cb9-2"><a></a><span class="im">from</span> scipy.signal <span class="im">import</span> correlate</span>
 <span id="cb9-3"><a></a></span>
@@ -781,7 +790,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="cc-interrogation-technic-2" class="slide level2 scrollable">
 <h2>CC interrogation technic</h2>
 <p>We can get the first velocity field by repeating this analysis for all windows.</p>
-<div id="bb950adb" class="cell" data-execution_count="8">
+<div id="bf1959c4" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">def</span> vel_field(curr_frame, next_frame, win_size):</span>
 <span id="cb10-2"><a></a>    ys <span class="op">=</span> np.arange(<span class="dv">0</span>, curr_frame.shape[<span class="dv">0</span>], win_size)</span>
 <span id="cb10-3"><a></a>    xs <span class="op">=</span> np.arange(<span class="dv">0</span>, curr_frame.shape[<span class="dv">1</span>], win_size)</span>
@@ -791,36 +800,34 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <span id="cb10-7"><a></a>        <span class="cf">for</span> ix, x <span class="kw">in</span> <span class="bu">enumerate</span>(xs):</span>
 <span id="cb10-8"><a></a>            int_win <span class="op">=</span> curr_frame[y : y <span class="op">+</span> win_size, x : x <span class="op">+</span> win_size]</span>
 <span id="cb10-9"><a></a>            search_win <span class="op">=</span> next_frame[y : y <span class="op">+</span> win_size, x : x <span class="op">+</span> win_size]</span>
-<span id="cb10-10"><a></a>            cross_corr <span class="op">=</span> correlate(</span>
-<span id="cb10-11"><a></a>                search_win <span class="op">-</span> search_win.mean(), int_win <span class="op">-</span> int_win.mean(), method<span class="op">=</span><span class="st">"fft"</span></span>
-<span id="cb10-12"><a></a>            )</span>
-<span id="cb10-13"><a></a>            dys[iy, ix], dxs[iy, ix] <span class="op">=</span> (</span>
-<span id="cb10-14"><a></a>                np.unravel_index(np.argmax(cross_corr), cross_corr.shape)</span>
-<span id="cb10-15"><a></a>                <span class="op">-</span> np.array([win_size, win_size])</span>
-<span id="cb10-16"><a></a>                <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb10-17"><a></a>            )</span>
-<span id="cb10-18"><a></a>    <span class="co"># locate velocity vectors from the center of each window</span></span>
-<span id="cb10-19"><a></a>    ys <span class="op">=</span> ys <span class="op">+</span> win_size <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb10-20"><a></a>    xs <span class="op">=</span> xs <span class="op">+</span> win_size <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb10-21"><a></a>    <span class="cf">return</span> xs, ys, dxs, dys</span>
-<span id="cb10-22"><a></a></span>
-<span id="cb10-23"><a></a>xs, ys, dxs, dys <span class="op">=</span> vel_field(a, b, <span class="dv">32</span>)</span>
-<span id="cb10-24"><a></a>norm_drs <span class="op">=</span> np.sqrt(dxs <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> dys <span class="op">**</span> <span class="dv">2</span>)</span>
-<span id="cb10-25"><a></a></span>
-<span id="cb10-26"><a></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
-<span id="cb10-27"><a></a>ax.quiver(</span>
-<span id="cb10-28"><a></a>    xs,</span>
-<span id="cb10-29"><a></a>    ys[::<span class="op">-</span><span class="dv">1</span>],</span>
-<span id="cb10-30"><a></a>    dxs,</span>
-<span id="cb10-31"><a></a>    <span class="op">-</span>dys,</span>
-<span id="cb10-32"><a></a>    norm_drs,</span>
-<span id="cb10-33"><a></a>    cmap<span class="op">=</span><span class="st">"plasma"</span>,</span>
-<span id="cb10-34"><a></a>    angles<span class="op">=</span><span class="st">"xy"</span>,</span>
-<span id="cb10-35"><a></a>    scale_units<span class="op">=</span><span class="st">"xy"</span>,</span>
-<span id="cb10-36"><a></a>    scale<span class="op">=</span><span class="fl">0.25</span>,</span>
-<span id="cb10-37"><a></a>)</span>
-<span id="cb10-38"><a></a>ax.set_aspect(<span class="st">"equal"</span>)</span>
-<span id="cb10-39"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-10"><a></a>            cross_corr <span class="op">=</span> correlate(search_win <span class="op">-</span> search_win.mean(), int_win <span class="op">-</span> int_win.mean(), method<span class="op">=</span><span class="st">"fft"</span>)</span>
+<span id="cb10-11"><a></a>            dys[iy, ix], dxs[iy, ix] <span class="op">=</span> (</span>
+<span id="cb10-12"><a></a>                np.unravel_index(np.argmax(cross_corr), cross_corr.shape)</span>
+<span id="cb10-13"><a></a>                <span class="op">-</span> np.array([win_size, win_size])</span>
+<span id="cb10-14"><a></a>                <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb10-15"><a></a>            )</span>
+<span id="cb10-16"><a></a>    <span class="co"># locate velocity vectors from the center of each window</span></span>
+<span id="cb10-17"><a></a>    ys <span class="op">=</span> ys <span class="op">+</span> win_size <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb10-18"><a></a>    xs <span class="op">=</span> xs <span class="op">+</span> win_size <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb10-19"><a></a>    <span class="cf">return</span> xs, ys, dxs, dys</span>
+<span id="cb10-20"><a></a></span>
+<span id="cb10-21"><a></a>xs, ys, dxs, dys <span class="op">=</span> vel_field(a, b, <span class="dv">32</span>)</span>
+<span id="cb10-22"><a></a>norm_drs <span class="op">=</span> np.sqrt(dxs <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> dys <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb10-23"><a></a></span>
+<span id="cb10-24"><a></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
+<span id="cb10-25"><a></a>ax.quiver(</span>
+<span id="cb10-26"><a></a>    xs,</span>
+<span id="cb10-27"><a></a>    ys[::<span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb10-28"><a></a>    dxs,</span>
+<span id="cb10-29"><a></a>    <span class="op">-</span>dys,</span>
+<span id="cb10-30"><a></a>    norm_drs,</span>
+<span id="cb10-31"><a></a>    cmap<span class="op">=</span><span class="st">"plasma"</span>,</span>
+<span id="cb10-32"><a></a>    angles<span class="op">=</span><span class="st">"xy"</span>,</span>
+<span id="cb10-33"><a></a>    scale_units<span class="op">=</span><span class="st">"xy"</span>,</span>
+<span id="cb10-34"><a></a>    scale<span class="op">=</span><span class="fl">0.25</span>,</span>
+<span id="cb10-35"><a></a>)</span>
+<span id="cb10-36"><a></a>ax.set_aspect(<span class="st">"equal"</span>)</span>
+<span id="cb10-37"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-execution_count="8">
 <div class="cell-output cell-output-display">
@@ -836,8 +843,8 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <h2>CC interrogation technic</h2>
 <p>Let’s have a look back at the CC map:</p>
 <div class="columns">
-<div class="column" style="width:50%;">
-<div id="b24be1d4" class="cell" data-execution_count="9">
+<div class="column" style="width:45%;">
+<div id="495c0874" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>plt.imshow(cross_corr, cmap<span class="op">=</span>plt.cm.gray)</span>
 <span id="cb11-2"><a></a>y, x <span class="op">=</span> np.unravel_index(cross_corr.argmax(), cross_corr.shape)</span>
 <span id="cb11-3"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>y<span class="op">=</span><span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>x<span class="op">=</span><span class="sc">}</span><span class="ss">"</span>)</span>
@@ -855,27 +862,48 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:55%;">
 <div class="fragment fade-in">
 <ul>
-<li><p>The information is discrete (pxl)! Very high uncertainty for displacements close to 1 pxl</p></li>
-<li><p>Sub-pixel interpolation of the correlation peak (Gaussian, parabolic, etc.) over 3, 5 or 7 pxls <span class="math inline">\(\Rightarrow\)</span> theoretical accuracy 0.01 pxl.</p></li>
+<li><p>The information is discrete (pxl)! <span class="math inline">\(\Rightarrow\)</span> very high uncertainty for displacements <span class="math inline">\(\approx\)</span> 1 pxl</p></li>
+<li><p>Histogram of the raw displacements:</p></li>
 </ul>
-<p><img data-src="images/cc3.png" width="900"></p>
+<div id="ad01ef3d" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>bins <span class="op">=</span> np.arange(dxs.<span class="bu">min</span>() <span class="op">-</span> <span class="fl">0.5</span>, dxs.<span class="bu">max</span>() <span class="op">+</span> <span class="fl">1.5</span>, <span class="dv">1</span>)</span>
+<span id="cb13-2"><a></a>plt.hist(dxs.ravel(), bins<span class="op">=</span>bins, edgecolor<span class="op">=</span><span class="st">"k"</span>)</span>
+<span id="cb13-3"><a></a>plt.xlabel(<span class="st">"Estimated horizontal displacement (pixels)"</span>)</span>
+<span id="cb13-4"><a></a>plt.ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb13-5"><a></a>plt.title(<span class="st">"Raw correlation-peak displacement — one spike per integer"</span>)</span>
+<span id="cb13-6"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/cell-11-output-1.png" width="808" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div></div>
 </section>
 <section id="cc-interrogation-technic-4" class="slide level2">
 <h2>CC interrogation technic</h2>
-<h3 id="errors">errors</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>The interpolation of correlation peaks causes a bias towards integer values displacements (Peak locking effect)</li>
-<li>This effect increases when the particle image size &lt; 2 pixels</li>
-<li>Solutions to correct this effect: choice of the interpolation function, iterative PIV, etc. <img data-src="images/peak_lock.png" width="700"></li>
+<li>Sub-pixel interpolation of the correlation peak (Gaussian, parabolic, etc.) over 3, 5 or 7 pxls <span class="math inline">\(\Rightarrow\)</span> theoretical accuracy 0.01 pxl.</li>
 </ul>
+<p><img data-src="images/cc3.png" width="700"></p>
+<div class="fragment fade-in">
+<ul>
+<li>A <strong>residual bias toward integer values can persist: the Peak-locking effect.</strong> It is caused when the correlation peak is too narrow to resolve, i.e.&nbsp;when the particle image size drops below ~2 pixels.</li>
+<li>Solutions: choice of the interpolation function, iterative PIV, etc.</li>
+</ul>
+</div>
 </div><div class="column" style="width:50%;">
+<p><img data-src="images/peak_lock.png" width="700"></p>
 <div class="fragment fade-in">
 <div class="line-block">Particle size on image results from:<br>
 &nbsp;&nbsp;– Actual particle size<br>
@@ -886,83 +914,186 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 </div>
 </div></div>
 </section>
-<section id="parameters" class="slide level2">
-<h2>Parameters</h2>
-<h3 id="taking-good-quality-images-is-an-art">Taking good quality images is an art!</h3>
+<section id="cc-interrogation-technic-5" class="slide level2">
+<h2>CC interrogation technic</h2>
+<p>Correlation coefficient for different displacements <span class="math inline">\(\equiv\)</span> different time between pulses</p>
+
+<img data-src="images/cc_disp.png" width="1000" class="r-stretch"></section>
+<section id="spatial-resolution-16" class="slide level2">
+<h2>Spatial resolution (1/6)</h2>
+<h3 id="requirements-in-fluid-flows-12">requirements in fluid flows (1/2)</h3>
+<ul>
+<li>One of the major difficulties in flow imaging is achieving <strong>adequate spatial and temporal resolution</strong>. This is particularly the case when flows are turbulent, if it is desired to resolve the smallest scales at which fluctuations occur.</li>
+<li>Laminar flows pose less stringent requirements. In many laminar shear flows including boundary layers, pipe flows, wakes, jets, and mixing layers, the maximum gradient is the same order of magnitude as the overall gradient, <span class="math display">\[\left(\frac{\partial U}{\partial y} \right)_{\rm max} \approx \frac{\Delta U}{\delta}\]</span> where <span class="math inline">\(\Delta U\)</span> is the characteristic velocity difference, <span class="math inline">\(\delta\)</span> is the local width of the shear flow.</li>
+</ul>
+</section>
+<section id="spatial-resolution-26" class="slide level2">
+<h2>Spatial resolution (2/6)</h2>
+<h3 id="requirements-in-fluid-flows-22">requirements in fluid flows (2/2)</h3>
+<ul>
+<li>In turbulent flows, the spatial fluctuations range in scale from the largest physical dimension of the flow (the ‘‘outer scales’’) to the scale at which diffusion acts to remove all gradients (the ‘‘inner’’ or dissipation scales where the energy of fluctuations is dissipated).</li>
+<li>The kinetic energy dissipation scale is the Kolmogorov scale <span class="math display">\[\eta \equiv \left( \frac{\nu ^3}{\epsilon} \right)^{1/4}.\]</span></li>
+<li>Using scaling arguments, the Kolmogorov scale can also be related to outer scale variables through the relationship, <span class="math inline">\(\eta \propto Re^{-3/4}\)</span>.</li>
+</ul>
+</section>
+<section id="spatial-resolution-36" class="slide level2">
+<h2>Spatial resolution (3/6)</h2>
+<h3 id="choosing-the-window-size">choosing the window size</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="fragment fade-in">
-<ul>
-<li>Homogeneous, regular tracer density <span class="math inline">\(\rightarrow\)</span> correlation relevance</li>
-</ul>
-</div>
-<div class="fragment fade-in">
-<ul>
-<li>Particle image size (ideal: ~3/4 pixels): Detectability / Pixel locking</li>
-</ul>
-</div>
-<div class="fragment fade-in">
-<ul>
-<li>No saturation of particle images on the CCD sensor</li>
-</ul>
-</div>
-<div class="fragment fade-in">
-<ul>
-<li>No reflection, background noise,…</li>
-</ul>
-</div>
+<p><img data-src="images/vort1.png" width="800"></p>
+</div><div class="column" style="width:50%;">
+<p>The window must be <strong>small enough</strong> to resolve the gradient down to the smallest scales, <strong>large enough</strong> to contain enough particles. Typical <em>starting</em> sizes: <span class="math inline">\(32\times32\)</span>, <span class="math inline">\(64\times64\)</span>, <span class="math inline">\(128\times128\)</span> px<span class="math inline">\(^2\)</span> (pixel size <span class="math inline">\(0.1\)</span>–<span class="math inline">\(1\)</span> mm).</p>
+<p>A window too large <strong>smooths and underestimates</strong> the true vorticity peak — the classic bias/noise trade-off.</p>
+</div></div>
+</section>
+<section id="spatial-resolution-46" class="slide level2">
+<h2>Spatial resolution (4/6)</h2>
+<h3 id="overlap-more-vectors">overlap: more vectors…</h3>
+<p>Overlapping interrogation windows (typically 50%, 75%) does <strong>not add any new physical information</strong> — each window is still the same size. It only increases how densely the vector field is <em>displayed</em>.</p>
+<svg viewbox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:620px; display:block; margin:0 auto; font-family: Georgia, serif;">
+  <defs>
+    <marker id="ov-arrow-end" markerwidth="10" markerheight="10" refx="8" refy="4" orient="auto">
+      <polygon points="0 0, 9 4, 0 8" fill="#43464B"></polygon>
+    </marker>
+    <marker id="ov-arrow-start" markerwidth="10" markerheight="10" refx="1" refy="4" orient="auto-start-reverse">
+      <polygon points="0 0, 9 4, 0 8" fill="#43464B"></polygon>
+    </marker>
+  </defs>
+
+  <text x="60" y="40" font-size="22" font-weight="bold" fill="#137fec">0% overlap</text>
+
+  <rect x="60" y="70" width="140" height="150" fill="none" stroke="#137fec" stroke-width="2.5"></rect>
+  <rect x="200" y="70" width="140" height="150" fill="none" stroke="#137fec" stroke-width="2.5"></rect>
+  <rect x="340" y="70" width="140" height="150" fill="none" stroke="#137fec" stroke-width="2.5"></rect>
+
+  <circle cx="130" cy="145" r="6" fill="#43464B"></circle>
+  <circle cx="270" cy="145" r="6" fill="#43464B"></circle>
+  <circle cx="410" cy="145" r="6" fill="#43464B"></circle>
+
+  <line x1="130" y1="145" x2="130" y2="260" stroke="#43464B" stroke-width="1" stroke-dasharray="4,3"></line>
+  <line x1="270" y1="145" x2="270" y2="260" stroke="#43464B" stroke-width="1" stroke-dasharray="4,3"></line>
+  <line x1="130" y1="270" x2="270" y2="270" stroke="#43464B" stroke-width="2" marker-start="url(#ov-arrow-start)" marker-end="url(#ov-arrow-end)"></line>
+  <text x="200" y="262" text-anchor="middle" font-size="16" fill="#43464B">M</text>
+
+  <text x="540" y="115" font-size="22" fill="#43464B">Each window = one independent</text>
+  <text x="540" y="140" font-size="22" fill="#43464B">correlation.</text>
+  <text x="540" y="175" font-size="22" fill="#43464B">Vectors spaced exactly one</text>
+  <text x="540" y="200" font-size="22" fill="#43464B">window apart.</text>
+
+  <text x="60" y="320" font-size="22" font-weight="bold" fill="#137fec">50% overlap</text>
+
+  <rect x="130" y="350" width="70" height="150" fill="#137fec" fill-opacity="0.15" stroke="none"></rect>
+
+  <rect x="60" y="350" width="140" height="150" fill="none" stroke="#137fec" stroke-width="2.5"></rect>
+  <rect x="130" y="350" width="140" height="150" fill="none" stroke="#137fec" stroke-width="2.5"></rect>
+  <rect x="200" y="350" width="140" height="150" fill="none" stroke="#137fec" stroke-width="2.5"></rect>
+  <rect x="270" y="350" width="140" height="150" fill="none" stroke="#137fec" stroke-width="2.5"></rect>
+  <rect x="340" y="350" width="140" height="150" fill="none" stroke="#137fec" stroke-width="2.5"></rect>
+
+  <circle cx="130" cy="425" r="6" fill="#43464B"></circle>
+  <circle cx="200" cy="425" r="6" fill="#43464B"></circle>
+  <circle cx="270" cy="425" r="6" fill="#43464B"></circle>
+  <circle cx="340" cy="425" r="6" fill="#43464B"></circle>
+  <circle cx="410" cy="425" r="6" fill="#43464B"></circle>
+
+  <line x1="130" y1="425" x2="130" y2="540" stroke="#43464B" stroke-width="1" stroke-dasharray="4,3"></line>
+  <line x1="200" y1="425" x2="200" y2="540" stroke="#43464B" stroke-width="1" stroke-dasharray="4,3"></line>
+  <line x1="130" y1="550" x2="200" y2="550" stroke="#43464B" stroke-width="2" marker-start="url(#ov-arrow-start)" marker-end="url(#ov-arrow-end)"></line>
+  <text x="165" y="542" text-anchor="middle" font-size="16" fill="#43464B">M/2</text>
+
+  <text x="540" y="385" font-size="22" fill="#43464B">Neighboring windows share</text>
+  <text x="540" y="410" font-size="22" fill="#43464B">pixels (shaded) — their vectors</text>
+  <text x="540" y="435" font-size="22" fill="#43464B">are not statistically independent.</text>
+  <text x="540" y="470" font-size="22" font-weight="bold" fill="#137fec">→ display density ↑, true</text>
+  <text x="540" y="495" font-size="22" font-weight="bold" fill="#137fec">resolution unchanged.</text>
+</svg>
+</section>
+<section id="spatial-resolution-56" class="slide level2">
+<h2>Spatial resolution (5/6)</h2>
+<h3 id="resolving-strong-gradients">resolving strong gradients</h3>
+<p>Near a wall, or in strong shear:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/grad.png" width="1000"></p>
 </div><div class="column" style="width:50%;">
 <div class="fragment fade-in">
-<ul>
-<li>Gaussian laser beams</li>
-</ul>
-</div>
-<div class="fragment fade-in">
-<ul>
-<li>Superimposed laser sheets, ideal thickness ~ 500μm</li>
-</ul>
-</div>
-<div class="fragment fade-in">
-<ul>
-<li>Time between pulses: In plane displacement =&gt; resolution Out of plane displacement =&gt; lost particles</li>
-</ul>
+<p>Far from the wall the correlation peak is sharp: displacement is nearly uniform across the window.</p>
+<p>Near the wall it varies <em>within</em> the window itself, partly decorrelating the signal — the peak becomes broad and noisy.</p>
+<p><span class="math inline">\(\rightarrow\)</span> the fix is not <em>one</em> window size, but a <strong>shrinking, iterated sequence</strong> of them — see next slide.</p>
 </div>
 </div></div>
-<div class="fragment fade-in">
-<p><img data-src="images/cc_seeding.png" width="1000"></p>
-</div>
 </section>
-<section id="parameters-1" class="slide level2">
-<h2>Parameters</h2>
-<p>Correlation coefficient for different displacements, i.e.&nbsp;different time between pulses</p>
-<div class="fragment fade-in">
-<p><img data-src="images/cc_disp.png" width="1000"></p>
-</div>
+<section id="spatial-resolution-66" class="slide level2">
+<h2>Spatial resolution (6/6)</h2>
+<h3 id="iterative-window-refinement">iterative window refinement</h3>
+<svg viewbox="0 0 950 425" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:850px; display:block; margin:0 auto; font-family: Georgia, serif;">
+  <defs>
+    <marker id="mp-arrow-blue" markerwidth="10" markerheight="10" refx="8" refy="4" orient="auto">
+      <polygon points="0 0, 9 4, 0 8" fill="#137fec"></polygon>
+    </marker>
+    <marker id="mp-arrow-orange" markerwidth="10" markerheight="10" refx="8" refy="4" orient="auto">
+      <polygon points="0 0, 9 4, 0 8" fill="#e8590c"></polygon>
+    </marker>
+  </defs>
+
+  <!-- Pass 1: 64x64, axis-aligned, coarse guess -->
+  <rect x="160" y="130" width="200" height="200" fill="none" stroke="#137fec" stroke-width="3"></rect>
+  <circle cx="190" cy="160" r="3" fill="#43464B"></circle>
+  <circle cx="210" cy="300" r="3" fill="#43464B"></circle>
+  <circle cx="320" cy="170" r="3" fill="#43464B"></circle>
+  <circle cx="340" cy="290" r="3" fill="#43464B"></circle>
+
+  <!-- Arrow 1: pass-1 displacement estimate -->
+  <line x1="260" y1="230" x2="291" y2="214" stroke="#137fec" stroke-width="3.5" marker-end="url(#mp-arrow-blue)"></line>
+
+  <!-- Pass 2: 32x32, rotated to follow arrow 1, orange -->
+  <g transform="translate(291,214) rotate(-28)">
+    <rect x="-70" y="-70" width="140" height="140" fill="none" stroke="#e8590c" stroke-width="3"></rect>
+    <circle cx="-45" cy="-20" r="3" fill="#43464B"></circle>
+    <circle cx="20" cy="35" r="3" fill="#43464B"></circle>
+    <circle cx="35" cy="-40" r="3" fill="#43464B"></circle>
+  </g>
+
+  <!-- Arrow 2: pass-2 displacement estimate -->
+  <line x1="291" y1="214" x2="315" y2="208" stroke="#e8590c" stroke-width="3.5" marker-end="url(#mp-arrow-orange)"></line>
+
+  <!-- Pass 3: 16x16, rotated to follow arrow 2, green -->
+  <g transform="translate(315,208) rotate(-14)">
+    <rect x="-45" y="-45" width="90" height="90" fill="none" stroke="#2f9e44" stroke-width="3"></rect>
+    <circle cx="-25" cy="-15" r="3" fill="#43464B"></circle>
+    <circle cx="20" cy="20" r="3" fill="#43464B"></circle>
+    <circle cx="25" cy="-25" r="3" fill="#43464B"></circle>
+  </g>
+
+  <text x="260" y="358" text-anchor="middle" font-size="15" font-style="italic" fill="#43464B">start: large window, zero-displacement guess</text>
+
+  <!-- color legend -->
+  <rect x="545" y="82" width="14" height="14" fill="#137fec"></rect>
+  <text x="566" y="94" font-size="15" fill="#43464B">Pass 1 — N×N px: coarse guess</text>
+  <rect x="545" y="112" width="14" height="14" fill="#e8590c"></rect>
+  <text x="566" y="124" font-size="15" fill="#43464B">Pass 2 — N/2×N/2 px: corrects Pass 1,</text>
+  <text x="566" y="144" font-size="15" fill="#43464B">rotated to follow it</text>
+  <rect x="545" y="162" width="14" height="14" fill="#2f9e44"></rect>
+  <text x="566" y="174" font-size="15" fill="#43464B">Pass 3 — N/4×N/4 px: corrects Pass 2</text>
+  <text x="566" y="194" font-size="15" fill="#43464B">→ final, sub-pixel field</text>
+
+  <!-- right-hand recipe -->
+  <text x="545" y="235" font-size="17" font-weight="bold" fill="#43464B">The recipe:</text>
+  <text x="545" y="263" font-size="15" fill="#43464B">1. Correlate at this window size.</text>
+  <text x="545" y="287" font-size="15" fill="#43464B">2. Estimate the shift.</text>
+  <text x="545" y="311" font-size="15" fill="#43464B">3. Repeat 1-2 (×1-2) until it stops</text>
+  <text x="565" y="331" font-size="15" fill="#43464B">changing at this window size.</text>
+  <text x="545" y="355" font-size="15" fill="#43464B">4. Halve the window, <tspan font-weight="bold">rotate it to</tspan></text>
+  <text x="565" y="375" font-size="15" fill="#43464B">follow the displacement, go to 1.</text>
+
+  <text x="545" y="398" font-size="14" font-style="italic" fill="#43464B">window sizes=(64,32,16) for example.</text>
+</svg>
+<p>Each pass is a small <strong>correction</strong> to the previous estimate. The window shrinks and rotates to follow that correction.</p>
 </section>
-<section id="spatial-resolution" class="slide level2">
-<h2>Spatial resolution</h2>
-<p>Typical mesh sizes: <span class="math inline">\(32 \times 32\)</span>, <span class="math inline">\(64 \times 64\)</span>, <span class="math inline">\(128 \times 128\)</span> pixel <span class="math inline">\(^2\)</span></p>
-<p>Typical pixel size: <span class="math inline">\(0.1\)</span> mm to <span class="math inline">\(1\)</span> mm</p>
-
-<img data-src="images/vort1.png" width="1000" class="r-stretch"></section>
-<section id="spatial-resolution-1" class="slide level2">
-<h2>Spatial resolution</h2>
-<p>Overlaping of the interrogation windows: typically 50%, 75%</p>
-
-<img data-src="images/overlap.png" width="1000" class="r-stretch"></section>
-<section id="spatial-resolution-2" class="slide level2">
-<h2>Spatial resolution</h2>
-<p>If strong gradients</p>
-
-<img data-src="images/grad.png" width="1000" class="r-stretch"><p><span class="math inline">\(\rightarrow\)</span> towards multi-pass</p>
-</section>
-<section id="multi-pass" class="slide level2">
-<h2>Multi-pass</h2>
-
-<img data-src="images/multipass.png" width="1000" class="r-stretch"></section>
 <section id="validation-procedure" class="slide level2">
 <h2>Validation procedure</h2>
-<p>Quality factor (signal-to-noise ratio):</p>
+<p>Quality factor (signal-to-noise ratio): how much the correlation peak stands out above the next-highest peak — a vector is rejected below a chosen threshold.</p>
 
 <img data-src="images/qual_fac.png" class="quarto-figure quarto-figure-center r-stretch" width="1000"></section>
 <section id="validation-procedure-1" class="slide level2">
@@ -988,18 +1119,105 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 </div>
 </div></div>
 </section>
-<section id="and-more" class="slide level2">
-<h2>And More…</h2>
-<ul>
-<li><a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/#footer-logo">Footer &amp; Logo</a> (optionally specify custom footer per-slide or hide global footer)</li>
-<li><a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/presenting.html#multiplex">Multiplex</a> (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).</li>
-</ul>
-<div class="footer">
-<p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/">Quarto Presentations</a></p>
+<section id="from-one-field-to-statistics" class="slide level2">
+<h2>From one field to statistics</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>A single realization gives you <strong>one instantaneous field</strong>. Turbulent flows need many independent realizations to estimate a reliable <strong>mean</strong> and <strong>fluctuations</strong> (turbulence intensity).</p>
+<p>The error on the estimated mean shrinks as <span class="math display">\[\frac{\sigma}{\sqrt{N}}\]</span> with <span class="math inline">\(N\)</span> the number of independent realizations and <span class="math inline">\(\sigma\)</span> the fluctuation level.</p>
+</div><div class="column" style="width:45%;">
+<div class="fragment fade-in">
+<p><strong>Doubling <span class="math inline">\(N\)</span> only buys a <span class="math inline">\(\sqrt 2\)</span> reduction</strong> in noise — diminishing returns. Decide <em>before</em> leaving the acquisition station how many realizations you can afford (capture + transfer + processing time), then check afterwards, from your own data, whether the running mean has actually stabilized.</p>
 </div>
+</div></div>
+</section>
+<section id="time-resolved-vs.-independent-realizations" class="slide level2">
+<h2>Time-resolved vs.&nbsp;independent realizations</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Independent realizations</strong></p>
+<ul>
+<li>Many uncorrelated double-frame pairs</li>
+<li><span class="math inline">\(\rightarrow\)</span> mean field, turbulence intensity</li>
+<li>Timing <em>between</em> pairs: irrelevant, as long as they’re independent</li>
+<li>How many: statistical convergence (previous slide)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="fragment fade-in">
+<p><strong>Time-resolved sequence</strong></p>
+<ul>
+<li>A continuous burst of single frames at a fixed rate</li>
+<li><span class="math inline">\(\rightarrow\)</span> spectral analysis (e.g.&nbsp;vortex-shedding frequency, Strouhal number)</li>
+<li>Frame rate: usually imposed by the light source (laser) and camera.</li>
+<li>How many: enough periods <span class="math inline">\(\times\)</span> enough samples/period, not a <span class="math inline">\(\sigma/\sqrt N\)</span> question</li>
+</ul>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
+
+</section>
+<section id="piv-pros" class="slide level2">
+<h2>PIV pros</h2>
+<ul>
+<li>The most widely applied velocity imaging technique in fluid mechanics.</li>
+<li>PIV is a very robust and accurate technique, which in its most common implementation enables the imaging of two components of velocity in a cross-section of the flow.</li>
+<li>PIV measurements are now commonplace and they have been applied in a wide range of gas- and liquid-phase flows, including microfluidics, large-scale wind tunnels, flames, plasmas, and supersonic and hypersonic flows.</li>
+</ul>
+</section>
+<section id="piv-challenges" class="slide level2 scrollable">
+<h2>PIV challenges</h2>
+<p>Developping a PIV setup is a seek for a compromise regarding,</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="line-block"><strong>Homogeneous, regular tracer density</strong> <span class="math inline">\(\rightarrow\)</span> correlation relevance</div>
+<div class="line-block"><strong>Reduced inertia</strong> of the seeding particles:<br>
+&nbsp;&nbsp;– Neutrally buoyant<br>
+&nbsp;&nbsp;– As small as possible</div>
+<div class="line-block"><strong>High visibility</strong>:<br>
+&nbsp;&nbsp;– Good light scattering<sup>1</sup><br>
+&nbsp;&nbsp;– Large enough<br>
+&nbsp;&nbsp;– No saturation on the CCD sensor<br>
+&nbsp;&nbsp;– No reflection, background noise,…</div>
+<div class="fragment fade-in">
+<p><span class="math inline">\(\Rightarrow\)</span> Ideal particle image size (<strong>~3-4 pixels</strong>): large enough to avoid the peak-locking, small enough to keep good detectability</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Poor vs.&nbsp;good seeding — same laser power: <img data-src="images/piv_im1.png" width="480"></p>
+<div class="fragment fade-in">
+<div class="line-block"><strong>Time between pulses</strong>:<br>
+&nbsp;&nbsp;– In plane displacement <span class="math inline">\(\Rightarrow\)</span> resolution<br>
+&nbsp;&nbsp;– Out of plane displacement <span class="math inline">\(\Rightarrow\)</span> lost particles</div>
+</div>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>PIV <strong>image intensity and contrast</strong> <span class="math inline">\(\propto\)</span> <strong>scattered light power</strong>: choosing suitable scattering particles is usually more effective and cost-efficient than increasing laser power.</p></li></ol></aside></section>
+<section id="piv-refs" class="slide level2">
+<h2>PIV refs</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Excellent introductions to PIV can be found in several references:</p>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/raffel.png" class="quarto-figure quarto-figure-center" width="350"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="next-the-lab-sessions" class="slide level2 scrollable">
+<h2>Next: the lab sessions</h2>
+<p>Two 4h sessions, one aquarium/acquisition station shared by rotation:</p>
+<ol type="1">
+<li><strong>Acquisition</strong> (1 station, by binome) — while waiting your turn, work through the first notebooks on synthetic images.</li>
+<li><strong>Processing</strong> (your own images) — diagnostics, calibration, masking, batch multi-pass PIV, quality control.</li>
+<li><strong>Analysis</strong> — mean/turbulent fields, wake/recirculation diagnostics, Strouhal number, comparison across flows and regimes. <span class="math inline">\(\rightarrow\)</span> next <code>Lecture</code> by Ph. Druault.</li>
+</ol>
 
 
 </section></section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

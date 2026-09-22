@@ -7,3 +7,30 @@
 .border-thick {
   border-width: 3px;
 }
+
+#title-slide h1.title {
+  font-size: 2.5em;
+}
+
+#title-slide p.subtitle {
+  font-size: 1.5em;
+}
+
+.piv-comparison table {
+  font-size: 0.72em;
+  line-height: 1.08;
+}
+
+.piv-comparison th,
+.piv-comparison td {
+  padding: 0.28em 0.42em;
+}
+
+.piv-comparison tbody tr:first-child td {
+  vertical-align: middle;
+}
+
+.piv-comparison tbody tr:first-child img {
+  max-height: 115px;
+  width: auto;
+}
