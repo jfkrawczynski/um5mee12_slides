@@ -6,10 +6,7 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="jean-francois.krawczynski@sorbonne-universite.fr, 2026">
@@ -239,7 +236,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 </section>
 <section id="so-simulate-or-measure" class="slide level2">
 <h2>So: simulate, or measure</h2>
-<p>Real flows of practical interest are usually turbulent, three-dimensional, geometrically complex, unsteady — exactly where analytical solutions disappear. For the vast majority of real applications, only two paths remain to get a quantitative answer:</p>
+<p><strong>Real flows</strong> of practical interest are usually <strong>turbulent</strong>, <strong>three-dimensional</strong>, <strong>geometrically complex</strong>, <strong>unsteady</strong> — exactly where analytical solutions disappear. For the vast majority of real applications, only two paths remain to get a quantitative answer:</p>
 <svg viewbox="0 0 1100 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:1100px; display:block; margin:0 auto; font-family: Georgia, serif;">
   <defs>
     <marker id="arrow-end" markerwidth="10" markerheight="10" refx="8" refy="4" orient="auto">
@@ -280,9 +277,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
   <rect x="680" y="282" width="340" height="58" rx="10" fill="#43464B" stroke="#43464B" stroke-width="2.5"></rect>
   <text x="850" y="318" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">This course: PIV</text>
 </svg>
-<div class="fragment fade-in">
-<p>Both are costly — and neither fully replaces the other: a turbulence closure model is only as trustworthy as the experimental data used to calibrate and validate it.</p>
-</div>
+<p>Both are costly and neither fully replaces the other: a turbulence closure model is only as trustworthy as the experimental data used to calibrate and validate it.</p>
 </section></section>
 <section>
 <section id="why-piv" class="title-slide slide level1 center">
@@ -355,69 +350,109 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 </div><div class="column" style="width:60%;">
 <p><img data-src="images/piv_princ2.png" width="800"></p>
 </div></div>
-<p><a href="#/piv-table">← back to the comparison table</a></p>
 </section>
-<section id="alternatives-to-piv-12" class="slide level2">
-<h2>Alternatives to PIV (1/2)</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>1D time-resolved signal (e.g.&nbsp;a hot-wire or an LDA probe, fixed in space): <img data-src="images/1d_sig.png" width="600"></p>
-<p>Therefore, the structure of an unsteady flow field cannot be obtained by such methods.</p>
-</div><div class="column" style="width:50%;">
-<div class="fragment fade-in">
-<p><video data-src="images/media1.mp4" width="600" controls=""><a href="images/media1.mp4">Video</a></video></p>
-<p>The same flow, captured as a full velocity <strong>field</strong> — this is what PIV gives you.</p>
-</div>
-</div></div>
-</section>
-<section id="piv-table" class="slide level2">
-<h2>Alternatives to PIV (2/2)</h2>
+<section id="piv-table-illustrated" class="slide level2">
+<h2>Alternatives to PIV</h2>
 <div class="piv-comparison">
-<table class="caption-top">
+<table>
 <thead>
-<tr class="header">
-<th></th>
-<th>Pitot tube</th>
-<th>Hot Wire Anemometry</th>
-<th>Laser Doppler Anemometry</th>
-<th><strong>PIV</strong></th>
+<tr>
+<th>
+</th>
+<th>
+Pitot tube
+</th>
+<th>
+HWA
+</th>
+<th>
+LDA
+</th>
+<th>
+<strong>PIV</strong>
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>Sketch</td>
-<td><img data-src="images/pitot1.png" width="250"></td>
-<td><img data-src="images/hwa1.png" width="200"></td>
-<td><a href="images/lda1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/lda1.png" width="250"></a></td>
-<td><a href="#/piv-principles"><em>(click to preview)</em></a></td>
+<tr>
+<th>
+Sketch
+</th>
+<td>
+<img src="images/pitot1.png" width="105">
+</td>
+<td>
+<img src="images/hwa1.png" width="105">
+</td>
+<td>
+<img src="images/lda1.png" width="105">
+</td>
+<td>
+<img src="images/piv_princ1.png" width="105">
+</td>
 </tr>
-<tr class="even">
-<td>Principle<br> (what is measured)</td>
-<td>Static and dynamic pressures.<br> Bernoulli</td>
-<td>Joule dissipation measurement in a wire</td>
-<td>Interferometric meas. of a Doppler shift on scattering particle</td>
-<td>Cross-correlation of tracer particle images</td>
+<tr>
+<th>
+Principle
+</th>
+<td>
+<em>Stat.</em> and <em>dyn.</em> pressures.<br>Bernoulli
+</td>
+<td>
+Joule dissipation measurement in a wire
+</td>
+<td>
+Interferometric meas. of a Doppler shift on scattering particle
+</td>
+<td>
+Cross-correlation of tracer particle images
+</td>
 </tr>
-<tr class="odd">
-<td>Point or field?</td>
-<td>Point</td>
-<td>Point</td>
-<td>Point</td>
-<td><strong>Field</strong></td>
+<tr>
+<th class="point-or-field">
+Point or field?
+</th>
+<td class="point-or-field-image" colspan="3">
+<img src="images/1d_sig.png" width="280">
+</td>
+<td>
+<video src="images/media1.mp4" width="250" autoplay="" loop="" muted="" playsinline="">
+</video>
+</td>
 </tr>
-<tr class="even">
-<td>Pros</td>
-<td>Easy to use. Cheap (1 k€)</td>
-<td>High time resolution <br> Medium price (10 k€)</td>
-<td>Non intrusive. High time resolution. Suited for several components</td>
-<td>Non intrusive. Whole velocity field at once</td>
+<tr>
+<th>
+Pros
+</th>
+<td>
+Easy to use. Cheap
+</td>
+<td>
+High time resolution
+</td>
+<td>
+Non intrusive. High time resolution.
+</td>
+<td>
+Non intrusive. Whole velocity field at once
+</td>
 </tr>
-<tr class="odd">
-<td>Cons</td>
-<td>Highly intrusive.<br> Very poor resolution</td>
-<td>Intrusive, fragile. Non linear calibration</td>
-<td>Non-regular sampling.<br> High price (50-100 k€). Complex settings</td>
-<td>Lower time resolution than LDA/HWA.<br> Price 10-100+ k€</td>
+<tr>
+<th>
+Cons
+</th>
+<td>
+Highly intrusive.<br>Very poor resolution
+</td>
+<td>
+Intrusive, fragile. Non linear calibration
+</td>
+<td>
+Non-regular sampling.<br>High price (50-100 k€). Complex settings
+</td>
+<td>
+Lower time resolution than LDA/HWA.<br>Price 10-100+ k€
+</td>
 </tr>
 </tbody>
 </table>
@@ -583,18 +618,18 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <h2>Objective</h2>
 <p>Estimate a <strong>velocity-field</strong> from a couple of <strong>grayscale particle images</strong>, i.e.&nbsp;find <span class="math inline">\(\vec{V}(\vec{x},t)\)</span> from <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span>, <span class="math inline">\(I \in [0,255]\)</span>.</p>
 <ul>
-<li>Ideally, a high data density is preferred on the PIV vector fields, particularly when significant spatial flow variations must be resolved or when comparing experimental data with numerical results.</li>
+<li><strong>Ideally, a high data density is preferred</strong> on the PIV vector fields, particularly <strong>when significant spatial flow variations</strong> must be resolved or when comparing experimental data with numerical results.</li>
 <li>This requires a <strong>medium</strong> concentration of the images of the tracer particles in the PIV recording — a real compromise, not a default:
 <ul>
-<li>too sparse, and matching pairs of particle images – due to subsequent illuminations – cannot be detected by visual inspection;</li>
-<li>too dense, and particle images start to overlap, blurring the correlation peak they should sharpen.</li>
+<li>too sparse, and matching pairs of <em>particle images</em> cannot be detected by visual inspection;</li>
+<li>too dense, and particle images start to overlap, blurring the information they should provide.</li>
 </ul></li>
 <li>Hence, statistical approaches were developed.</li>
 </ul>
 </section>
 <section id="from-ivecxttdelta-t" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">From <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span></h2>
-<div id="d42602dd" class="cell" data-execution_count="1">
+<div id="7aae56b7" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb1-1" class="hljs-ln-code"><a></a><span class="co"># import the standard numerical and plotting packages</span></span>
 <span id="cb1-2" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3" class="hljs-ln-code"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -608,7 +643,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 </section>
 <section id="from-ivecxttdelta-t-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">From <span class="math inline">\(I(\vec{x},t,t+\Delta t)\)</span></h2>
-<div id="beeb9f9a" class="cell" data-execution_count="2">
+<div id="7370f8c3" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb2-1" class="hljs-ln-code"><a></a><span class="co"># import the standard numerical and plotting packages</span></span>
 <span id="cb2-2" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3" class="hljs-ln-code"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -642,7 +677,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="windowing" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Windowing</h2>
 <p>Let’s focus on small portions of the images:</p>
-<div id="dccf8a83" class="cell" data-execution_count="3">
+<div id="1ae22cbb" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb3-1" class="hljs-ln-code"><a></a>win_size <span class="op">=</span> <span class="dv">32</span></span>
 <span id="cb3-2" class="hljs-ln-code"><a></a>a_win <span class="op">=</span> a[:win_size, :win_size].copy()</span>
 <span id="cb3-3" class="hljs-ln-code"><a></a>b_win <span class="op">=</span> b[:win_size, :win_size].copy()</span>
@@ -670,7 +705,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="shifting" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Shifting</h2>
 <p>We could then try to shift the window IA by some pixels along the horizontal and/or vertical directions</p>
-<div id="3e6c4f1b" class="cell" data-execution_count="4">
+<div id="39b1e331" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="2,4,6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb4-1" class="hljs-ln-code"><a></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">4</span>))</span>
 <span id="cb4-2" class="hljs-ln-code"><a></a>img <span class="op">=</span> axs[<span class="dv">0</span>].imshow(b_win <span class="op">-</span> a_win, cmap<span class="op">=</span>plt.cm.gray)</span>
 <span id="cb4-3" class="hljs-ln-code"><a></a>axs[<span class="dv">0</span>].set_title(<span class="st">"IB - IA(shift=0)"</span>)</span>
@@ -695,7 +730,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="optimal-matching" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Optimal matching?</h2>
 <p>Let’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.</p>
-<div id="70036b09" class="cell" data-execution_count="5">
+<div id="b43e67ab" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="|16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb5-1" class="hljs-ln-code"><a></a><span class="kw">def</span> match_template(img, template, maxroll<span class="op">=</span><span class="dv">8</span>):</span>
 <span id="cb5-2" class="hljs-ln-code"><a></a>    <span class="co"># img: input image to compare</span></span>
 <span id="cb5-3" class="hljs-ln-code"><a></a>    <span class="co"># template: image to match against</span></span>
@@ -714,7 +749,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <span id="cb5-16" class="hljs-ln-code"><a></a>match_template(np.roll(a_win, (<span class="dv">2</span>, <span class="dv">0</span>), axis<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>)), a_win)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="75">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>(0.0, (2, 0))</code></pre>
 </div>
 </div>
@@ -722,12 +757,12 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="optimal-matching-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Optimal matching?</h2>
 <p>Let’s try to find the best shift algorithmically: shift and calculate the sum of squared differences, the minimum of which should be the best shift.</p>
-<div id="b52ebd7c" class="cell" data-execution_count="6">
+<div id="e1f0d2f5" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb7-1" class="hljs-ln-code"><a></a><span class="co"># Let’s try it on the two sub-windows</span></span>
 <span id="cb7-2" class="hljs-ln-code"><a></a>match_template(b_win, a_win)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="76">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>(123.80226169178009, (-1, 1))</code></pre>
 </div>
 </div>
@@ -760,11 +795,12 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <h2>CC interrogation technic</h2>
 <p>Direct calculation: very long! : <span class="math inline">\(2M^2N^2\)</span> operations <span class="math inline">\(\Rightarrow\)</span> Calculation of the correlation function by FFT: <span class="math inline">\(2N^2\log_2N\)</span> (if <span class="math inline">\(N=M\)</span>).</p>
 
-<img data-src="images/cc2.png" width="700" class="r-stretch"></section>
+<img data-src="images/cc2.png" width="700" class="r-stretch"><p>Ordre de grandeur: 1000 <span class="math inline">\(\times\)</span> faster for a 32 <span class="math inline">\(\times\)</span> 32 window, 10000 <span class="math inline">\(\times\)</span> faster for a 128 <span class="math inline">\(\times\)</span> 128 window.</p>
+</section>
 <section id="cc-interrogation-technic-1" class="slide level2">
 <h2>CC interrogation technic</h2>
 <p>CC is an efficient computational algorithm to find out the right shift.</p>
-<div id="7d77d587" class="cell" data-execution_count="7">
+<div id="f186e97e" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># import the required package</span></span>
 <span id="cb9-2"><a></a><span class="im">from</span> scipy.signal <span class="im">import</span> correlate</span>
 <span id="cb9-3"><a></a></span>
@@ -790,7 +826,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <section id="cc-interrogation-technic-2" class="slide level2 scrollable">
 <h2>CC interrogation technic</h2>
 <p>We can get the first velocity field by repeating this analysis for all windows.</p>
-<div id="bf1959c4" class="cell" data-execution_count="8">
+<div id="d7a78869" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">def</span> vel_field(curr_frame, next_frame, win_size):</span>
 <span id="cb10-2"><a></a>    ys <span class="op">=</span> np.arange(<span class="dv">0</span>, curr_frame.shape[<span class="dv">0</span>], win_size)</span>
 <span id="cb10-3"><a></a>    xs <span class="op">=</span> np.arange(<span class="dv">0</span>, curr_frame.shape[<span class="dv">1</span>], win_size)</span>
@@ -844,7 +880,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <p>Let’s have a look back at the CC map:</p>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div id="495c0874" class="cell" data-execution_count="9">
+<div id="cdc80864" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>plt.imshow(cross_corr, cmap<span class="op">=</span>plt.cm.gray)</span>
 <span id="cb11-2"><a></a>y, x <span class="op">=</span> np.unravel_index(cross_corr.argmax(), cross_corr.shape)</span>
 <span id="cb11-3"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>y<span class="op">=</span><span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>x<span class="op">=</span><span class="sc">}</span><span class="ss">"</span>)</span>
@@ -868,7 +904,7 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
 <li><p>The information is discrete (pxl)! <span class="math inline">\(\Rightarrow\)</span> very high uncertainty for displacements <span class="math inline">\(\approx\)</span> 1 pxl</p></li>
 <li><p>Histogram of the raw displacements:</p></li>
 </ul>
-<div id="ad01ef3d" class="cell" data-execution_count="10">
+<div id="9d1384c2" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>bins <span class="op">=</span> np.arange(dxs.<span class="bu">min</span>() <span class="op">-</span> <span class="fl">0.5</span>, dxs.<span class="bu">max</span>() <span class="op">+</span> <span class="fl">1.5</span>, <span class="dv">1</span>)</span>
 <span id="cb13-2"><a></a>plt.hist(dxs.ravel(), bins<span class="op">=</span>bins, edgecolor<span class="op">=</span><span class="st">"k"</span>)</span>
 <span id="cb13-3"><a></a>plt.xlabel(<span class="st">"Estimated horizontal displacement (pixels)"</span>)</span>
@@ -1604,38 +1640,6 @@ jean-francois.krawczynski@sorbonne-universite.fr, 2026
         }
       });
       </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-    (function() {
-      let previousOnload = window.onload;
-      window.onload = () => {
-        if (previousOnload) {
-          previousOnload();
-        }
-        lightboxQuarto.on('slide_before_load', (data) => {
-          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-          const href = trigger.getAttribute('href');
-          if (href !== null) {
-            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-            if (imgEl !== null) {
-              const srcAttr = imgEl.getAttribute("src");
-              if (srcAttr && srcAttr.startsWith("data:")) {
-                slideConfig.href = srcAttr;
-              }
-            }
-          } 
-        });
-      
-        lightboxQuarto.on('slide_after_load', (data) => {
-          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(slideNode);
-          }
-        });
-      
-      };
-      
-    })();
-              </script>
     
 
 </body></html>

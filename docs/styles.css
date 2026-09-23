@@ -34,3 +34,18 @@
   max-height: 115px;
   width: auto;
 }
+
+.piv-comparison th.point-or-field {
+  vertical-align: middle;
+}
+
+.piv-comparison td.point-or-field-image {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.piv-comparison td img,
+.piv-comparison td video {
+  display: block;
+  margin: 0 auto;
+}
